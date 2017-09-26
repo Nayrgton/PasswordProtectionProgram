@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.18)  25 SEP 2017 22:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.18)  25 SEP 2017 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -62,60 +62,72 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@lastruleclass=\count91
 \@thisrulewidth=\dimen122
 )
-No file ProblemStatement.aux.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\MT@toks=\toks17
+\MT@count=\count92
+LaTeX Info: Redefining \textls on input line 774.
+\MT@outer@kern=\dimen123
+LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
+\MT@listname@count=\count93
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 916.
+LaTeX Info: Redefining \lslig on input line 916.
+\MT@outer@space=\skip45
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
+))
+(./ProblemStatement.aux)
 \openout1 = `ProblemStatement.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Info: Redefining \microtypecontext on input line 19.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
 
-Overfull \hbox (30.30606pt too wide) in paragraph at lines 28--28
-[]|\OT1/cmr/bx/n/10 Change| 
- []
-
-
-Overfull \hbox (19.0008pt too wide) in paragraph at lines 28--28
-[]|\OT1/cmr/m/n/10 Initial
- []
-
-
-Overfull \hbox (17.22299pt too wide) in paragraph at lines 28--28
-\OT1/cmr/m/n/10 Prob-
- []
-
-
-Overfull \hbox (8.16742pt too wide) in paragraph at lines 28--28
-\OT1/cmr/m/n/10 lem
- []
-
-
-Overfull \hbox (18.72299pt too wide) in paragraph at lines 28--28
-\OT1/cmr/m/n/10 State-
- []
-
-
-Overfull \hbox (14.55632pt too wide) in paragraph at lines 28--28
-\OT1/cmr/m/n/10 ment| 
- []
-
-[1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 33.
+(Font)              <12> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 33.
+(Font)              <6> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 39.
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ú in font cmr8!
@@ -128,13 +140,9 @@ Missing character: There is no ô in font cmr10!
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ù in font cmr8!
+ [1
 
-Underfull \hbox (badness 1394) in paragraph at lines 39--39
-[][]\OT1/cmr/m/n/8 Identity Theft and You, Pub-lic Works and Gov-ern-ment Ser-v
-ices Canada, 2014,
- []
-
-[2]
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -142,42 +150,32 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Overfull \hbox (167.80655pt too wide) in paragraph at lines 45--47
-\OT1/cmr/m/n/10 graphic)." En-trepreneur. June 03, 2015. Ac-cessed Septem-ber 2
-4, 2017. https://www.entrepreneur.com/article/246902. 
+Overfull \hbox (6.47363pt too wide) in paragraph at lines 48--50
+\OT1/cmr/m/n/10 (-20) Ac-cessed Septem-ber 24, 2017. https://www.priv.gc.ca/med
+ia/2034/guide[]idt[]e.pdf 
  []
 
-
-Overfull \hbox (13.66373pt too wide) in paragraph at lines 45--47
-\OT1/cmr/m/n/10 Ac-cessed Septem-ber 24, 2017. https://www.priv.gc.ca/media/203
-4/guide[]idt[]e.pdf 
- []
-
-[3] (./ProblemStatement.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[2] (./ProblemStatement.aux) ) 
 Here is how much of TeX's memory you used:
- 387 strings out of 493014
- 4559 string characters out of 6133336
- 57395 words of memory out of 5000000
- 3996 multiletter control sequences out of 15000+600000
- 7588 words of font info for 27 fonts, out of 8000000 for 9000
+ 1992 strings out of 493014
+ 32488 string characters out of 6133336
+ 122968 words of memory out of 5000000
+ 5546 multiletter control sequences out of 15000+600000
+ 8140 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,9n,17p,1103b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on ProblemStatement.pdf (3 pages, 104580 bytes).
+ 31i,8n,38p,1109b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb>
+Output written on ProblemStatement.pdf (2 pages, 92253 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 9217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
