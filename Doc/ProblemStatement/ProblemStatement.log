@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.18)  25 SEP 2017 22:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.18)  25 SEP 2017 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -146,21 +146,31 @@ Missing character: There is no  in font cmr8!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no  in font cmr10!
 
-Overfull \hbox (6.47363pt too wide) in paragraph at lines 48--50
-\OT1/cmr/m/n/10 (-20) Ac-cessed Septem-ber 24, 2017. https://www.priv.gc.ca/med
-ia/2034/guide[]idt[]e.pdf 
+Overfull \hbox (56.37038pt too wide) in paragraph at lines 50--51
+\OT1/cmr/m/n/10 (-20) 2014, Ac-cessed Septem-ber 24, 2017. https://www.priv.gc.
+ca/media/2034/guide[]idt[]e.pdf 
  []
 
 [2] (./ProblemStatement.aux) ) 
 Here is how much of TeX's memory you used:
- 1992 strings out of 493014
- 32488 string characters out of 6133336
- 122968 words of memory out of 5000000
- 5546 multiletter control sequences out of 15000+600000
+ 1991 strings out of 493014
+ 32468 string characters out of 6133336
+ 122960 words of memory out of 5000000
+ 5545 multiletter control sequences out of 15000+600000
  8140 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  31i,8n,38p,1109b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -172,7 +182,7 @@ ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 msfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr8.pfb>
-Output written on ProblemStatement.pdf (2 pages, 92253 bytes).
+Output written on ProblemStatement.pdf (2 pages, 92274 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream
