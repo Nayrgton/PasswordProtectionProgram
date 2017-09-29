@@ -2,18 +2,17 @@
 
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{hyperref}
 
 \title{SE 3XA3: Development Plan\\Title of Project}
 
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\author{Team 28, Tuples1
+		\\ Suhavi Sandhu, sandhs11
+		\\ Shabana Dhayanath, dhayanas
+		\\ Joseph Lu, luy89
 }
 
-\date{}
-
-\input{../Comments}
+\date{\today}
 
 \begin{document}
 
@@ -23,9 +22,8 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
+% PLEASE CHANGE THIS 
+\today & Suhavi Sandhu, Shabana Dhayananth, Joseph Lu & Description of changes\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -37,18 +35,52 @@ Date2 & Name(s) & Description of changes\\
 Put your introductory blurb here.
 
 \section{Team Meeting Plan}
+The team will be meeting twice a week, every week, on Tuesdays and Thursdays at Thode library. We decided to have rotate the roles every other week to split responsibilities equally.
 
+\textbf{Researcher} - Shabana
+\textbf{Team Leader} - Suhavi
+\textbf{Scribe} - Joseph
+\textbf{Developer} - all 
+
+The meeting agenda will be filled out by the scribe after every meeting and uploaded to the git repository for all members to access. Below is a template for the meeting minutes. It notes down the details of the meeting and also provides a guideline for the meeting’s progression. Ideally, we will start by updating the rest of the team with what we have accomplished since the last meeting, followed by items that need to be addressed (problems, opinions, questions), and at the end, what needs to be done by the next meeting. There will also be a written statement on decisions made during the meeting.
+
+% Table goes here
 \section{Team Communication Plan}
+
+The team will primarily use the phone to communicate any issues, changes and progress made on the project. For minor announcements, there will be a Facebook group, as well, where we can schedule and confirm meeting times. If there is an important issue that has to do with the code or design of the project, we will be using git issues. When working on the reports, we will be using Google Docs to allow everyone to contribute at the same time.
 
 \section{Team Member Roles}
 
+\textbf{Team Leader} - Schedules meetings and delegates work to the other members as well as him/herself. Ideally, this member will make sure the git repo has no conflicts and looks clean.
+
+\textbf{Scribe} - Will be in charge of writing meeting minutes as well as writing reports using Latex. This person ideally has experience using Latex.
+
+\textbf{Researcher} - Will actively learn about the technology we will be implementing in our project. In our case, this will heavily focus on encryption methods and documentation from the original product.
+
+\textbf{Programmer} - All team members will play the role of the programmer as there will be a lot to code.
+
 \section{Git Workflow Plan}
+
+\textbf{Branching Workflow}
+\begin{itemize}
+    \item master - branch to host our stable code
+    \item develop - branch to develop our program
+    \item each additional branches are used to implement specific parts of the program
+\end{itemize}
 
 \section{Proof of Concept Demonstration Plan}
 
+
+
 \section{Technology}
 
+We will be using Python as the main language to create our application. Our main library to create the gui is the python library tkinter. Our encryption library will use the python library cryptography. The primary IDE we will use is IDLE and the primary form of testing will be done on pyunit. Our documentation generation will be done with Doxygen and our reports will be written in \latex \\
+Our database that will store the usernames and passwords will be MariaDB.
+
 \section{Coding Style}
+
+We are planning to following the Python coding style
+\href{https://google.github.io/styleguide/pyguide.html}[Python Coding Syle]
 
 \section{Project Schedule}
 
