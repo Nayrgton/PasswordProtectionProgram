@@ -58,7 +58,7 @@ The meeting agenda will be filled out by the scribe after every meeting and uplo
             \multicolumn{4}{|l|}{\textbf{Update on what happened since last meeting: }} \\ 
             \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
             \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-	\hline
+	\hlin
             \multicolumn{4}{|l|}{\textbf{Issues discussed this meeting: }} \\ 
             \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
             \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
@@ -95,25 +95,19 @@ The team will primarily use the phone to communicate any issues, changes and pro
 Tags will be use when major milestones are reached or there is a major issue that needs attention.\\
 Milestones will be used to divide our workload and allow the users to work in parallel.
 
-\section{Proof of Concept Demonstration Plan}
-\subsection{Will implementation be difficult?}
-The hardest part of the program for us to implement is probably going to be integrating the database into our Python GUI program as our developers have not formally programed in MySQL. As we are currently taking a databases course, we will take advantage of those resources and ask the teaching assistants and instructor for clarification when needed.\\\\
+\section{Proof of Concept Demonstration Plan} 
+\subsection{Will implementation be difficult?} The hardest part of the program for us to implement is probably going to be integrating the database into our Python GUI program as our developers have not formally programed in MySQL. As we are currently taking a databases course, we will take advantage of those resources and ask the teaching assistants and instructor for clarification when needed.\\\\
 \subsection{Will testing be difficult?}
 Testing the encryption on our program may be difficult as we are not hackers and do not really have experience or knowledge in trying to break through encryptions. Therefore, we will mainly focus on testing the user interface. We will also be researching the Python cryptography library that we intend to use to ensure its credibility.\\\\
 \subsection{Is a required library difficult to install?}
-The required libraries should be easy to install with the python package manager pip.\\\\
-\subsection{Will portability be a concern?}
-Portability should not be a concern as long as all the dependencies are downloaded.
+The required libraries should be easy to install with the python package manager pip.\\\\ \subsection{ Portability should not be a concern as long as all the dependencies are downloaded.
 
 \section{Technology}
 We will be using Python as the main language to create our application. Our main library to create the GUI is the Python library tkinter. The encryption method we will use is provided by the python library cryptography. The primary IDE we will use is IDLE and the primary form of testing will be done on pyunit. Our documentation generation will be done with Doxygen and our reports will be written in latex. The database that will store the usernames and passwords will be MariaDB.
-
 \section{Coding Style}
 We are planning to following the Python coding style 
 \href{https://google.github.io/styleguide/pyguide.html}[Python Coding Syle]
-
 \section{Project Schedule}
-\href{run:d: ../../ProjectSchedule/GanttChart.gen}[Gantt chart]
-
+Provide a pointer to your Gantt Chart.
 \section{Project Review}
 \end{document}

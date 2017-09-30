@@ -3,7 +3,11 @@
 \BOOKMARK [1][-]{section.3}{Team Member Roles}{}% 3
 \BOOKMARK [1][-]{section.4}{Git Workflow Plan}{}% 4
 \BOOKMARK [1][-]{section.5}{Proof of Concept Demonstration Plan}{}% 5
-\BOOKMARK [1][-]{section.6}{Technology}{}% 6
-\BOOKMARK [1][-]{section.7}{Coding Style}{}% 7
-\BOOKMARK [1][-]{section.8}{Project Schedule}{}% 8
-\BOOKMARK [1][-]{section.9}{Project Review}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Will implementation be difficult?}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Will testing be difficult?}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.3}{Is a required library difficult to install?}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.4}{Will portability be a concern?}{section.5}% 9
+\BOOKMARK [1][-]{section.6}{Technology}{}% 10
+\BOOKMARK [1][-]{section.7}{Coding Style}{}% 11
+\BOOKMARK [1][-]{section.8}{Project Schedule}{}% 12
+\BOOKMARK [1][-]{section.9}{Project Review}{}% 13
