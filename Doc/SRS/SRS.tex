@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{float}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -104,7 +105,7 @@ There is a deadline in December for the project to be completed.
 
 \subsection{Naming Conventions and Terminology}
 \begin{table}
-\begin{center}
+\centering
 \captionof{table}{Terminology}
 \begin{tabular}{ | p{3cm} | p{10cm} | }
 	\hline
@@ -151,7 +152,6 @@ There is a deadline in December for the project to be completed.
 	Tkinter & Python module that is going to be used to create a graphical user interface, known as Python’s standard GUI package \\
 \hline
 \end{tabular}
-\end{center}
 \end{table}
 
 \subsection{Relevant Facts and Assumptions}
@@ -191,19 +191,19 @@ one for multiple accounts. This makes them more susceptible to security threats.
 
 \subsubsection{Individual Product Use Cases}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.5]{Images/UseCase.png}
 \caption{Use Case Diagram}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.5]{Images/BusinessModel.png}
 \caption{Business Data Model}
 \end{figure}
 
 \subsection{Functional Requirements}
 
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \captionof{table}{Functional Requirements}
 \begin{tabular}{ | p{1cm} | p{4cm} | p{4cm} | p{4cm} | }
