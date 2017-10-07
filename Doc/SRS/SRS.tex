@@ -1,4 +1,4 @@
-\documentclass[12pt, titlepage]{article}
+﻿\documentclass[12pt, titlepage]{article}
 
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -8,7 +8,7 @@
     colorlinks,
     citecolor=black,
     filecolor=black,
-    linkcolor=red,
+    linkcolor=black,
     urlcolor=blue
 }
 \usepackage[round]{natbib}
@@ -37,8 +37,8 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+Oct 6, 2017 & 1.0 & section 1, 2, 5 \\
+Oct 7, 2017 & 1.1 & section 3, 4, 6, tables, figures \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -47,19 +47,9 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-This document describes the requirements for ....  The template for the Software
-Requirements Specification (SRS) is a subset of the Volere
-template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
-to the template, you should explicity state what modifications were made.
-
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
-
-The purpose of this project is to implement an encrypted password manager,  PasswordProtectionProgram (PPP) 
-wherein a person can safely store and access all of the passwords they use with a single master password. 
-Through working on this project the software team also hopes to learn about encryption methods and the 
-development process.
 
 \subsection{The Stakeholders}
 
@@ -70,12 +60,6 @@ The stakeholders of this project are:
 \item Identity thieves since they are able to breach users’ personal information due to weak passwords and weak encryption methods
 \item The development team, as they are the students attempting to solve the problem at hand
 \end{itemize}
-
-\subsubsection{The Client}
-
-\subsubsection{The Customers}
-
-\subsubsection{Other Stakeholders}
 
 \subsection{Mandated Constraints}
 
@@ -112,6 +96,7 @@ There is a deadline in December for the project to be completed.
 \subsection{Naming Conventions and Terminology}
 \begin{table}
 \begin{center}
+\captionof{table}{Terminology}
 \begin{tabular}{ | p{3cm} | p{10cm} | }
 	\hline
 	Term & Definition \\
@@ -124,13 +109,11 @@ There is a deadline in December for the project to be completed.
 	\hline
 	Crypographic Algorithm & A means of altering data from a readable form to a protected form (and vice-versa) \\
 	\hline
-	cryptography & ython library that will be used to encrypt and decrypt passwords \\
+	cryptography & Python library that will be used to encrypt and decrypt passwords \\
 	\hline
 	Dictionary Attack & A hacking technique that tries to bypass internet security by determining passwords or encryption keys using a very large number of likely possibilities \\
 	\hline
 	Encryption & The process of converting information or data into a code, especially to prevent unauthorized access \\
-	\hline
-	GUI & Graphical Use Interface \\
 	\hline
 	Hash & A value returned by a cryptographic hash function, a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size decreasing the likelihood of a dictionary attack \\
 	\hline
@@ -146,8 +129,6 @@ There is a deadline in December for the project to be completed.
 	\hline
 	pip3 & A package management system used to install and manage software packages for Python 3 \\
 	\hline
-	PPP & An abbreviation for the project, the PasswordProtectionProgram \\
-	\hline
 	PW & Abbreviation for password \\
 	\hline
 	Python 3 & The language that will be used to develop the product\\
@@ -159,12 +140,8 @@ There is a deadline in December for the project to be completed.
 	Symmetric Cipher & The specific cipher that will be used for encryption, the key that it employs for going from readable form to protected form is the same \\
 	\hline
 	Tkinter & Python module that is going to be used to create a graphical user interface, known as Python’s standard GUI package \\
-	\hline 
-	Unicode & World computing standard for encoding and representing symbols and characters \\
 \hline
 \end{tabular}
-\\
-\caption{Table 1: Terminology}
 \end{center}
 \end{table}
 
@@ -203,23 +180,23 @@ stores sensitive personal information in a password protected account. However, 
 often easy to forget and therefore, people usually opt for weaker passwords or use the same 
 one for multiple accounts. This makes them more susceptible to security threats.
 
-\subsubsection{Work Partitioning}
-
 \subsubsection{Individual Product Use Cases}
 
 \begin{figure}[h]
-\includegraphics{Images/UseCase.png}
-\caption{Figure 1: Use Case Diagram}
+\includegraphics[scale=0.5]{Images/UseCase.png}
+\caption{Use Case Diagram}
 \end{figure}
 
 \begin{figure}[h]
-\includegraphics{Images/BusinessModel.png}
-\caption{Figure 2: Business Data Model}
+\includegraphics[scale=0.5]{Images/BusinessModel.png}
+\caption{Business Data Model}
 \end{figure}
 
 \subsection{Functional Requirements}
 
+\begin{table}
 \begin{center}
+\captionof{table}{Functional Requirements}
 \begin{tabular}{ | p{1cm} | p{4cm} | p{4cm} | p{4cm} | }
 	\hline
 	Name & Description & Rationale & Fit Criterion\\
@@ -246,6 +223,7 @@ one for multiple accounts. This makes them more susceptible to security threats.
 \hline
 \end{tabular}
 \end{center}
+\end{table}
 
 \section{Non-functional Requirements}
 
@@ -421,6 +399,7 @@ Actions to be taken in the cases in which the user has lost access to their pass
 \subsection{Off-the-Shelf Solutions}
 \begin{table}
 \begin{center}
+\captionof{table}{Off-the-Shelf Solutions}
 \begin{tabular}{ | p{3cm} | p{10cm} | }
 	\hline
 	Existing Product & Key Features \\
@@ -434,8 +413,6 @@ Actions to be taken in the cases in which the user has lost access to their pass
 	RatticDB & Intended for tracking shared  passwords among a group of employees, no application level encryption \\
 \hline
 \end{tabular}
-\\
-\caption{Table 3: Off-the-Shelf Solutions}
 \end{center}
 \end{table}
 
@@ -450,6 +427,7 @@ Deliverables as outlined by SFWRENG 3XA3 courseware:
 
 \begin{table}
 \begin{center}
+\captionof{table}{Deliverables}
 \begin{tabular}{ | p{5cm} | p{9cm} | }
 	\hline
 	Deilverable & Deadline \\
@@ -469,8 +447,6 @@ Deliverables as outlined by SFWRENG 3XA3 courseware:
 	Final Documentation & December 6, 2017 \\
 \hline
 \end{tabular}
-\\
-\caption{Table 4: Deliverables}
 \end{center}
 \end{table}
 
@@ -478,6 +454,7 @@ Implementation Breakdown:
 
 \begin{table}
 \begin{center}
+\captionof{table}{Implementation Breakdown}
 \begin{tabular}{ | p{5cm} | p{10cm} | }
 	\hline
 	Task & Intended Completion Date \\
@@ -503,8 +480,6 @@ Implementation Breakdown:
 	User Guide & December 1, 2017 \\
 \hline
 \end{tabular}
-\\
-\caption{Table 5: Implementation Breakdown}
 \end{center}
 \end{table}
 
@@ -540,25 +515,13 @@ Passwords can be organized by service in the database, so based on that there ca
 Instead of storing passwords, another solution is 2 factor authentication (2FA). This eliminates the need to download a password management software and instead the user can do a phone verification after typing their password or a fingerprint scanner for mobile devices.
 
 \begin{figure}[h]
-\includegraphics{Images/2fa.png}
-\caption{Figure 3: 2 Factor Authentication}
+\includegraphics[scale=0.5]{Images/2fa.png}
+\caption{2 Factor Authentication}
 \end{figure}
 
 \bibliographystyle{plainnat}
 
 \bibliography{SRS}
-
-\newpage
-
-\section{Appendix}
-
-This section has been added to the Volere template.  This is where you can place
-additional information.
-
-\subsection{Symbolic Parameters}
-
-The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
 
 
 \end{document}
