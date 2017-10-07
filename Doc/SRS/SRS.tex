@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{float}
+\usepackage[section]{placeins}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -204,7 +205,7 @@ one for multiple accounts. This makes them more susceptible to security threats.
 \subsection{Functional Requirements}
 
 \begin{table}[H]
-\begin{center}
+\centering
 \captionof{table}{Functional Requirements}
 \begin{tabular}{ | p{1cm} | p{4cm} | p{4cm} | p{4cm} | }
 	\hline
@@ -231,7 +232,6 @@ one for multiple accounts. This makes them more susceptible to security threats.
 	FR10 & The user should be able to change their master password & To allow the user to regularly update PW & Update PW from Settings and verify that new PW works and old one does not \\
 \hline
 \end{tabular}
-\end{center}
 \end{table}
 
 \section{Non-functional Requirements}
@@ -406,9 +406,8 @@ History: Created October 6, 2017
 Actions to be taken in the cases in which the user has lost access to their passwords or has lost all of their information due to hardware problems have not yet been explored. Also, the product will be implemented on a Windows operating system as that is the operating system used by all team members. It is intended that the software will work on Linux and Unix operating systems as well so but testing on those environments has not been discussed.
 
 \subsection{Off-the-Shelf Solutions}
-\newpage
-\begin{table}
-\begin{center}
+\begin{table}[H]
+\centering
 \captionof{table}{Off-the-Shelf Solutions}
 \begin{tabular}{ | p{3cm} | p{10cm} | }
 	\hline
@@ -423,7 +422,6 @@ Actions to be taken in the cases in which the user has lost access to their pass
 	RatticDB \cite{RatticDBSite} & Intended for tracking shared  passwords among a group of employees, no application level encryption \\
 \hline
 \end{tabular}
-\end{center}
 \end{table}
 
 
@@ -435,8 +433,8 @@ If users solely on this product to store all of their passwords, there is potent
 
 Deliverables as outlined by SFWRENG 3XA3 courseware:
 
-\begin{table}
-\begin{center}
+\begin{table}[H]
+\centering
 \captionof{table}{Deliverables}
 \begin{tabular}{ | p{5cm} | p{9cm} | }
 	\hline
@@ -457,13 +455,12 @@ Deliverables as outlined by SFWRENG 3XA3 courseware:
 	Final Documentation & December 6, 2017 \\
 \hline
 \end{tabular}
-\end{center}
 \end{table}
 
 Implementation Breakdown:
 
-\begin{table}
-\begin{center}
+\begin{table}[H]
+\centering
 \captionof{table}{Implementation Breakdown}
 \begin{tabular}{ | p{5cm} | p{10cm} | }
 	\hline
@@ -490,7 +487,6 @@ Implementation Breakdown:
 	User Guide & December 1, 2017 \\
 \hline
 \end{tabular}
-\end{center}
 \end{table}
 
 The team will be implementing and testing non-functional requirements based on their priority.
