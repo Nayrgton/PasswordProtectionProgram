@@ -48,6 +48,10 @@ Oct 7, 2017 & 1.1 & section 3, 4, 6, tables, figures \\
 
 \pagenumbering{arabic}
 
+This document describes the requirements for PasswordProtectionProgram.  The template for the Software
+Requirements Specification (SRS) is a subset of the Volere
+template~\cite{RobertsonAndRobertson2012}.
+
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
@@ -409,13 +413,13 @@ Actions to be taken in the cases in which the user has lost access to their pass
 	\hline
 	Existing Product & Key Features \\
 	\hline
-	Padlock (template software) & Template open source software upon which the product will be based, Chrome and mobile application available \\
+	Padlock (template software) \cite{PadLockGit} & Template open source software upon which the product will be based, Chrome and mobile application available \\
 	\hline
-	Encryptr & Cloud-based password manager \\
+	Encryptr \cite{EncryptrGit} & Cloud-based password manager \\
 	\hline
-	KeePass & Password database is locked with a master key or key file, encrypted with AES and Twofish \\
+	KeePass \cite{KeePassSite} & Password database is locked with a master key or key file, encrypted with AES and Twofish \\
 	\hline
-	RatticDB & Intended for tracking shared  passwords among a group of employees, no application level encryption \\
+	RatticDB \cite{RatticDBSite} & Intended for tracking shared  passwords among a group of employees, no application level encryption \\
 \hline
 \end{tabular}
 \end{center}
@@ -521,7 +525,7 @@ Instead of storing passwords, another solution is 2 factor authentication (2FA).
 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{Images/2fa.png}
-\caption{2 Factor Authentication}
+\caption{2 Factor Authentication \cite{FileCloudDefs} }
 \end{figure}
 
 \bibliographystyle{plainnat}
