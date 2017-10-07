@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PasswordProtectionProgram" company="McMaster University" webLink="https://gitlab.cas.mcmaster.ca/tuples1/PasswordProtectionProgram" view-date="2017-09-10" view-index="1" gantt-divider-location="560" resource-divider-location="465" version="2.8.5" locale="en_CA">
-    <description><![CDATA[SFWRENG 2XA3 Project:
+<?xml version="1.0" encoding="UTF-8"?><project name="PasswordProtectionProgram" company="McMaster University" webLink="https://gitlab.cas.mcmaster.ca/tuples1/PasswordProtectionProgram" view-date="2017-10-10" view-index="0" gantt-divider-location="560" resource-divider-location="465" version="2.8.5" locale="en_CA">
+    <description><![CDATA[SFWRENG 3XA3 Project:
 
 Offline, desktop based password manager intended for users to be able to keep track of all of their passwords in one secure location.]]></description>
-    <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Name" width="269" order="0"/>
-        <field id="tpd4" name="Begin date" width="144" order="1"/>
-        <field id="tpd5" name="End date" width="143" order="2"/>
-        <option id="color.recent"><![CDATA[#ff3333 #0000ff #ff0000 #cc00cc #ffff00 #3333ff #33ff33 #ff0033]]></option>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Name" width="262" order="0"/>
+        <field id="tpd4" name="Begin date" width="140" order="1"/>
+        <field id="tpd5" name="End date" width="139" order="2"/>
+        <option id="color.recent"><![CDATA[#ff9933 #ff9900 #ff3333 #0000ff #ff0000 #cc00cc #ffff00 #3333ff #33ff33 #ff0033]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="293" order="0"/>
@@ -17,7 +17,7 @@ Offline, desktop based password manager intended for users to be able to keep tr
         <day-types>
             <day-type id="0"/>
             <day-type id="1"/>
-            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
             <only-show-weekends value="false"/>
             <overriden-day-types/>
             <days/>
@@ -52,10 +52,29 @@ Offline, desktop based password manager intended for users to be able to keep tr
         <task id="18" name="Problem Statement" color="#ff0000" meeting="false" start="2017-09-21" duration="3" complete="0" expand="true"/>
         <task id="3" name="Development Plan" color="#ff0000" meeting="false" start="2017-09-25" duration="4" complete="0" expand="true"/>
         <task id="77" name="Gantt Chart" color="#ff3333" meeting="false" start="2017-09-29" duration="1" complete="0" expand="true"/>
-        <task id="4" name="Requirements Document" color="#ff0000" meeting="false" start="2017-10-02" duration="6" complete="0" expand="true"/>
-        <task id="16" name="Prototype 1" color="#0000ff" meeting="false" start="2017-10-02" duration="10" complete="0" expand="true"/>
-        <task id="9" name="System Design" color="#33ff33" meeting="false" start="2017-10-04" duration="6" complete="0" expand="true"/>
-        <task id="13" name="User Interface" color="#33ff33" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+        <task id="4" name="Requirements Document" color="#ff0000" meeting="false" start="2017-10-04" duration="2" complete="0" expand="true"/>
+        <task id="16" name="Prototype 1" color="#0000ff" meeting="false" start="2017-10-07" duration="9" complete="0" expand="true">
+            <task id="91" name="System Design" color="#33ff33" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true">
+                <task id="92" name="FR2" color="#8cb6ce" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true"/>
+                <task id="102" name="FR6" color="#8cb6ce" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true"/>
+                <task id="103" name="FR8" color="#8cb6ce" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true"/>
+                <task id="112" name="Performance Requirements" color="#ff9933" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true"/>
+                <task id="113" name="Operational and Environmental Requirements" color="#ff9933" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true"/>
+                <task id="114" name="Maintainability and Support Requirements" color="#ff9933" meeting="false" start="2017-10-07" duration="6" complete="0" expand="true"/>
+            </task>
+            <task id="93" name="User Interface" color="#33ff33" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true">
+                <task id="94" name="FR1" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="95" name="FR3" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="96" name="FR4" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="97" name="FR5" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="98" name="FR7" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="99" name="FR9" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="100" name="FR10" color="#8cb6ce" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="108" name="Look and Feel Requirements" color="#ff9933" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="109" name="Usability and Humanity Requirements" color="#ff9933" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+                <task id="111" name="Unserstandability and Politeness Requirements" color="#ff9933" meeting="false" start="2017-10-10" duration="7" complete="0" expand="true"/>
+            </task>
+        </task>
         <task id="5" name="Test Plan" color="#cc00cc" meeting="false" start="2017-10-23" duration="2" complete="0" expand="true">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
         </task>
@@ -63,8 +82,11 @@ Offline, desktop based password manager intended for users to be able to keep tr
             <depend id="28" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="28" name="Test 1 Fixes" color="#cc00cc" meeting="false" start="2017-10-27" duration="2" complete="0" expand="true"/>
-        <task id="12" name="Encryption" color="#33ff33" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true"/>
-        <task id="27" name="Prototype 2" color="#3333ff" meeting="false" start="2017-11-01" duration="9" complete="0" expand="true"/>
+        <task id="27" name="Prototype 2" color="#3333ff" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true">
+            <task id="101" name="Encryption" color="#33ff33" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true">
+                <task id="106" name="Security Requirements" color="#ff9900" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true"/>
+            </task>
+        </task>
         <task id="8" name="Test Plan Revision/ Test 2" color="#cc00cc" meeting="false" start="2017-11-14" duration="3" complete="0" expand="true">
             <depend id="29" type="2" difference="0" hardness="Strong"/>
         </task>
@@ -84,13 +106,10 @@ Offline, desktop based password manager intended for users to be able to keep tr
         <allocation task-id="18" resource-id="0" function="3" responsible="false" load="33.0"/>
         <allocation task-id="3" resource-id="0" function="3" responsible="true" load="30.0"/>
         <allocation task-id="4" resource-id="0" function="3" responsible="true" load="7.0"/>
-        <allocation task-id="9" resource-id="0" function="4" responsible="true" load="30.0"/>
         <allocation task-id="16" resource-id="0" function="4" responsible="true" load="10.0"/>
-        <allocation task-id="13" resource-id="0" function="4" responsible="false" load="15.0"/>
         <allocation task-id="5" resource-id="0" function="SoftwareDevelopment:4" responsible="true" load="40.0"/>
         <allocation task-id="6" resource-id="0" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
         <allocation task-id="28" resource-id="0" function="SoftwareDevelopment:4" responsible="false" load="35.0"/>
-        <allocation task-id="12" resource-id="0" function="4" responsible="false" load="20.0"/>
         <allocation task-id="27" resource-id="0" function="4" responsible="true" load="25.0"/>
         <allocation task-id="8" resource-id="0" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
         <allocation task-id="29" resource-id="0" function="SoftwareDevelopment:4" responsible="true" load="40.0"/>
@@ -98,18 +117,18 @@ Offline, desktop based password manager intended for users to be able to keep tr
         <allocation task-id="11" resource-id="0" function="4" responsible="false" load="33.0"/>
         <allocation task-id="14" resource-id="0" function="4" responsible="true" load="33.0"/>
         <allocation task-id="77" resource-id="0" function="4" responsible="false" load="15.0"/>
+        <allocation task-id="91" resource-id="0" function="4" responsible="true" load="30.0"/>
+        <allocation task-id="93" resource-id="0" function="4" responsible="false" load="15.0"/>
+        <allocation task-id="101" resource-id="0" function="4" responsible="false" load="20.0"/>
         <allocation task-id="2" resource-id="1" function="1" responsible="false" load="33.0"/>
         <allocation task-id="0" resource-id="1" function="1" responsible="false" load="5.0"/>
         <allocation task-id="18" resource-id="1" function="1" responsible="false" load="33.0"/>
         <allocation task-id="3" resource-id="1" function="1" responsible="false" load="30.0"/>
         <allocation task-id="4" resource-id="1" function="1" responsible="true" load="15.0"/>
-        <allocation task-id="9" resource-id="1" function="5" responsible="false" load="10.0"/>
         <allocation task-id="16" resource-id="1" function="5" responsible="true" load="10.0"/>
-        <allocation task-id="13" resource-id="1" function="5" responsible="true" load="30.0"/>
         <allocation task-id="5" resource-id="1" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
         <allocation task-id="6" resource-id="1" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
         <allocation task-id="28" resource-id="1" function="SoftwareDevelopment:4" responsible="true" load="35.0"/>
-        <allocation task-id="12" resource-id="1" function="5" responsible="false" load="20.0"/>
         <allocation task-id="27" resource-id="1" function="5" responsible="true" load="25.0"/>
         <allocation task-id="8" resource-id="1" function="SoftwareDevelopment:4" responsible="true" load="35.0"/>
         <allocation task-id="29" resource-id="1" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
@@ -117,18 +136,18 @@ Offline, desktop based password manager intended for users to be able to keep tr
         <allocation task-id="11" resource-id="1" function="5" responsible="true" load="33.0"/>
         <allocation task-id="14" resource-id="1" function="5" responsible="true" load="33.0"/>
         <allocation task-id="77" resource-id="1" function="5" responsible="false" load="15.0"/>
+        <allocation task-id="91" resource-id="1" function="5" responsible="false" load="10.0"/>
+        <allocation task-id="93" resource-id="1" function="5" responsible="true" load="30.0"/>
+        <allocation task-id="101" resource-id="1" function="5" responsible="false" load="20.0"/>
         <allocation task-id="0" resource-id="2" function="2" responsible="false" load="5.0"/>
         <allocation task-id="2" resource-id="2" function="2" responsible="false" load="33.0"/>
         <allocation task-id="18" resource-id="2" function="2" responsible="true" load="33.0"/>
         <allocation task-id="3" resource-id="2" function="2" responsible="false" load="20.0"/>
         <allocation task-id="4" resource-id="2" function="2" responsible="true" load="15.0"/>
-        <allocation task-id="9" resource-id="2" function="6" responsible="false" load="10.0"/>
         <allocation task-id="16" resource-id="2" function="6" responsible="true" load="10.0"/>
-        <allocation task-id="13" resource-id="2" function="6" responsible="false" load="15.0"/>
         <allocation task-id="5" resource-id="2" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
         <allocation task-id="6" resource-id="2" function="SoftwareDevelopment:4" responsible="true" load="40.0"/>
         <allocation task-id="28" resource-id="2" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
-        <allocation task-id="12" resource-id="2" function="6" responsible="true" load="40.0"/>
         <allocation task-id="27" resource-id="2" function="6" responsible="true" load="25.0"/>
         <allocation task-id="8" resource-id="2" function="SoftwareDevelopment:4" responsible="true" load="35.0"/>
         <allocation task-id="29" resource-id="2" function="SoftwareDevelopment:4" responsible="false" load="30.0"/>
@@ -136,6 +155,9 @@ Offline, desktop based password manager intended for users to be able to keep tr
         <allocation task-id="11" resource-id="2" function="6" responsible="false" load="33.0"/>
         <allocation task-id="14" resource-id="2" function="6" responsible="true" load="33.0"/>
         <allocation task-id="77" resource-id="2" function="6" responsible="true" load="50.0"/>
+        <allocation task-id="91" resource-id="2" function="6" responsible="false" load="10.0"/>
+        <allocation task-id="93" resource-id="2" function="6" responsible="false" load="15.0"/>
+        <allocation task-id="101" resource-id="2" function="6" responsible="true" load="40.0"/>
     </allocations>
     <vacations/>
     <previous/>
