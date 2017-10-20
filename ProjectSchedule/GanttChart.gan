@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PasswordProtectionProgram" company="McMaster University" webLink="https://gitlab.cas.mcmaster.ca/tuples1/PasswordProtectionProgram" view-date="2017-10-10" view-index="0" gantt-divider-location="560" resource-divider-location="465" version="2.8.5" locale="en_CA">
+<?xml version="1.0" encoding="UTF-8"?><project name="PasswordProtectionProgram" company="McMaster University" webLink="https://gitlab.cas.mcmaster.ca/tuples1/PasswordProtectionProgram" view-date="2017-09-23" view-index="0" gantt-divider-location="560" resource-divider-location="465" version="2.8.5" locale="en_CA">
     <description><![CDATA[SFWRENG 3XA3 Project:
 
 Offline, desktop based password manager intended for users to be able to keep track of all of their passwords in one secure location.]]></description>
-    <view zooming-state="default:2" id="gantt-chart">
+    <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="Name" width="262" order="0"/>
         <field id="tpd4" name="Begin date" width="140" order="1"/>
         <field id="tpd5" name="End date" width="139" order="2"/>
@@ -82,9 +82,9 @@ Offline, desktop based password manager intended for users to be able to keep tr
             <depend id="28" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="28" name="Test 1 Fixes" color="#cc00cc" meeting="false" start="2017-10-27" duration="2" complete="0" expand="true"/>
-        <task id="27" name="Prototype 2" color="#3333ff" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true">
-            <task id="101" name="Encryption" color="#33ff33" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true">
-                <task id="106" name="Security Requirements" color="#ff9900" meeting="false" start="2017-11-01" duration="5" complete="0" expand="true"/>
+        <task id="27" name="Prototype 2" color="#3333ff" meeting="false" start="2017-10-13" duration="24" complete="0" expand="true">
+            <task id="101" name="Encryption" color="#33ff33" meeting="false" start="2017-10-13" duration="24" complete="0" expand="true">
+                <task id="106" name="Security Requirements" color="#ff9900" meeting="false" start="2017-10-13" duration="24" complete="0" expand="true"/>
             </task>
         </task>
         <task id="8" name="Test Plan Revision/ Test 2" color="#cc00cc" meeting="false" start="2017-11-14" duration="3" complete="0" expand="true">
