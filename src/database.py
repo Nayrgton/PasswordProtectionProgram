@@ -18,3 +18,4 @@ def DeleteTable():
 def Insert(U,P):
     newAcc = Account(UserName=U,Password=P)
     newAcc.save()
+
