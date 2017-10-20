@@ -31,7 +31,15 @@ def cryptEncode(f, passw):
     #print(f.decrypt(token)) = g.decrypt(cryptEncode(g, "plswork"))
     return token
 
+'''
+IDLE
+key = generKey()
+x = cryptEncode(key, "hellooo")
+print (key.decrypt(x))
+'''
 
 #infile = open("Passwords.txt","r").read().strip().split("\n")
 #for i in infile:
 #    print(token(i))
+
+
