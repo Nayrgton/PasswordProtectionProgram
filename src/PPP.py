@@ -10,6 +10,8 @@ window.configure(background="#E6E6FA")
 window.geometry("1080x840")
 # window.wm_iconbitmap('logo.ico')
 
+form = Frame(window)
+
 # Logo image?
 # logo = PhotoImage(file="logo.png")
 # logo_lbl = Label(window, image=logo)
@@ -23,7 +25,12 @@ create_lbl = Label(window, text="Create a master password", bg=bgc, font=("Helve
 
 # Enter pw
 ent = Entry(window, show="*")
+window.bind('<Return>', lambda x: onEnterPress)
 
+def onEnterPress(event):
+    print("you entered")
+    checkPassword()
+    
 # Checks if password is good and then encrypts it to a file
 def checkPassword():
     password = ent.get()
@@ -45,7 +52,6 @@ def checkPassword():
         msg = "Success!"
 
     mesg.configure(text=msg)
-    
 
 # Button
 btn = Button(window, text="Enter", font=("Helvetica",16), command=checkPassword)
@@ -55,10 +61,18 @@ mesg = Label(window, text="", bg=bgc)
 
 # Add all widgets to window
 welcome.pack()
+form.pack()
 create_lbl.pack()
 ent.pack()
 btn.pack()
 mesg.pack()
+
+#vertical center widgets
+welcome.place(relx=.5, rely=.3, anchor="c")
+create_lbl.place(relx=.5, rely=.45, anchor="c")
+ent.place(relx=.5, rely=.5, anchor="c")
+btn.place(relx=.5, rely=.55, anchor="c")
+mesg.place(relx=.5, rely=.6, anchor="c")
 
 # Draw window
 window.mainloop()
