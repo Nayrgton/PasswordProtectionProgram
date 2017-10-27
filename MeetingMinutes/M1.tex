@@ -4,6 +4,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
 \title{SE 3XA3: Meeting Minutes}
 
 \author{Team 28, Tuples1
@@ -17,52 +19,45 @@
 \begin{document}
 
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}||p{2cm}||p{3cm}||p{6cm}| }
-        \hline
-        \hline
-            \multicolumn{4}{|c|}{\textbf{Meeting Minutes}} \\ 
-        \hline
-        \hline
-            \textbf{Meeting no}& \textbf{Location}&\textbf{Meeting Date}&\textbf{Attendees}\\
-        \hline
-            {1}&{Hatch Building}&{2017-10-06}&{Shabana Dhayananth, Suhavi Sandhu, Joseph Lu}\\
-        \hline
-            \multicolumn{4}{|l|}{\textbf{Update on what happened since last meeting: }} \\
-			
-			Started researching on encryption and databases.\\
-			Started on Requirements Document.
+\begin{tabularx}{\textwidth}{ |X||X||X||X| }
+    \hline
+    \hline
+        \multicolumn{4}{|c|}{\textbf{Meeting Minutes}} \\ 
+    \hline
+    \hline
 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-        \hline
-            \multicolumn{4}{|l|}{\textbf{Issues discussed this meeting: }} \\
+    \textbf{Meeting no} & \textbf{Location} & \textbf{Meeting Date} & \textbf{Attendees}\\
+    \hline
 
-			Discussed` Requirements Document\\
-			Discussed Project 
+    1 & Hatch Building & 2017-10-06 & All\\
 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-        \hline
-            \multicolumn{4}{|l|}{\textbf{What to do until next meeting: }} \\
+    \hline
 
-			Start the Coding
-			\begin{itemize}
-				\item Gui (tkinter)
-				\item Encryption (python library)
-				\item Database (mariadb)
-			\end{itemize}
+    \multicolumn{4}{|l|}{\textbf{Update on what happened since last meeting: }} \\
+		
+	\multicolumn{4}{|l|}{\tabitem Started researching on encryption and databases.}\\
+	\multicolumn{4}{|l|}{\tabitem Started on Requirements Document.}\\
 
-			Work on Test Plan
+    \hline
+    
+    \multicolumn{4}{|l|}{\textbf{Issues discussed this meeting: }}\\
 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-        \hline
-            \multicolumn{4}{|l|}{\textbf{Decisions made: }} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\
-        \hline
-    \end{tabular}
-\end{center}
+    \multicolumn{4}{|l|}{\tabitem Discussed Requirements Document}\\
+    \multicolumn{4}{|l|}{\tabitem Discussed Project}\\ 
+
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{What to do until next meeting: }} \\
+
+    \multicolumn{4}{|l|}{\tabitem Start the Coding}\\
+	    \multicolumn{4}{|l|}{\quad\tabitem Gui (tkinter)}\\
+		\multicolumn{4}{|l|}{\quad\tabitem Encryption (python library)}\\
+		\multicolumn{4}{|l|}{\quad\tabitem Database (mariadb)}\\
+	\multicolumn{4}{|l|}{\tabitem Work on Test Plan}\\
+
+    \hline
+        \multicolumn{4}{|l|}{\textbf{Decisions made: }} \\
+    \hline
+\end{tabularx}
 
 \end{document}
