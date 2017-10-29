@@ -5,19 +5,35 @@
 
 import peewee
 
+#  database connection db
 db = peewee.SqliteDatabase('pppDatabase.db')
 db.connect()
 
-## @brief SQLite table to store passwords
-#  @detail Use peewee orm library to create a table class that stores accounts
-class Account(peewee.Model):
-##    AccID = peewee.FixedCharField(20, null=False, unique=True)
-    AccName = peewee.CharField()
-    UserName = peewee.CharField()
-    Password = peewee.CharField()
-
+## @brief Base Model for database connection
+#  @detail All other Tables will connect automatically to our database
+class BaseModel(peewee.Model):
     class Meta:
         database = db
+
+## @brief SQLite table to store passwords
+#  @detail Use peewee orm library to create a table class that stores accounts
+#  @param AccID Account ID and Primary Key
+#  @param AccType Type of Account used
+#  @param UserName Account Username
+class Account(BaseModel):
+    AccID = peewee.PrimaryKeyField()
+    AccType = peewee.CharField()
+    UserName = peewee.CharField()
+
+## @brief SQLite table to store hash keys and hash values
+#  @detail use peewee orm library to create a table class that stores hash values and hash keys in a database. This table is not accessabile via the application. 
+#  @param Eid Encrypted Password ID and Foreign key from Account ID
+#  @param HashVal Hashed value of Password
+#  @param HashKey Key to Decrypt Password
+class Encrypt(BaseModel):
+    Eid = peewee.ForeignKeyField(Account, on_field='AccID', primary_key=True, on_delete='CASCADE', on_update='CASCADE')
+    HashVal = peewee.CharField(True, unique=True)
+    HashKey = peewee.FixedCharField()
 
 ## @brief Instantiate new empty table
 def ResetTable():
@@ -25,12 +41,29 @@ def ResetTable():
     db.create_table(Account)
 
 ## @brief Insert new Username/Password
+#  @param T Account Type
 #  @param U username
-#  @param P password
-def Insert(U, P):
-    Account(UserName=U, Password=P).save()
+#  @param Hv Hash Value
+#  @param Hk Hash Key
+def Insert(T, U, Hv, Hk):
+    Account(AccType=T, UserName=U).save()
+    Encrypt(HashVal=Hv, HashKey=Hk).save()
 
-## @brief Get Table Row with Account Name
+## @brief Get Table Rows with Account Name
+#  @param type Account type
+def GetA(Atype):
+    return Account.select(Account.AccType == Atype)
+
+## @brief Get Table Row with Username
 #  @param name Account Name
 def GetU(name):
-    return Account.get(Account.AccName == name)
+    return Account.select(Account.UserName == name)
+
+## @brief Delete Table Row with ID
+#  @param Aid Account ID
+def Delete(Aid):
+    Account.delete().where(Account.AccID == Aid).execute()
+
+def Update(Aid, U, Hv, Hk):
+    Account.update(UserName=U).where(Account.Aid == Aid).execute()
+    Encrypt.update(HashVal=Hv, HashKey=Hk).where(Encrypt.Eid == Aid).execute()
