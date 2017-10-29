@@ -31,7 +31,7 @@ class Account(BaseModel):
 #  @param HashVal Hashed value of Password
 #  @param HashKey Key to Decrypt Password
 class Encrypt(BaseModel):
-    Eid = peewee.ForeignKeyField(Account, on_field='AccID', primary_key=True, on_delete='CASCADE', on_update='CASCADE')
+    Eid = peewee.ForeignKeyField(Account, on_field='AccID', primary_key=True, on_delete='CASCADE')
     HashVal = peewee.CharField(True, unique=True)
     HashKey = peewee.FixedCharField()
 
@@ -64,6 +64,10 @@ def GetU(name):
 def Delete(Aid):
     Account.delete().where(Account.AccID == Aid).execute()
 
-def Update(Aid, U, Hv, Hk):
+## @brief Update Table Row with ID
+#  @param Aid Account Id and Encrypted ID
+#  @param U new Username
+#  @param Hv new Hash Value
+def Update(Aid, U, Hv):
     Account.update(UserName=U).where(Account.Aid == Aid).execute()
-    Encrypt.update(HashVal=Hv, HashKey=Hk).where(Encrypt.Eid == Aid).execute()
+    Encrypt.update(HashVal=Hv).where(Encrypt.Eid == Aid).execute()
