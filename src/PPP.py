@@ -3,79 +3,104 @@ import re
 
 bgc = "#E6E6FA"
 
-# Create window, set title, bg colour, dimensions and icon
-window = Tk()
-window.title("Password Protection Program")
-window.configure(background="#E6E6FA")
-window.geometry("1080x840")
-# window.wm_iconbitmap('logo.ico')
+class PPP(Tk):
 
-form = Frame(window)
+    def __init__(self, *args, **kwargs):
+        Tk.__init__(self, *args, **kwargs)
+        container = Frame(self)
 
-# Logo image?
-# logo = PhotoImage(file="logo.png")
-# logo_lbl = Label(window, image=logo)
-# logo.lbl.pack()
+        container.pack(side="top", fill="both", expand = True)
 
-# Welcome label
-welcome = Label(window, text="Welcome to the Password Protection Program", bg=bgc, font=("Helvetica",16))
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
 
-# Create master password label
-create_lbl = Label(window, text="Create a master password", bg=bgc, font=("Helvetica",16))
+        self.frames = {}
 
-# Enter pw
-ent = Entry(window, show="*")
-window.bind('<Return>', lambda x: onEnterPress)
+        for F in (HomeScreen, PWPage):
 
-def onEnterPress(event):
-    print("you entered")
-    checkPassword()
-    
-# Checks if password is good and then encrypts it to a file
-def checkPassword():
-    password = ent.get()
-    strength = 0
+            frame = F(container, self)
 
-    if len(password) == 0:
-        msg = "Password cannot be empty"
+            self.frames[F] = frame
 
-    elif len(password) < 8:
-        msg = "Password must be at least 8 characters"
+            frame.grid(row=0, column=0, sticky="nsew")
 
-    elif not(re.search("[0-9]", password)):
-        msg = "Password must have at least 1 number"
+        self.show_frame(HomeScreen)
+
+    def show_frame(self, cont):
+
+        frame = self.frames[cont]
+        frame.tkraise()
+
+class HomeScreen(Frame):
+
+    def __init__(self, parent, controller):
+        Frame.__init__(self, parent)
+        # Welcome label
+        welcome = Label(self, text="Welcome to the Password Protection Program", bg=bgc, font=("Helvetica",16))
+        welcome.pack(pady=10,padx=10)
+
+        # Enter password
+        ent = Entry(self, show="*")
+        ent.pack()
+
+        # Checks if password is good and then encrypts it to a file
+        def checkPassword():
+            password = ent.get()
+            strength = 0
+
+            if len(password) == 0:
+                msg = "Password cannot be empty"
+
+            elif len(password) < 8:
+                msg = "Password must be at least 8 characters"
+
+            elif not(re.search("[0-9]", password)):
+                msg = "Password must have at least 1 number"
+                
+            elif not(re.search("[a-z]", password) and re.search("[A-Z]", password)):
+                msg = "Password must have uppercase and lowercase"
+                
+            else:
+                controller.show_frame(PWPage)
+                return
+
+            mesg.configure(text=msg)
         
-    elif not(re.search("[a-z]", password) and re.search("[A-Z]", password)):
-        msg = "Password must have uppercase and lowercase"
+        # Button
+        btn = Button(self, text="Enter", font=("Helvetica",16), command=checkPassword)
+        btn.pack()
+
+        # Password strength
+        mesg = Label(self, text="", bg=bgc)
+        mesg.pack()
+
         
-    else:
-        msg = "Success!"
+class PWPage(Frame):
 
-    mesg.configure(text=msg)
+    def __init__(self, parent, controller):
+        Frame.__init__(self, parent)
+        welcome = Label(self, text="Add an entry to the PasswordPotatoProgram", bg=bgc, font=("Helvetica",16))
+        welcome.pack(pady=10,padx=10)
 
-# Button
-btn = Button(window, text="Enter", font=("Helvetica",16), command=checkPassword)
+        plus = Button(self, text="+", command=lambda: showEntry())
+        plus.pack()
 
-# Password strength
-mesg = Label(window, text="", bg=bgc)    
+        def showEntry():
+            typeLabel = Label(self, text="What type of account is this?")
+            typeLabel.pack()
 
-# Add all widgets to window
-welcome.pack()
-form.pack()
-create_lbl.pack()
-ent.pack()
-btn.pack()
-mesg.pack()
+            typeEnt = Entry(self)
+            typeEnt.pack()
 
-#vertical center widgets
-welcome.place(relx=.5, rely=.3, anchor="c")
-create_lbl.place(relx=.5, rely=.45, anchor="c")
-ent.place(relx=.5, rely=.5, anchor="c")
-btn.place(relx=.5, rely=.55, anchor="c")
-mesg.place(relx=.5, rely=.6, anchor="c")
+            userLabel = Label(self, text="Username")
+            userLabel.pack()
 
-# Draw window
-window.mainloop()
+app = PPP()
+
+app.mainloop()
+            
+        
+
 
 
 
