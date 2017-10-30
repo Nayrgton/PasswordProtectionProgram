@@ -22,6 +22,7 @@ class BaseModel(peewee.Model):
 #  @param UserName Account Username
 class Account(BaseModel):
     AccID = peewee.PrimaryKeyField()
+    AccName = peewee.CharField()
     AccType = peewee.CharField()
     UserName = peewee.CharField()
 
@@ -33,31 +34,33 @@ class Account(BaseModel):
 class Encrypt(BaseModel):
     Eid = peewee.ForeignKeyField(Account, on_field='AccID', primary_key=True, on_delete='CASCADE')
     HashVal = peewee.CharField(True, unique=True)
-    HashKey = peewee.FixedCharField()
+    HashKey = peewee.FixedCharField(10)
 
 ## @brief Instantiate new empty table
+#  @detail Encrypt Table should also be reset when Account is reset
 def ResetTable():
     db.drop_table(Account)
     db.create_table(Account)
 
-## @brief Insert new Username/Password
+## @brief Insert new Account Instance and Encrypt Instance
+#  @param N Account Name
 #  @param T Account Type
 #  @param U username
 #  @param Hv Hash Value
 #  @param Hk Hash Key
-def Insert(T, U, Hv, Hk):
-    Account(AccType=T, UserName=U).save()
+def Insert(N, T, U, Hv, Hk):
+    Account(AccName=N, AccType=T, UserName=U).save()
     Encrypt(HashVal=Hv, HashKey=Hk).save()
 
-## @brief Get Table Rows with Account Name
-#  @param type Account type
-def GetA(Atype):
+## @brief Get Table Rows with Account Type
+#  @param Atype Account type
+def GetT(Atype):
     return Account.select(Account.AccType == Atype)
 
-## @brief Get Table Row with Username
-#  @param name Account Name
-def GetU(name):
-    return Account.select(Account.UserName == name)
+## @brief Get Table Row with Account name
+#  @param Aname Account Name
+def GetU(Aname):
+    return Account.select(Account.AccName == name)
 
 ## @brief Delete Table Row with ID
 #  @param Aid Account ID
@@ -65,9 +68,14 @@ def Delete(Aid):
     Account.delete().where(Account.AccID == Aid).execute()
 
 ## @brief Update Table Row with ID
-#  @param Aid Account Id and Encrypted ID
+#  @param Aid Account Id
 #  @param U new Username
 #  @param Hv new Hash Value
-def Update(Aid, U, Hv):
+def UpdateU(Aid, U):
     Account.update(UserName=U).where(Account.Aid == Aid).execute()
+
+## @brief Update Password with ID
+#  @param Aid Account Id (Encrypted ID)
+#  @param Hv new Hash Value
+def UpdateP(Aid, Hv):
     Encrypt.update(HashVal=Hv).where(Encrypt.Eid == Aid).execute()
