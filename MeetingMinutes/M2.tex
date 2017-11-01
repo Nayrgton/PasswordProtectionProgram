@@ -1,0 +1,74 @@
+\documentclass{article}
+
+%Delete if not needed
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\title{SE 3XA3: Meeting Minutes}
+
+\author{Team 28, Tuples1
+		\\ Suhavi Sandhu, sandhs11
+		\\ Shabana Dhayanath, dhayanas
+		\\ Joseph Lu, luy89
+}
+
+\date{\today}
+
+\begin{document}
+
+\begin{tabularx}{\textwidth}{| X || X || X || X |}
+    \hline
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Meeting information}}\\
+    \hline
+    \hline
+        
+    \textbf{Meeting no}& \textbf{Location}&\textbf{Meeting Date}&\textbf{Attendees}\\
+    
+    \hline
+
+    2 & ITB & 2017-10-18 & All\\
+    
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{Update on what happened since last meeting?}}\\
+
+    \multicolumn{4}{|l|}{\tabitem created empty database using MariaDB}\\
+    \multicolumn{4}{|l|}{\tabitem started working on encryption using Fernet (Python)}\\
+        \multicolumn{4}{|l|}{\quad\tabitem can encrypt password using key}\\
+    \multicolumn{4}{|l|}{\tabitem started GUI using tkinter (Python)}\\
+        \multicolumn{4}{|l|}{\quad\tabitem first screen layout}\\
+
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{Issues discussed this meeting:}}\\
+    
+    \multicolumn{4}{|l|}{\tabitem need to figure out how to save key \& encrypt password in database}\\
+    \multicolumn{4}{|l|}{then use to decrypt}\\
+    \multicolumn{4}{|l|}{\tabitem MariaDB may be switched to sqlite}\\
+
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{What to do next meeting:}}\\
+
+    \multicolumn{4}{|l|}{\tabitem Add working widgets to GUI, start next screen}\\
+    \multicolumn{4}{|l|}{\tabitem Add tables and functions to database}\\
+    \multicolumn{4}{|l|}{\tabitem Separate encryption functions to use for encrypting and decrypting}\\
+        \multicolumn{4}{|l|}{\quad\tabitem eventually with values from database}\\
+
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{Decisions made:}}\\
+    
+    \multicolumn{4}{|l|}{\tabitem use peewee for database}\\
+    \multicolumn{4}{|l|}{\tabitem work on aesthetics after GUI functional}\\
+    \multicolumn{4}{|l|}{\tabitem work on separate parts of project, and test then attach to GUI}\\
+        \multicolumn{4}{|l|}{\quad\tabitem i.e. first test plan is for individual components not integrated}\\
+
+    \hline
+
+\end{tabularx}
+
+\end{document}
