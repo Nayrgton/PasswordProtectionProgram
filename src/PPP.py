@@ -30,6 +30,8 @@ class PPP(Tk):
         self.state = {
             "prompt": "Enter your master password", "val": False
             }
+        # List of accounts
+        self.accounts = []
 
         
         self.showCreateMP()
@@ -168,7 +170,17 @@ class PPP(Tk):
 
         # Updates label with correct response
         kwargs['label'].config(text=msg)
-
+        
+    def showEntry(self, frame):
+        # Check if database is empty
+    
+        # If it's not empty, display entries
+        count_entries = 5
+        for i in range(count_entries):
+            # Get name of entries
+            name = "Account"+str(i)
+            btn = Button(frame, text=name, command=lambda: self.viewDetails(frame, name))
+            btn.grid(row=7+i, column=1)
 
         
     ## @brief Password Management Screen
@@ -222,14 +234,59 @@ class PPP(Tk):
         passL.grid(row=4, column=0)
         passE.grid(row=4, column=1)
 
-        submit = Button(PWPage, text="Add", command=addPW)
-        # Allows submit button to work when the user presses Enter key and calls matchPassword method
-        passE.bind('<Return>', lambda x: self.addEntry(PWPage, nameE, typeE, userE, passE))
-        ent.focus_set()
+        # Allows submit button to work when the user presses Enter key and calls addEntry method
+        passE.bind('<Return>', lambda x: self.addEntry(PWPage, detailFrame, nameE, typeE, userE, passE))
+        nameE.focus_set()
 
-        # When clicked, matchPassword method gets called with the frame name, label and the password entered by user
-        btn = Button(logIn, text="Submit", command=lambda: self.matchPassword(logIn, label=match, entry=ent))
-        btn.grid(row=3, column=1)
+        # When clicked, addEntry method gets called with the frame name and relevant entries
+        btn = Button(PWPage, text="Submit", command=lambda:  self.addEntry(PWPage, detailFrame, nameE, typeE, userE, passE))
+        btn.grid(row=5, column=1)
+
+        # Frame for showing details
+        detailFrame = Frame(self)
+        detailFrame.pack()
+        
+        # Show existing entries
+        count_entries = 5
+        for i in range(count_entries):
+            # Get name of entries
+            name = "Account"+str(i)
+            self.accounts.append(name)
+            # Get id of entry
+            # change viewDetails 'i' to id
+            btn = Button(PWPage, text=name, command=lambda i=i: self.viewDetails(i, detailFrame))
+            btn.grid(row=7+i, column=1)
+
+    ## @brief Add entry to database and display in scrollbar frame
+    def addEntry(self, scrollFrame, detailFrame, *pwd):
+        accName = pwd[0].get()
+        accType = pwd[1].get()
+        accUser = pwd[2].get()
+        accPass = pwd[3].get()
+        # Add entries to database
+        
+        # Add entry to list
+        self.accounts.append(accName)
+        
+        # Get id of entry
+        # for now it's extracted from list
+        i = len(self.accounts) - 1
+
+        viewBtn = Button(scrollFrame, text=accName, command=lambda: self.viewDetails(i, detailFrame))
+        viewBtn.grid(row=7+i, column=1)
+
+
+    def viewDetails(self, idnum, frame):
+        # Get full entry from database
+
+        # Delete everything in frame currently
+        for widget in frame.winfo_children():
+            widget.destroy()
+
+        namelabel = Label(frame, text=self.accounts[idnum])
+        namelabel.pack()
+        
+                        
 
                    
 # Runs application
