@@ -6,6 +6,7 @@
 from tkinter import *
 from tkinter import ttk
 import re
+import database
 
 
 # Background colour
@@ -33,15 +34,15 @@ class PPP(Tk):
         # List of accounts
         self.accounts = []
 
-        
-        self.showCreateMP()
+
+        ## JOSEPH -- TESTING REQUIRED ##
         # Checks if master password has been initialized or not
-        '''
-        if (password in database):
+        db = database.Account.select()
+        if (len(db)):
             self.showLogIn()
         else:
             self.showCreateMP()
-        '''
+        
 
         # Customizing window title, size and icon
         self.title("Password Protection Program")
@@ -88,7 +89,8 @@ class PPP(Tk):
         # Get master password from DB
         # Unencrypt it
         # Master password from DB
-        mp = "Assssss1"
+        ## JOSEPH ##
+        mp = database.Encrypt.select().order_by(Account.created_date)[0].HashVal # remember to change this when encryption works
 
         # Makes sure the user entered the correct password
         if len(password) == 0:
@@ -159,9 +161,13 @@ class PPP(Tk):
         # Password satisfies constraints    
         else:
             # Call encryption methods
-            print("Encrypting")
+            enV = "Encrypting"
+            enK = "Encrypting"
+            
             # Insert to database method
-            print("Inserting to database")
+            ## JOSEPH ##
+            database.Insert("Master", "Master", "", enV, enK)
+
             # Destroy the current frame, createMP
             frame.destroy()
             # Show the password mangement page
@@ -175,10 +181,11 @@ class PPP(Tk):
         # Check if database is empty
     
         # If it's not empty, display entries
-        count_entries = 5
-        for i in range(count_entries):
+        ## JOSEPH ##
+        entries = database.select()[1:]
+        for entry in entries:
             # Get name of entries
-            name = "Account"+str(i)
+            name = entry.AccName
             btn = Button(frame, text=name, command=lambda: self.viewDetails(frame, name))
             btn.grid(row=7+i, column=1)
 
@@ -259,32 +266,45 @@ class PPP(Tk):
 
     ## @brief Add entry to database and display in scrollbar frame
     def addEntry(self, scrollFrame, detailFrame, *pwd):
-        accName = pwd[0].get()
-        accType = pwd[1].get()
-        accUser = pwd[2].get()
-        accPass = pwd[3].get()
+        AccName = pwd[0].get()
+        AccType = pwd[1].get()
+        UserName = pwd[2].get()
+        Password = pwd[3].get()
         # Add entries to database
-        
+        HashVal = "Encrypted"
+        HashKey = "Encrypted"
+
+        database.Insert(AccName, AccType, UserName, HashVal, HashKey)
+
         # Add entry to list
         self.accounts.append(accName)
         
+        ## JOSEPH ##
         # Get id of entry
         # for now it's extracted from list
         i = len(self.accounts) - 1
 
-        viewBtn = Button(scrollFrame, text=accName, command=lambda: self.viewDetails(i, detailFrame))
+        viewBtn = Button(scrollFrame, text=AccName, command=lambda: self.viewDetails(i, detailFrame))
         viewBtn.grid(row=7+i, column=1)
 
 
     def viewDetails(self, idnum, frame):
         # Get full entry from database
+        query, enPass = database.GetId(idnum)
+        password = "Encrypted"
 
         # Delete everything in frame currently
         for widget in frame.winfo_children():
             widget.destroy()
 
-        namelabel = Label(frame, text=self.accounts[idnum])
+        namelabel = Label(frame, text=query.AccName)
         namelabel.pack()
+        typelabel = Label(frame, text=query.AccType)
+        tyoelabel.pack()
+        Userlabel = Label(frame, text=query.UserName)
+        Userlabel.pack()
+        passlabel = Label(frame, text=password)
+        passlabel.pack()
         
                         
 
