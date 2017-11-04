@@ -4,3 +4,5 @@
 *.out
 *.lot
 *.lof
+*.pyc
+*.db
