@@ -90,7 +90,7 @@ class PPP(Tk):
         # Unencrypt it
         # Master password from DB
         ## JOSEPH ##
-        mp = database.Encrypt.select().order_by(Account.created_date)[0].HashVal # remember to change this when encryption works
+        mp = database.Encrypt.select().order_by(database.Account.created_date)[0].HashVal # remember to change this when encryption works
 
         # Makes sure the user entered the correct password
         if len(password) == 0:
@@ -166,7 +166,7 @@ class PPP(Tk):
             
             # Insert to database method
             ## JOSEPH ##
-            database.Insert("Master", "Master", "", enV, enK)
+            database.Insert(1, "Master", "Master", "", enV, enK)
 
             # Destroy the current frame, createMP
             frame.destroy()
@@ -178,16 +178,21 @@ class PPP(Tk):
         kwargs['label'].config(text=msg)
         
     def showEntry(self, frame):
+        entries = []
+        i=0
+
         # Check if database is empty
-    
-        # If it's not empty, display entries
-        ## JOSEPH ##
-        entries = database.select()[1:]
+        if database.Account.table_exists():
+            
+            # If it's not empty, display entries
+            entries = database.Account.select()
+
         for entry in entries:
             # Get name of entries
             name = entry.AccName
             btn = Button(frame, text=name, command=lambda: self.viewDetails(frame, name))
             btn.grid(row=7+i, column=1)
+            i+=1
 
         
     ## @brief Password Management Screen
@@ -274,10 +279,10 @@ class PPP(Tk):
         HashVal = "Encrypted"
         HashKey = "Encrypted"
 
-        database.Insert(AccName, AccType, UserName, HashVal, HashKey)
+        database.Insert(len(self.accounts), AccName, AccType, UserName, HashVal, HashKey)
 
         # Add entry to list
-        self.accounts.append(accName)
+        self.accounts.append(AccName)
         
         ## JOSEPH ##
         # Get id of entry
