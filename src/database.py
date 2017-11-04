@@ -50,7 +50,12 @@ def ResetTable():
 #  @param Hk Hash Key
 def Insert(N, T, U, Hv, Hk):
     Account(AccName=N, AccType=T, UserName=U).save()
-    Encrypt(HashVal=Hv, HashKey=Hk).save()
+    Encrypt(Accname=Hv, HashKey=Hk).save()
+
+## @brief search tables with AccId
+#  @param Id Account Id
+def GetId(Id):
+    return Account.get(AccID.id == Id), Encrypt.get(Eid == Id)
 
 ## @brief Get Table Rows with Account Type
 #  @param Atype Account type
