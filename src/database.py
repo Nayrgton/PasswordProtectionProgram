@@ -41,6 +41,7 @@ class Encrypt(BaseModel):
 def ResetTable():
     db.drop_table(Account)
     db.create_table(Account)
+    db.create_table(Encrypt)
 
 ## @brief Insert new Account Instance and Encrypt Instance
 #  @param N Account Name
