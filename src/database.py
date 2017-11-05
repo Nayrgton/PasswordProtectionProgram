@@ -33,7 +33,7 @@ class Account(BaseModel):
 #  @param HashKey Key to Decrypt Password
 class Encrypt(BaseModel):
     ID = peewee.ForeignKeyField(Account, to_field='ID', primary_key=True, on_delete='CASCADE')
-    HashVal = peewee.CharField(10, unique=True)
+    HashVal = peewee.CharField()
     HashKey = peewee.FixedCharField(10)
 
 ## @brief Instantiate new empty tables
@@ -59,7 +59,8 @@ def Insert(Id, N, T, U, Hv, Hk):
 ## @brief search tables with AccId
 #  @param Id Account Id
 def GetId(Id):
-    return Account.select().join(Encrypt).where(Account.ID == Id)[0]
+    return Encrypt.select().join(Account).where(Encrypt.ID == Id).get()
+#Account.select().join(Encrypt).where(Account.ID == Id)[0]
 
 ## @brief Get Table Rows with Account Type
 #  @param Atype Account type

@@ -11,7 +11,6 @@ import database
 
 # Background colour
 BGC = "#E6E6FA"
-
 # Large font
 LARGE = ("Helvetica", 16)
 
@@ -90,8 +89,8 @@ class PPP(Tk):
         # Unencrypt it
         # Master password from DB
         ## JOSEPH ##
-        mp = database.Encrypt.select().order_by(database.Account.created_date)[0].HashVal # remember to change this when encryption works
-
+        mp = database.GetId(1).HashVal # remember to change this when encryption works
+        
         # Makes sure the user entered the correct password
         if len(password) == 0:
             msg = "Password cannot be empty"
@@ -161,7 +160,7 @@ class PPP(Tk):
         # Password satisfies constraints    
         else:
             # Call encryption methods
-            enV = "Encrypting"
+            enV = password
             enK = "Encrypting"
             
             # Insert to database method
@@ -177,22 +176,24 @@ class PPP(Tk):
         # Updates label with correct response
         kwargs['label'].config(text=msg)
         
-    def showEntry(self, frame):
+    def showEntry(self, frame, detailFrame):
         entries = []
-        i=0
+        i = 0
 
         # Check if database is empty
         if database.Account.table_exists():
             
             # If it's not empty, display entries
             entries = database.Account.select()
+            i = len(entries)
 
         for entry in entries:
             # Get name of entries
             name = entry.AccName
-            btn = Button(frame, text=name, command=lambda: self.viewDetails(frame, name))
+            btn = Button(frame, text=name, command=lambda i=i: self.viewDetails(i,detailFrame))
             btn.grid(row=7+i, column=1)
-            i+=1
+            self.accounts.append(name)
+            i-=1
 
         
     ## @brief Password Management Screen
@@ -257,7 +258,10 @@ class PPP(Tk):
         # Frame for showing details
         detailFrame = Frame(self)
         detailFrame.pack()
-        
+
+        # Show existing entries
+        self.showEntry(PWPage, detailFrame)
+        '''        
         # Show existing entries
         count_entries = 5
         for i in range(count_entries):
@@ -268,7 +272,7 @@ class PPP(Tk):
             # change viewDetails 'i' to id
             btn = Button(PWPage, text=name, command=lambda i=i: self.viewDetails(i, detailFrame))
             btn.grid(row=7+i, column=1)
-
+    '''
     ## @brief Add entry to database and display in scrollbar frame
     def addEntry(self, scrollFrame, detailFrame, *pwd):
         AccName = pwd[0].get()
@@ -276,38 +280,38 @@ class PPP(Tk):
         UserName = pwd[2].get()
         Password = pwd[3].get()
         # Add entries to database
-        HashVal = "Encrypted"
-        HashKey = "Encrypted"
-
-        database.Insert(len(self.accounts), AccName, AccType, UserName, HashVal, HashKey)
+        HashKey = "Encrypted!"
 
         # Add entry to list
         self.accounts.append(AccName)
         
+        database.Insert(len(self.accounts), AccName, AccType, UserName, Password, HashKey)
+
         ## JOSEPH ##
         # Get id of entry
         # for now it's extracted from list
-        i = len(self.accounts) - 1
+        i = len(self.accounts)
 
-        viewBtn = Button(scrollFrame, text=AccName, command=lambda: self.viewDetails(i, detailFrame))
+        viewBtn = Button(scrollFrame, text=AccName, command=lambda i=i: self.viewDetails(i, detailFrame))
         viewBtn.grid(row=7+i, column=1)
 
 
     def viewDetails(self, idnum, frame):
         # Get full entry from database
-        query, enPass = database.GetId(idnum)
-        password = "Encrypted"
+        #query, enPass = database.GetId(idnum)
+        print(idnum)
+        password = database.GetId(idnum).HashVal
 
         # Delete everything in frame currently
         for widget in frame.winfo_children():
             widget.destroy()
 
-        namelabel = Label(frame, text=query.AccName)
-        namelabel.pack()
-        typelabel = Label(frame, text=query.AccType)
-        tyoelabel.pack()
-        Userlabel = Label(frame, text=query.UserName)
-        Userlabel.pack()
+        #namelabel = Label(frame, text=query.AccName)
+        #namelabel.pack()
+        #typelabel = Label(frame, text=query.AccType)
+        #tyoelabel.pack()
+        #Userlabel = Label(frame, text=query.UserName)
+        #Userlabel.pack()
         passlabel = Label(frame, text=password)
         passlabel.pack()
         
