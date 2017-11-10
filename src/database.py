@@ -58,24 +58,42 @@ def Insert(Id, N, T, U, Hv, Hk):
 
 ## @brief search tables with AccId
 #  @param Id Account Id
-def GetId(Id):
-    return Account.select().join(Encrypt).where(Account.ID == Id)[0]
+def GetId(id_):
+    return (Account
+            .select(Account, Encrypt)
+            .join(Encrypt)
+            .order_by(Account.ID)
+            .where(id_==Account.ID)
+            .naive()
+            )
 
 ## @brief Get Table Rows with Account Type
 #  @param Atype Account type
 def GetT(Atype):
-    return Account.select().join(Encrypt).where(Account.AccType == Atype)
+    return (Account
+            .select()
+            .join(Encrypt)
+            .order_by(Account.ID)
+            .where(Account.AccType == Atype)
+            .naive()
+            )
 
 ## @brief Get Table Row with Account name
 #  @param Aname Account Name
 def GetN(Aname):
-    return Account.select().join(Encrypt).where(Account.AccName == Aname)
+    return (Account
+            .select()
+            .join(Encrypt)
+            .order_by(Account.ID)
+            .where(Account.AccName == Aname)
+            .naive()
+            )
 
 ## @brief Delete Table Row with ID
-#  @param Aid Account ID
-def Delete(Aid):
-    Account.delete().where(Account.ID == Aid).execute()
-    Encrypt.delete().where(Encrypt.ID == Aid).execute()
+#  @param id Account ID
+def Delete(id_):
+    Account.delete().where(Account.ID == id_).execute()
+    Encrypt.delete().where(Encrypt.ID == id_).execute()
 
 ## @brief Update Table Row with ID
 #  @param Aid Account Id
