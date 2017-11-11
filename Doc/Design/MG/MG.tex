@@ -107,7 +107,6 @@ adapted here is called design for change.
 \begin{description}
   \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The operating system
   that the application is being run on.
-  language that is used.
   \item[\refstepcounter{acnum} \actheacnum \label{acFramework}:] The framework for
   the graphical user interface.
   \item[\refstepcounter{acnum} \actheacnum \label{acDatabase}:] The database management system that is ued to store sensitive information.
@@ -135,7 +134,8 @@ decisions will be changed.
   \item[\refstepcounter{ucnum} \uctheucnum \label{ucDBase}:] The use of a database to store the user data.
   \item[\refstepcounter{ucnum} \uctheucnum \label{ucPassEncrypt}:] Individual encryption of each password input to the system.
   \item[\refstepcounter{ucnum} \uctheucnum \label{ucPurpose}:] The goal of the system is provide a secure storage of the user's passwords.
-  \item[\refstepcounter{acnum} \actheacnum \label{acLanguage}:] The development
+  \item[\refstepcounter{ucnum} \actheacnum \label{ucLanguage}:] The development language that is used.
+
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
@@ -213,9 +213,9 @@ that the module is not a leaf and will not have to be implemented. Whether or
 not this module is implemented depends on the programming language
 selected.
 
-\subsection{Hardware Hiding Modules (\mref{mHH})}
+\subsection{Hardware Hiding Modules}
 
-Not applicable.
+Not applicable as the system is software-based and the lowest level that the software interfaces with is the Operating System..
 
 \subsection{Behaviour-Hiding Module}
 
@@ -391,7 +391,7 @@ because they use modules from the lower levels.
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\includegraphics[scale=0.5]{Images/DAG.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
