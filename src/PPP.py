@@ -301,21 +301,20 @@ class PPP(Tk):
     #  @param frame The frame in which to display the details on
     def viewDetails(self, idnum, frame):
         # Get full entry from database
-        #query, enPass = database.GetId(idnum)
-        print(idnum)
-        password = database.GetId(idnum).HashVal
+        query = database.GetId(idnum)
+        
 
         # Delete everything in frame currently
         for widget in frame.winfo_children():
             widget.destroy()
 
-        #namelabel = Label(frame, text=query.AccName)
-        #namelabel.pack()
-        #typelabel = Label(frame, text=query.AccType)
-        #tyoelabel.pack()
-        #Userlabel = Label(frame, text=query.UserName)
-        #Userlabel.pack()
-        passlabel = Label(frame, text=password)
+        namelabel = Label(frame, text=query.AccName)
+        namelabel.pack()
+        typelabel = Label(frame, text=query.AccType)
+        typelabel.pack()
+        Userlabel = Label(frame, text=query.UserName)
+        Userlabel.pack()
+        passlabel = Label(frame, text=query.HashVal)
         passlabel.pack()
         
    
