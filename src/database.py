@@ -10,13 +10,13 @@ db = peewee.SqliteDatabase('pppDatabase.db')
 db.connect()
 
 ## @brief Base Model for database connection
-#  @details All other Tables will connect automatically to our database
+#  @detail All other Tables will connect automatically to our database
 class BaseModel(peewee.Model):
     class Meta:
         database = db
 
 ## @brief SQLite table to store passwords
-#  @details Use peewee orm library to create a table class that stores accounts
+#  @detail Use peewee orm library to create a table class that stores accounts
 #  @param AccID Account ID and Primary Key
 #  @param AccType Type of Account used
 #  @param UserName Account Username
@@ -27,7 +27,7 @@ class Account(BaseModel):
     UserName = peewee.CharField(null=True)
 
 ## @brief SQLite table to store hash keys and hash values
-#  @details use peewee orm library to create a table class that stores hash values and hash keys in a database. This table is not accessabile via the application. 
+#  @detail use peewee orm library to create a table class that stores hash values and hash keys in a database. This table is not accessabile via the application. 
 #  @param Eid Encrypted Password ID and Foreign key from Account ID
 #  @param HashVal Hashed value of Password
 #  @param HashKey Key to Decrypt Password
@@ -37,12 +37,12 @@ class Encrypt(BaseModel):
     HashKey = peewee.FixedCharField(10)
 
 ## @brief Instantiate new empty tables
-#  @details Encrypt Table should also be reset when Account is reset
+#  @detail Encrypt Table should also be reset when Account is reset
 def CreateTables():
     db.create_tables([Account, Encrypt], safe=True)
 
 ## @brief Delete tables
-#  @details Encrypt Table should also be reset when Account is reset
+#  @detail Encrypt Table should also be reset when Account is reset
 def DropTables():
     db.drop_tables([Account, Encrypt], safe=True)
 
@@ -64,7 +64,7 @@ def GetId(id_):
             .join(Encrypt)
             .order_by(Account.ID)
             .where(id_==Account.ID)
-            .naive()[0]
+            .naive()gi
             )
 
 ## @brief Get Table Rows with Account Type
