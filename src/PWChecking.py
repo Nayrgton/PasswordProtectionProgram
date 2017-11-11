@@ -15,5 +15,10 @@ def checkMP(password):
         return True
 
 
-def checkLogIn(password):
-    
+def checkLogIn(entered, actual):
+    if len(entered) == 0:
+        return "Password cannot be empty"
+    elif entered != actual:
+        return "Incorrect password"
+    elif entered == actual:
+        return True

@@ -7,6 +7,7 @@ from tkinter import *
 from tkinter import ttk
 import re
 import database
+import PWChecking
 
 
 # Background colour
@@ -50,21 +51,16 @@ class PPP(Tk):
         logIn = Frame(self, bg=BGC)        
         welcome = Label(logIn, text="Welcome to the Password Protection Program", fg=BG, bg=BGC, font=LARGE)
         welcome.grid(row=0, columnspan=3, padx=10, pady=10) # Divides space into 3 columns and places label in the middle
-
         enterLabel = Label(logIn, fg=BG, bg=BGC, text="Enter your master password")
         enterLabel.grid(row=1, column=1, padx=10, pady=2)
-
         ent = ttk.Entry(logIn, width=10, font=LARGE, show="*")
         ent.grid(row=2, column=1, padx=10, pady=10)
-
         # Allows submit button to work when the user presses Enter key and calls matchPassword method
         ent.bind('<Return>', lambda x: self.matchPassword(logIn, label=match, entry=ent))
         ent.focus_set()
-
         # When clicked, matchPassword method gets called with the frame name, label and the password entered by user
         btn = Button(logIn, text="Submit", fg=FG, bg=BG, font=LARGE, command=lambda: self.matchPassword(logIn, label=match, entry=ent))
         btn.grid(row=3, column=1)
-
         # Label that shows if the password matches the one in the database
         match = Label(logIn, fg=BG, bg=BGC, text="")
         match.grid(row=4, column=1)
@@ -76,27 +72,20 @@ class PPP(Tk):
     #  @param **kwargs A variable argument list, in this case takes the label that tells you if incorrect password and entry from user
     def matchPassword(self, frame, **kwargs):
         password = kwargs['entry'].get()
-
         # Get master password from DB and decrypt it
-        mp = database.GetId(1).HashVal # remember to change this when encryption works
-        
+        mp = database.GetId(1).HashVal
+        # Password checking
+        response = PWChecking.checkLogIn(password, mp)
         # Makes sure the user entered the correct password
-        if len(password) == 0:
-            msg = "Password cannot be empty"
-
-        elif password != mp:
-            msg = "Incorrect password"
-
-        elif password == mp:
+        if type(response) == str:
+            kwargs['label'].config(text=msg) # Updates label with correct resposne
+        else:
             # Destroy the current frame, createMP
             frame.destroy()
             # Show the password mangement page
             self.showPWPage()
             self.configure(background=BG)
             return
-
-        # Updates label with correct resposne
-        kwargs['label'].config(text=msg)
 
     ## @brief Master Password Creation Screen
     #  @details Displays the master password creation frame
@@ -114,7 +103,7 @@ class PPP(Tk):
         ent.grid(row=2, column=1)
         ent.bind('<Return>', lambda x: self.checkPassword(createMP, label=criteria, entry=ent))
         ent.focus_set() # sets focus to entry box
-
+        
         # When clicked, matchPassword method gets called with the frame name, label and the password entered by user
         btn = Button(createMP, text="Submit", command=lambda: self.checkMP(createMP, label=criteria, entry=ent))
         btn.grid(row=3, column=1)
@@ -132,7 +121,6 @@ class PPP(Tk):
         # Get password
         password = kwargs['entry'].get()
         response = PWChecking.checkMP(password)
-
         # If response is string, that means something is wrong with the input (not long enough, etc)
         if type(response) == str:
             # Updates label with correct response
@@ -140,8 +128,7 @@ class PPP(Tk):
         # Password satisfies constraints    
         else:
             # Call encryption methods
-            enV = password
-            enK = "Encrypting"            
+            enV, enK = password, "Encrypting"           
             # Insert to database method
             database.Insert(1, "Master", "Master", "", enV, enK)
             # Destroy the current frame, createMP
@@ -150,18 +137,18 @@ class PPP(Tk):
             self.showPWPage()
             return
         
+    ## @brief Show entry
+    #  @details Shows entry that user submits as a button on the left scrolling frame
+    #  @param frame The frame that displays button
+    #  @param detailFrame The frame that will show further details if button on left frame is clicked
     def showEntry(self, frame, detailFrame):
         entries = []
         i = 1
-
         # Check if database is empty
         if database.Account.table_exists():
-            
-            # h it's not empty, display entries
             entries = database.Account.select()
-            #i = len(entries)
-
-            self.img = PhotoImage(file="eye.gif")
+        # Image of eye on button
+        self.img = PhotoImage(file="eye.gif")
         for entry in entries:
             # Get name of entries
             name = entry.AccName[:6]
