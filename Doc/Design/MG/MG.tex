@@ -76,7 +76,7 @@ maintainers to easily identify the parts of the software. The document
 shall act as a guide for new project members that want to understand 
 the system, a hierarchical structure for maintainers that want to 
 improve the system, and a source for designers to verify the system’s 
-consistency, feasibility and flexibility. //
+consistency, feasibility and flexibility.
 
 The document is organized such that the anticipated and unlikely 
 changes of the software requirements are listed, following a 
@@ -105,19 +105,16 @@ require changing the one module that hides the associated decision. The approach
 adapted here is called design for change.
 
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The machine on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The operating system
+  \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The operating system
   that the application is being run on.
-\item[\refstepcounter{acnum} \actheacnum \label{acLanguage}:] The development
-  language that is used.
-\item[\refstepcounter{acnum} \actheacnum \label{acFramework}:] The framework for
+  \item[\refstepcounter{acnum} \actheacnum \label{acFramework}:] The framework for
   the graphical user interface.
-\item[\refstepcounter{acnum} \actheacnum \label{acDatabase}:] The database management system that is ued to store sensitive information.
-\item[\refstepcounter{acnum} \actheacnum \label{acEncryption}:] The encryption library that secures user information.
-\item[\refstepcounter{acnum} \actheacnum \label{acUserCustom}:] Customization functionality for the user (ex. change the inactivity time before the application logs out).
-\item[\refstepcounter{acnum} \actheacnum \label{acDBAttributes}:] The attributes of the database.
-\item[\refstepcounter{acnum} \actheacnum \label{acPassGenFunc}:] Additional functionality from password generator (ex. constraining the random password to have only numbers, special characters).
-\item[\refstepcounter{acnum} \actheacnum \label{acPortability}:] The portability of the application (ex. allow the application to be used online).
+  \item[\refstepcounter{acnum} \actheacnum \label{acDatabase}:] The database management system that is ued to store sensitive information.
+  \item[\refstepcounter{acnum} \actheacnum \label{acEncryption}:] The encryption library that secures user information.
+  \item[\refstepcounter{acnum} \actheacnum \label{acUserCustom}:] Customization functionality for the user (ex. change the inactivity time before the application logs out).
+  \item[\refstepcounter{acnum} \actheacnum \label{acDBAttributes}:] The attributes of the database.
+  \item[\refstepcounter{acnum} \actheacnum \label{acPassGenFunc}:] Additional functionality from password generator (ex. constraining the random password to have only numbers, special characters).
+  \item[\refstepcounter{acnum} \actheacnum \label{acPortability}:] The portability of the application (ex. allow the application to be used online).
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -130,13 +127,15 @@ will potentially need to be modified. Hence, it is not intended that these
 decisions will be changed.
 
 \begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
+  \item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
   used by the system.
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] The input to the 
+  \item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] The input to the 
   system will always be external.
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucDBase}:] The use of a database to store the user data.
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucPassEncrypt}:] Individual encryption of each password input to the system.
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucPurpose}:] The goal of the system is provide a secure storage of the user's passwords.
+  \item[\refstepcounter{ucnum} \uctheucnum \label{ucDBase}:] The use of a database to store the user data.
+  \item[\refstepcounter{ucnum} \uctheucnum \label{ucPassEncrypt}:] Individual encryption of each password input to the system.
+  \item[\refstepcounter{ucnum} \uctheucnum \label{ucPurpose}:] The goal of the system is provide a secure storage of the user's passwords.
+  \item[\refstepcounter{ucnum} \actheacnum \label{ucLanguage}:] The development language that is used.
+
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
@@ -147,6 +146,7 @@ below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
 
 \begin{description}
+<<<<<<< HEAD
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module  
 \item [\refstepcounter{mnum} \mthemnum \label{mIn}:] Input Module
 \item [\refstepcounter{mnum} \mthemnum \label{mPG}:] Password Generator Module
@@ -158,6 +158,18 @@ actually be implemented.
 \item [\refstepcounter{mnum} \mthemnum \label{mInac}:] Inactivity Module
 \item [\refstepcounter{mnum} \mthemnum \label{mDB}:] Database Module
 \item [\refstepcounter{mnum} \mthemnum \label{mCons}:] Constants Module
+=======
+  \item [\refstepcounter{mnum} \mthemnum \label{mIn}:] Input Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mPG}:] Password Generator Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mEH}:] Encryption Handling Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mPCUC}:] Password Checking Upon Creation Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mPCUL}:] Password Checking Upon Login Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mGUI}:] GUI Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mCop}:] Copy Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mInac}:] Inactivity Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mDB}:] Database Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mCons}:] Constants Module
+>>>>>>> 31357be63018430af13e46441a1d16f242d45854
 \end{description}
 
 \textbf{Note:} The implentation of PasswordProtectionProgram is completely software based, therefore there are no relevant hardware hiding modules.
@@ -215,9 +227,9 @@ that the module is not a leaf and will not have to be implemented. Whether or
 not this module is implemented depends on the programming language
 selected.
 
-\subsection{Hardware Hiding Modules (\mref{mHH})}
+\subsection{Hardware Hiding Modules}
 
-Not applicable.
+Not applicable as the system is software-based and the lowest level that the software interfaces with is the Operating System..
 
 \subsection{Behaviour-Hiding Module}
 
@@ -318,20 +330,43 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+FR1 & \mref{mCons}\\
+FR2 & \mref{mDB}\\
+FR3 & \mref{mPCUC}\\
+FR4 & \mref{mPCUL}\\
+FR5 & \mref{mIn}, \mref{mGUI}\\
+FR6 & \mref{mPG}\\
+FR7 & \mref{mGUI}\\
+FR8 & \mref{mEH}, \mref{mDB}\\
+FR9 & \mref{mCop}\\
+FR10 & \mref{mPCUC}\\
+FR11 & \mref{mEH}\\
 \bottomrule
 \end{tabular}
-\caption{Trace Between Requirements and Modules}
+\caption{Trace Between Functional Requirements and Modules}
+\label{TblRT}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Req.} & \textbf{Modules}\\
+\midrule
+NFR1 & \mref{mGUI}\\
+NFR2 & \mref{mIn}, \mref{mGUI}\\
+NFR3 & \mref{mIn}, \mref{mGUI}\\
+NFR7 & \mref{m}\\
+NFR9 & \mref{mIn}, \mref{mGUI}\\
+NFR11 & \mref{mCons}, \mref{mGUI}\\
+NFR12 & \mref{mCons}, \mref{mGUI}\\
+NFR13 & \mref{mIn}\\
+NFR15 & \mref{mEH}, \mref{mDB}\\
+NFR16 & \mref{mEH}, \mref{mPCUL}\\
+NFR17 & \mref{mInac}\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Non-Functional Requirements and Modules}
 \label{TblRT}
 \end{table}
 
@@ -341,18 +376,14 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+\acref{acInput} & \mref{mIn}\\
+\acref{acFramework} & \mref{mGUI}\\
+\acref{acDatabase} & \mref{mDB}\\
+\acref{acEncryption} & \mref{mEH}\\
+\acref{acUserCustom} & \mref{mCons}\\
+\acref{acDBAttributes} & \mref{mDB}\\
+\acref{acPassGenFunc} & \mref{mPG}\\
+\acref{acPortability} & \mref{mGUI}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
@@ -374,7 +405,7 @@ because they use modules from the lower levels.
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\includegraphics[scale=0.5]{Images/DAG.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
