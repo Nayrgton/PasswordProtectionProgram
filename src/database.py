@@ -10,7 +10,7 @@ db = peewee.SqliteDatabase('pppDatabase.db')
 db.connect()
 
 ## @brief Base Model for database connection
-#  @detail All other Tables will connect automatically to our database
+#  @details All other Tables will connect automatically to our database
 class BaseModel(peewee.Model):
     class Meta:
         database = db

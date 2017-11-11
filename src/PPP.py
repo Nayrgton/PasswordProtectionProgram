@@ -8,15 +8,8 @@ from tkinter import ttk
 import re
 import database
 import PWChecking
-
-
-# Background colour
-BGC = "#cccccc"
-# Large font
-LARGE = ("Helvetica", 16)
-BG = "#383A39"
-FG = "#A1DBCD"
-
+from Constants import *
+import inactivity
 
 ## @brief An ADT that represents the GUI
 class PPP(Tk):
@@ -30,13 +23,13 @@ class PPP(Tk):
         Tk.__init__(self, *args)        
         # Customizing window title, size and icon
         self.title("Password Protection Program")
-        self.geometry("1080x840")
+        self.geometry(screen_size)
         self.configure(background=BGC)
         # self.wm_iconbitmap('logo.ico')
         # List of accounts
         self.accounts = []
         # Image of eye on button
-        self.img = PhotoImage(file="eye.gif")
+        self.img = PhotoImage(file=eye)
 
         # Checks if master password has been initialized or not
         db = database.Account.select()
@@ -44,13 +37,13 @@ class PPP(Tk):
             self.showCreateMP()
         else:
             self.showLogIn()
+        
 
     ## @brief Log In Screen
     #  @details Displays the log in frame
-    #  @param *kwargs A variable argument list to provide extra functionality to the frame
-    def showLogIn(self, *kwargs):
+    def showLogIn(self):
         # Creating and adding the frame
-        logIn = Frame(self, bg=BGC)        
+        logIn = Frame(self, bg=BGC)      
         welcome = Label(logIn, text="Welcome to the Password Protection Program", fg=BG, bg=BGC, font=LARGE)
         welcome.grid(row=0, columnspan=3, padx=10, pady=10) # Divides space into 3 columns and places label in the middle
         enterLabel = Label(logIn, fg=BG, bg=BGC, text="Enter your master password")
@@ -80,7 +73,7 @@ class PPP(Tk):
         response = PWChecking.checkLogIn(password, mp)
         # Makes sure the user entered the correct password
         if type(response) == str:
-            kwargs['label'].config(text=msg) # Updates label with correct resposne
+            kwargs['label'].config(text=response) # Updates label with correct resposne
         else:
             # Destroy the current frame, createMP
             frame.destroy()
@@ -91,9 +84,7 @@ class PPP(Tk):
 
     ## @brief Master Password Creation Screen
     #  @details Displays the master password creation frame
-    #  @param *kwargs A variable argument list to provide extra functionality to the frame
-    def showCreateMP(self, *args):
-
+    def showCreateMP(self):
         # Similarly to showLogIn method, creates and adds widgets to frame
         createMP = Frame(self)
         createMP.pack()
@@ -126,7 +117,7 @@ class PPP(Tk):
         # If response is string, that means something is wrong with the input (not long enough, etc)
         if type(response) == str:
             # Updates label with correct response
-            kwargs['label'].config(text=msg)
+            kwargs['label'].config(text=response)
         # Password satisfies constraints    
         else:
             # Call encryption methods
