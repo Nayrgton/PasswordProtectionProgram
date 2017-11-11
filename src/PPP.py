@@ -35,6 +35,8 @@ class PPP(Tk):
         # self.wm_iconbitmap('logo.ico')
         # List of accounts
         self.accounts = []
+        # Image of eye on button
+        self.img = PhotoImage(file="eye.gif")
 
         # Checks if master password has been initialized or not
         db = database.Account.select()
@@ -138,21 +140,17 @@ class PPP(Tk):
             return
         
     ## @brief Show entry
-    #  @details Shows entry that user submits as a button on the left scrolling frame
+    #  @details Shows entries that already exists as a button on the left scrolling frame
     #  @param frame The frame that displays button
     #  @param detailFrame The frame that will show further details if button on left frame is clicked
     def showEntry(self, frame, detailFrame):
-        entries = []
         i = 1
         # Check if database is empty
         if database.Account.table_exists():
             entries = database.Account.select()
-        # Image of eye on button
-        self.img = PhotoImage(file="eye.gif")
         for entry in entries:
             # Get name of entries
             name = entry.AccName[:6]
-
             btn = Button(frame, text="\t"+name+"\t", image=self.img, compound="right", fg=FG,bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(i,detailFrame))
             btn.config(height=75, width=60)
             btn.grid(row=7+i,columnspan=6, sticky=N+S+E+W)
@@ -167,9 +165,6 @@ class PPP(Tk):
 
         ## @brief Updates scroll region when all widgets are in canvas
         def on_configure(event):
-            # update scrollregion after starting 'mainloop'
-            # when all widgets are in canvas
-            
             canvas.configure(scrollregion=canvas.bbox('all'))
 
         # Create beautiful canvas im picasso
@@ -215,7 +210,7 @@ class PPP(Tk):
         nameE.focus_set()
 
         # When clicked, addEntry method gets called with the frame name and relevant entries
-        btn = Button(PWPage, text="Submit", bg=BGC, fg=BG, font=LARGE, command=lambda:  self.addEntry(PWPage, detailFrame, nameE, typeE, userE, passE))
+        btn = Button(PWPage, text="Submit", bg=BGC, fg=BG, font=LARGE, command=lambda: self.addEntry(PWPage, detailFrame, canvas, nameE, typeE, userE, passE))
         btn.grid(row=5, column=1, padx=5, pady=10)
 
         # Frame for showing details
@@ -231,7 +226,7 @@ class PPP(Tk):
     #  @param scrollFrame The frame on the left which displays the entries as buttons
     #  @param detailFrame The frame on the right which displays details of each entry
     #  @param *pwd Variable list of entries from the user when he/she adds an entry
-    def addEntry(self, scrollFrame, detailFrame, *pwd):
+    def addEntry(self, scrollFrame, canvas, detailFrame, *pwd):
         AccName = pwd[0].get() # The account name
         AccType = pwd[1].get() # The account type
         UserName = pwd[2].get() # The username for the account
@@ -249,8 +244,10 @@ class PPP(Tk):
         # ID of entry to denote where to place each entry on the scrollframe
         i = len(self.accounts)
         # Creates a button for the entry at the appropriate position
-        viewBtn = Button(scrollFrame, text=AccName, command=lambda i=i: self.viewDetails(i, detailFrame))
-        viewBtn.grid(row=7+i, column=1)
+        viewBtn = Button(scrollFrame, text="\t"+AccName+"\t", image=self.img, compound="right", fg=FG, bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(i, detailFrame))
+        viewBtn.config(height=75, width=60)
+        viewBtn.grid(row=7+i, columnspan=6, sticky=N+S+E+W)
+
 
     ## @brief Displays details of entry
     #  @details Displays details of entry (type, name, username, password), called when button for entry is clicked
@@ -259,12 +256,10 @@ class PPP(Tk):
     def viewDetails(self, idnum, frame):
         # Get full entry from database
         query = database.GetId(idnum)
-        
-
         # Delete everything in frame currently
         for widget in frame.winfo_children():
             widget.destroy()
-
+        # Add new details
         namelabel = Label(frame, text=query.AccName)
         namelabel.pack()
         typelabel = Label(frame, text=query.AccType)
