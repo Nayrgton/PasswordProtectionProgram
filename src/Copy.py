@@ -1,4 +1,4 @@
-## @file copy.py
+## @file Copy.py
 # @author Suhavi Sandhu
 # @brief Copies the text after the user clicks a button
 # @date November 10, 2017
