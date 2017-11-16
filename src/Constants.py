@@ -16,4 +16,22 @@ LARGE = ("Helvetica", 16)
 screen_size = "1080x840"
 
 # Dependent files
-eye = "eye.gif"
+EYE = "eye.gif"
+
+WELCOME = "Welcome to the Password Protection Program"
+
+# States for Register screen
+REGISTER = {
+    "prompt": "Create a master password to start using the application",
+    "loggedIn": False }
+
+# States for LogIn screen
+LOGIN = {
+    "prompt": "Enter your master password",
+    "loggedIn": True }
+
+FIELDS = ["Name", "Type", "Username", "Password"]
+
+# Error Time
+
+# Processing Time
