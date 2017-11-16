@@ -107,3 +107,5 @@ def UpdateU(Aid, U):
 #  @param Hv new Hash Value
 def UpdateP(Aid, Hv):
     Encrypt.update(HashVal=Hv).where(Encrypt.ID == Aid).execute()
+
+DropTables();CreateTables()
