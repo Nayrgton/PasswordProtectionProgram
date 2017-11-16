@@ -30,7 +30,7 @@ def generKey():
 ## @brief This function uses a key to encrypt an input string
 #  @details Fernet uses symmetric encryption on the input key
 #  @param key, passw refer to the key to be used to encypt and the password to be encrypted
-#  @return encrypted password 
+#  @return encrypted password in byte format
 def cryptEncode(key, passw):
     f = Fernet(key)
     inp = passw.encode(encoding= 'utf-8')
@@ -40,14 +40,15 @@ def cryptEncode(key, passw):
 
 ## @brief This function uses the saved key to decrypt the encrypted user password stored in the database
 #  @param key, encrypted refer to the key that was used to encrpt the password and the encrypted password
-#  @return decrypted password
+#  @return decrypted password in string format
 def cryptDecode(key, encrypted):
     f = Fernet(key)
     decrypted = f.decrypt(encrypted)
+    decrypted = str(decrypted, 'utf-8')
     return decrypted
 
 '''
-IDLE
+Function Call Syntax
 key = generKey()
 x = cryptEncode(key, "hellooo")
 a = cryptDecode(key, x)
