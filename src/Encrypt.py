@@ -1,5 +1,5 @@
 ## @file Encrypt.py
-#  @title Password Encryption
+#  @brief This module handles the key generation for and encryption/decryption of passwords
 #  @author Shabana Dhayananth
 #  @date October 15, 2017
 
@@ -48,10 +48,10 @@ def cryptDecode(key, encrypted):
     return decrypted
 
 '''
-Function Call Syntax
+Function Call Syntax (for reference)
 key = generKey()
-x = cryptEncode(key, "hellooo")
-a = cryptDecode(key, x)
+encryptedPassword = cryptEncode(key, "hellooo")
+decryptedPassword = cryptDecode(key, x)
 '''
 
 

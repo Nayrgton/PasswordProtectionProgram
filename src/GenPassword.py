@@ -1,5 +1,5 @@
 ## @file GenPassword.py
-#  @title Generate Random Password
+#  @brief This module is used to generate a random password containing alphanumeric characters
 #  @author Shabana Dhayananth
 #  @date October 27, 2017
 
