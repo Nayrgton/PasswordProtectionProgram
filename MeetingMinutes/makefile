@@ -1,4 +1,4 @@
-all: M1.pdf M2.pdf M3.pdf M4.pdf
+all: M1.pdf M2.pdf M3.pdf M4.pdf M5.pdf M6.pdf
 
 M1.pdf: M1.tex
 	pdflatex M1.tex
