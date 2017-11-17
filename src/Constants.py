@@ -16,7 +16,9 @@ LARGE = ("Helvetica", 16)
 screen_size = "1080x840"
 
 # Dependent files
-EYE = "eye.gif"
+EYE = "icons/eye.gif"
+COPY = "icons/copy.gif"
+GENERATE = "icons/flash.gif"
 
 WELCOME = "Welcome to the Password Protection Program"
 
