@@ -74,7 +74,7 @@ class PPP(Tk):
         # If for logging in is true
         if state:
             # Get master password from DB and decrypt it
-            mp = str(Encrypt.cryptDecode(database.GetId(1).HashKey.encode('utf-8'), database.GetId(1).HashVal.encode('utf-8')),'utf-8')
+            mp = Encrypt.cryptDecode(database.GetId(1).HashKey.encode('utf-8'), database.GetId(1).HashVal.encode('utf-8'))
             print(mp)
             # Password checking
             response = PWChecking.checkLogIn(password, mp)
@@ -207,7 +207,7 @@ class PPP(Tk):
             temp.grid(row=i, column=0, sticky=W)
 
         # Decrypt password
-        pw = str(Encrypt.cryptDecode(query.HashKey.encode('utf-8'), query.HashVal.encode('utf-8')),'utf-8')
+        pw = Encrypt.cryptDecode(query.HashKey.encode('utf-8'), query.HashVal.encode('utf-8'))
         namelabel = Label(frame, text=query.AccName, font=LARGE)
         namelabel.grid(row=0, column=1)
         typelabel = Label(frame, text=query.AccType, font=LARGE)
