@@ -64,13 +64,8 @@ def GetId(id_):
             .join(Encrypt)
             .order_by(Account.ID)
             .where(id_==Account.ID)
-<<<<<<< HEAD
-            .naive()[0]
-            )
-=======
             .naive()
             )[0]
->>>>>>> Database
 
 ## @brief Get Table Rows with Account Type
 #  @param Atype Account type
