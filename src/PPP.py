@@ -173,6 +173,11 @@ class PPP(Tk):
         detailFrame = Frame(self, bg=BG)
         detailFrame.pack(expand=1)
 
+        details = Label(detailFrame, text=WELCOME, font=LARGE, bg=BG, fg=FG)
+        details.pack()
+        manual = Label(detailFrame, text="<<<Instructions on how to use>>>", bg=BG, fg=FG)
+        manual.pack()
+
         # Show existing entries
         self.showEntry(PWPage, detailFrame)
 
