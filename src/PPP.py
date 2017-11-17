@@ -30,6 +30,8 @@ class PPP(Tk):
         # self.wm_iconbitmap('logo.ico')
         # Image of eye on button
         self.view = PhotoImage(file=EYE)
+        self.copy = PhotoImage(file=COPY)
+        self.gen = PhotoImage(file=GENERATE)
 
         # Checks if master password has been initialized or not
         db = database.Account.select()
@@ -123,7 +125,7 @@ class PPP(Tk):
             canvas.configure(scrollregion=canvas.bbox('all'))
 
         # Create beautiful canvas im picasso
-        canvas = Canvas(self, bg=BG, width=280) # width=280
+        canvas = Canvas(self, bg=BG, width=300) # width=280
         canvas.pack(side=LEFT, fill='y')
         
         # Create scrollbar
@@ -154,6 +156,10 @@ class PPP(Tk):
         typeE.grid(row=2, column=1)
         userE.grid(row=3, column=1)
         passE.grid(row=4, column=1)
+        genU = Button(PWPage, image=self.gen, bg=BG, command=lambda: [f for f in [userE.delete(0, END),userE.insert(0, GenPassword.genPassCrypt())]])
+        genP = Button(PWPage, image=self.gen, bg=BG, command=lambda: [f for f in [passE.delete(0, END),passE.insert(0, GenPassword.genPassCrypt())]])
+        genU.grid(row=3, column=2)
+        genP.grid(row=4, column=2)
 
         # Allows submit button to work when the user presses Enter key and calls addEntry method
         passE.bind('<Return>', lambda x: self.addEntry(PWPage, detailFrame, nameE, typeE, userE, passE))
@@ -219,20 +225,20 @@ class PPP(Tk):
         passlabel.insert(0, pw)
         passlabel.grid(row=3, column=1)
 
-        copyU = Button(frame, text="C", bg=BGC, fg=BG, font=LARGE, command=lambda: Copy.copy(userlabel.get()))
-        copyP = Button(frame, text="C", bg=BGC, fg=BG, font=LARGE, command=lambda: Copy.copy(passlabel.get()))
+        copyU = Button(frame, image=self.copy, bg=BG,command=lambda: Copy.copy(userlabel.get()))
+        copyP = Button(frame, image=self.copy, bg=BG, command=lambda: Copy.copy(passlabel.get()))
         copyU.grid(row=2, column=2)
         copyP.grid(row=3, column=2)
 
-        editU = Button(frame, text="Save", bg=BGC, fg=BG, font=LARGE)
-        editP = Button(frame, text="Save", bg=BGC, fg=BG, font=LARGE)
-        editU.grid(row=2, column=3)
-        editP.grid(row=3, column=3)
+        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE)
+        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE)
+        editU.grid(row=2, column=4)
+        editP.grid(row=3, column=4)
 
-        genU = Button(frame, text="Generate", bg=BGC, fg=BG, font=LARGE, command=lambda: [f for f in [userlabel.delete(0, END),userlabel.insert(0, GenPassword.genPassCrypt())]])
-        genP = Button(frame, text="Generate", bg=BGC, fg=BG, font=LARGE, command=lambda: [f for f in [passlabel.delete(0, END),passlabel.insert(0, GenPassword.genPassCrypt())]])
-        genU.grid(row=2, column=4)
-        genP.grid(row=3, column=4)
+        genU = Button(frame, image=self.gen, bg=BG, command=lambda: [f for f in [userlabel.delete(0, END),userlabel.insert(0, GenPassword.genPassCrypt())]])
+        genP = Button(frame, image=self.gen, bg=BG, command=lambda: [f for f in [passlabel.delete(0, END),passlabel.insert(0, GenPassword.genPassCrypt())]])
+        genU.grid(row=2, column=3)
+        genP.grid(row=3, column=3)
 
     def destroyF(self, frame):
         for widget in frame.winfo_children():
