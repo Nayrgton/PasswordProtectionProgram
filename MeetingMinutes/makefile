@@ -20,6 +20,16 @@ M4.pdf: M4.tex
 	rm M4.aux
 	rm M4.log
 
+M5.pdf: M5.tex
+	pdflatex M5.tex
+	rm M5.aux
+	rm M5.log
+
+M6.pdf: M6.tex
+	pdflatex M6.tex
+	rm M6.aux
+	rm M6.log
+
 clean:
 	#rm *.aux
 	#rm *.log
