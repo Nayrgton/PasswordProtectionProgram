@@ -22,7 +22,7 @@ class BaseModel(peewee.Model):
 #  @param UserName Account Username
 class Account(BaseModel):
     ID = peewee.PrimaryKeyField()
-    AccName = peewee.CharField()
+    AccName = peewee.CharField(unique=True)
     AccType = peewee.CharField()
     UserName = peewee.CharField(null=True)
 
@@ -64,8 +64,13 @@ def GetId(id_):
             .join(Encrypt)
             .order_by(Account.ID)
             .where(id_==Account.ID)
+<<<<<<< HEAD
             .naive()[0]
             )
+=======
+            .naive()
+            )[0]
+>>>>>>> Database
 
 ## @brief Get Table Rows with Account Type
 #  @param Atype Account type
@@ -107,3 +112,5 @@ def UpdateU(Aid, U):
 #  @param Hv new Hash Value
 def UpdateP(Aid, Hv):
     Encrypt.update(HashVal=Hv).where(Encrypt.ID == Aid).execute()
+
+DropTables();CreateTables()
