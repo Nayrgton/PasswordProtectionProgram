@@ -235,8 +235,8 @@ class PPP(Tk):
         copyU.grid(row=2, column=2)
         copyP.grid(row=3, column=2)
 
-        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE)
-        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE)
+        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(frame, idnum, userlabel, False))
+        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(frame, idnum, passlabel, True))
         editU.grid(row=2, column=4)
         editP.grid(row=3, column=4)
 
@@ -248,7 +248,18 @@ class PPP(Tk):
     def destroyF(self, frame):
         for widget in frame.winfo_children():
             widget.destroy()
-   
+
+    def update(self, frame, i, new, pw):
+        updated = new.get()
+        if pw:
+           hashkey = database.GetId(i).HashKey
+           hashval = Encrypt.cryptEncode(hashkey, updated)
+           database.UpdateP(i, hashval)
+        if not pw:
+            database.UpdateU(i, updated)
+       
+       
+       
 # Runs application
 app = PPP()
 app.mainloop()
