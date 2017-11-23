@@ -104,20 +104,21 @@ class PPP(Tk):
     #  @param frame The frame that displays button
     #  @param detailFrame The frame that will show further details if button on left frame is clicked
     def showEntry(self, frame, detailFrame):
-        i = 1
+        rnum = 1
         # Check if database is empty
         if database.Account.table_exists():
             entries = database.Account.select()
         for entry in entries:
+            i = entry.ID
             # Get name of entries
             name = entry.AccName[:6]
-            btn = Button(frame, text="\t"+name+"\t", image=self.view, compound="right", fg=FG,bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(entry.ID,detailFrame))
+            btn = Button(frame, text="\t"+name+"\t", image=self.view, compound="right", fg=FG,bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(i,detailFrame))
             btn.config(height=75, width=60)
-            btn.grid(row=7+i,columnspan=2, sticky=N+S+E+W)
+            btn.grid(row=7+rnum,columnspan=2, sticky=N+S+E+W)
             if i > 1:
-                delButton = Button(frame, bg=BG,image=self.delete, command=lambda i=i: [f for f in [database.Delete(entry.ID), btn.grid_remove(), delButton.grid_remove(), self.showEntry(frame, detailFrame)]])
-                delButton.grid(row=7+i, column=2)
-            i+=1
+                delButton = Button(frame, bg=BG,image=self.delete, command=lambda i=i: [f for f in [database.Delete(i), btn.grid_remove(), delButton.grid_remove(), self.destroyF(detailFrame), self.showEntry(frame, detailFrame)]])
+                delButton.grid(row=7+rnum, column=2)
+            rnum+=1
                     
     ## @brief Password Management Screen
     #  @details Where user can add and view account information
