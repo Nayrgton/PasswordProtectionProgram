@@ -32,6 +32,7 @@ class PPP(Tk):
         self.view = PhotoImage(file=EYE)
         self.copy = PhotoImage(file=COPY)
         self.gen = PhotoImage(file=GENERATE)
+        self.delete = PhotoImage(file=DELETE)
 
         # Checks if master password has been initialized or not
         db = database.Account.select()
@@ -110,9 +111,12 @@ class PPP(Tk):
         for entry in entries:
             # Get name of entries
             name = entry.AccName[:6]
-            btn = Button(frame, text="\t"+name+"\t", image=self.view, compound="right", fg=FG,bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(i,detailFrame))
+            btn = Button(frame, text="\t"+name+"\t", image=self.view, compound="right", fg=FG,bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(entry.ID,detailFrame))
             btn.config(height=75, width=60)
             btn.grid(row=7+i,columnspan=2, sticky=N+S+E+W)
+            if i > 1:
+                delButton = Button(frame, bg=BG,image=self.delete, command=lambda i=i: [f for f in [database.Delete(entry.ID), btn.grid_remove(), delButton.grid_remove(), self.showEntry(frame, detailFrame)]])
+                delButton.grid(row=7+i, column=2)
             i+=1
                     
     ## @brief Password Management Screen
@@ -235,8 +239,8 @@ class PPP(Tk):
         copyU.grid(row=2, column=2)
         copyP.grid(row=3, column=2)
 
-        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(frame, idnum, userlabel, False))
-        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(frame, idnum, passlabel, True))
+        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, userlabel, False))
+        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, passlabel, True))
         editU.grid(row=2, column=4)
         editP.grid(row=3, column=4)
 
@@ -249,7 +253,7 @@ class PPP(Tk):
         for widget in frame.winfo_children():
             widget.destroy()
 
-    def update(self, frame, i, new, pw):
+    def update(self, i, new, pw):
         updated = new.get()
         if pw:
            hashkey = database.GetId(i).HashKey
@@ -257,7 +261,8 @@ class PPP(Tk):
            database.UpdateP(i, hashval)
         if not pw:
             database.UpdateU(i, updated)
-       
+
+        
        
        
 # Runs application
