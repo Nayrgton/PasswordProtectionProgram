@@ -19,6 +19,7 @@ screen_size = "1080x840"
 EYE = "icons/eye.gif"
 COPY = "icons/copy.gif"
 GENERATE = "icons/flash.gif"
+DELETE = "icons/delete.gif"
 
 WELCOME = "Welcome to the Password Protection Program"
 
