@@ -56,6 +56,15 @@ def Insert(N, T, U, Hv, Hk):
     Account.create(AccName=N, AccType=T, UserName=U)
     Encrypt.create(ID = Account.select().order_by(Account.ID.desc()).get(), HashVal=Hv, HashKey=Hk)
 
+## @brief get all queries
+def GetAll():
+    return (Account
+            .select(Account, Encrypt)
+            .join(Encrypt)
+            .order_by(Account.ID)
+            .naive()
+            )
+
 ## @brief search tables with AccId
 #  @param Id Account Id
 def GetId(id_):
