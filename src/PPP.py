@@ -28,7 +28,8 @@ class PPP(Tk):
         self.geometry(screen_size)
         self.configure(background=BGC)
         # self.wm_iconbitmap('logo.ico')
-        # Image of eye on button
+        
+        # Relevant icons from Constants.py
         self.view = PhotoImage(file=EYE)
         self.copy = PhotoImage(file=COPY)
         self.gen = PhotoImage(file=GENERATE)
@@ -94,7 +95,7 @@ class PPP(Tk):
             enK = Encrypt.generKey()
             enV = Encrypt.cryptEncode(enK, password)          
             # Insert to database method
-            database.Insert(1, "Master", "Master", "", enV, enK)
+            database.Insert("Master", "Master", "", enV, enK)
         frame.destroy() # Destroy the current frame
         self.showPWPage() # Show the password mangement page
         self.configure(background=BG)
@@ -203,7 +204,8 @@ class PPP(Tk):
         HashVal = Encrypt.cryptEncode(HashKey,Password)
 
         # Add entry to database
-        database.Insert(len(database.Account.select())+1, AccName, AccType, UserName, HashVal, HashKey)
+        i = ???
+        database.Insert(i, AccName, AccType, UserName, HashVal, HashKey)
 
         #self.showEntry(scrollFrame, detailFrame)
         self.showEntry(scrollFrame, detailFrame)
