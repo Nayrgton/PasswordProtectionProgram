@@ -108,7 +108,7 @@ class PPP(Tk):
         rnum = 1
         # Check if database is empty
         if database.Account.table_exists():
-            entries = database.Account.select()
+            entries = database.GetAll()
         for entry in entries:
             i = entry.ID
             # Get name of entries
@@ -204,8 +204,7 @@ class PPP(Tk):
         HashVal = Encrypt.cryptEncode(HashKey,Password)
 
         # Add entry to database
-        i = ???
-        database.Insert(i, AccName, AccType, UserName, HashVal, HashKey)
+        database.Insert(AccName, AccType, UserName, HashVal, HashKey)
 
         #self.showEntry(scrollFrame, detailFrame)
         self.showEntry(scrollFrame, detailFrame)
