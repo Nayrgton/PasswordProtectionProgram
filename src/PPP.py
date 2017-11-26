@@ -9,11 +9,10 @@ import re
 import database
 import PWChecking
 from Constants import *
-import inactivity
 import Copy
 import Encrypt
 import GenPassword
-import time
+
 
 ## @brief An ADT that represents the GUI
 class PPP(Tk):
@@ -211,9 +210,7 @@ class PPP(Tk):
         except:
             notunique.config(text="Name must be unique!")
             return
-        notunique.config(text="                                           ")
-        
-        
+        notunique.config(text="                                           ")        
         self.showEntry(scrollFrame, detailFrame)
 
     ## @brief Displays details of entry
@@ -279,9 +276,27 @@ class PPP(Tk):
         if not pw:
             database.UpdateU(i, updated)
 
-        
-       
+## @brief Activates when user is inactive for more than x time
+#  @details Currently shows login by default, can easily add database check
+def inactive():
+    app.destroyF(app)
+    app.showHomeScreen(LOGIN)
+    
+## @brief resets the timer
+#  @param app The GUI
+#  @param event optional
+def reset_timer():
+    global timer
+    if timer is not None:
+        app.after_cancel(timer)
+    timer = app.after(INACTIVITY, inactive)
+    
        
 # Runs application
 app = PPP()
+timer = None
+app.bind_all("<Any-KeyPress>", lambda x: reset_timer())
+app.bind_all("<Any-ButtonPress>", lambda x: reset_timer())
+reset_timer()
 app.mainloop()
+    
