@@ -1,5 +1,5 @@
 %to-do
-%add diagrams and images and acrabb table
+%add images
 %add references
 %do section 4
 
@@ -66,10 +66,6 @@ This document contains four sections: General Information, System Summary, Getti
 
 The current section, General Information outlines the purpose of the software and the breakdown of the user manual. The System Summary gives an overview of the software and hardware configurationsfor the system as well as user access levels. The next two sections , Getting Started and Using the System explain how to install the software and how to access all of its functions, respectively.
 
-\subsection{Acronyms and Abbreviations} \label{AcrAbb}
-
-FILL IN LATER (TABLE)
-
 
 \section{System Summary} \label{SysSumm}
 
@@ -77,11 +73,6 @@ FILL IN LATER (TABLE)
 \subsection{System Configurations} \label{SysConf}
 
 PasswordProtectionProgram can be used on desktop computers that use Windows, OSX and Linux OS. The application will be available for download as an executable file containing all necessary software dependencies, such as the Python libraries: cryptography, peewee, tkinter, pyperclip. After running the executable file, the product will be immediately ready for use.
-
-
-\subsection{Data Flows} \label{DataFlow}
-
-FILL IN LATER (DIAGRAM)
 
 
 \subsection{User Access Levels} \label{UserAcc}
@@ -98,14 +89,21 @@ The system in completely offline so all dependent account details are saved into
 
 \subsection{Installation and Logging In} \label{install}
 
-The PasswordProtectionProgram software is currently available to be downloaded at (URL HERE}. When the .exe file is run, the application should open up to a one time only master password creation screen. The user is to create a password based on the security recommendations provided by the system and this password will be used for all future log ins to the system. As there is only one user per application download, a username is unncessary.
+The PasswordProtectionProgram software is currently available to be downloaded at (URL HERE). When the .exe file is run, the application should open up to a one time only master password creation screen. The user is to create a password based on the security recommendations provided by the system and this password will be used for all future log ins to the system. As there is only one user per application download, a username is unncessary.
 
-
-INSERT IMAGE HERE
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{images/CreateMassPass.png}
+	\caption{Create Master Password Screen}
+	\label{fig:crMasPass}
+\end{figure}
 
 For all subsequent use of the product, the initial entry screen will only require entry of the aster password as shown in the following image.
 
-INSERT IMAGE HERE
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{images/EnterMassPass.png}
+	\caption{Enter Master Password Screen}
+	\label{fig:enMasPass}
+\end{figure}
 
 
 \subsection{System Menu} \label{SysMenu}
@@ -114,14 +112,22 @@ After creating a master password or logging into the system, the user is lead to
 Below this, starting with the master password, all the accounts for which the user has already saved a username and password are listed. 
 
 
-INSERT IMAGE HERE
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{images/InAppScreen.png}
+	\caption{In Application Screen}
+	\label{fig:InApp}
+\end{figure}
 
 
 \subsection{Changing Master Password} \label{ChangeMasPass}
 
-If the master password that was initially set for the software needs to be changed, this can be done so by choosing the master password box on the left side of the in-application*** screen.
+If the master password that was initially set for the software needs to be changed, this can be done so by choosing the master password box on the left side of the in-application screen.
 
-INSERT IMAGE HERE
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{images/ChangeMasPass.png}
+	\caption{Changing Master Password}
+	\label{fig:chMasPass}
+\end{figure}
 
 
 \subsection{Exit System} \label{SysExit}
@@ -134,13 +140,24 @@ The system can be exited by simply closing the application window as this automa
 
 \subsection{System Functions} \label{SysFunc}
 
+\subsubsection{Add Entry} \label{AddEnt}
+
+\subsubsection{View Entry} \label{ViewEnt}
+
+\subsubsection{Delete Entry} \label{DelEnt}
+
+\subsubsection{Update Entry} \label{UpdateEnt}
+
+\subsubsection{Copy Field} \label{CopyField}
+
+\subsubsection{Generate Field} \label{GenField}
+
+\subsubsection{User Manual} \label{UseMan}
+
 
 \subsection{Special Instructions for Error Correction} \label{ErrCorr}
 
-\subsection{Caveats and Exceptions} \label{CavExc}
-
-\subsection{Input Procedures and Expected Output} \label{InOut}
-
+TENTATIVE: In the case that the master password is forgotten, the system has a "forgot master password" button that when pressed will reset the application to the state it was when first downloaded. Thus, all saved data will be lost and a new master password will have to be created.
 
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
