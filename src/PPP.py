@@ -117,7 +117,7 @@ class PPP(Tk):
             btn.config(height=75, width=60)
             btn.grid(row=8+rnum,columnspan=2, sticky=N+S+E+W)
             if i > 1:
-                delButton = Button(frame, bg=BG,image=self.delete, command=lambda i=i: [f for f in [database.Delete(i), btn.grid_remove(), delButton.grid_remove(), self.destroyF(detailFrame), self.showEntry(frame, detailFrame)]])
+                delButton = Button(frame, bg=BG,image=self.delete, command=lambda i=i: [f for f in [database.Delete(i), btn.grid_remove(), delButton.grid_remove(), self.destroyF(self), self.showPWPage()]])
                 delButton.grid(row=8+rnum, column=2)
             rnum+=1
                     
@@ -210,8 +210,9 @@ class PPP(Tk):
         except:
             notunique.config(text="Name must be unique!")
             return
-        notunique.config(text="                                           ")        
-        self.showEntry(scrollFrame, detailFrame)
+        notunique.config(text="                                           ")     # Used as a bypass because tkinter does not allow deletion of local labels
+        self.destroyF(self)
+        self.showPWPage()
 
     ## @brief Displays details of entry
     #  @details Displays details of entry (type, name, username, password), called when button for entry is clicked
