@@ -27,13 +27,14 @@ class PPP(Tk):
         self.title("Password Protection Program")
         self.geometry(screen_size)
         self.configure(background=BGC)
-        # self.wm_iconbitmap('logo.ico')
+        self.wm_iconbitmap('ppp.ico')
         
         # Relevant icons from Constants.py
         self.view = PhotoImage(file=EYE)
         self.copy = PhotoImage(file=COPY)
         self.gen = PhotoImage(file=GENERATE)
         self.delete = PhotoImage(file=DELETE)
+        self.logo = PhotoImage(file=LOGO)
 
         # Checks if master password has been initialized or not
         db = database.Account.select()
@@ -48,23 +49,25 @@ class PPP(Tk):
     #  @param state List of what goes in the frame, namely if it is a register frame or log in frame
     def showHomeScreen(self, state):
         # Creating and adding the frame
-        HomeScreen = Frame(self, bg=BGC)      
+        HomeScreen = Frame(self, bg=BGC)
+        logo = Label(HomeScreen, bg=BGC, image=self.logo)
+        logo.grid(row=0, columnspan=3, padx=20, pady=20)
         welcome = Label(HomeScreen, text=WELCOME, fg=BG, bg=BGC, font=LARGE)
-        welcome.grid(row=0, columnspan=3, padx=10, pady=10) # Divides space into 3 columns and places label in the middle
+        welcome.grid(row=1, columnspan=3, padx=10, pady=10) # Divides space into 3 columns and places label in the middle
         enterLabel = Label(HomeScreen, fg=BG, bg=BGC, text=state['prompt'])
-        enterLabel.grid(row=1, column=1, padx=10, pady=2)
+        enterLabel.grid(row=2, column=1, padx=10, pady=2)
         ent = ttk.Entry(HomeScreen, width=10, font=LARGE, show="*")
-        ent.grid(row=2, column=1, padx=10, pady=10)
+        ent.grid(row=3, column=1, padx=10, pady=10)
         
         # Allows submit button to work when the user presses Enter key and calls matchPassword method
         ent.bind('<Return>', lambda x: self.checkPW(HomeScreen, match, ent, state['loggedIn']))
         ent.focus_set()
         # When clicked, checkPW method gets called with the frame name, label and the password entered by user as well as if it is for registering or logging in
         btn = Button(HomeScreen, text="Submit", fg=FG, bg=BG, font=LARGE, command=lambda: self.checkPW(HomeScreen, match, ent, state['loggedIn']))
-        btn.grid(row=3, column=1)
+        btn.grid(row=4, column=1)
         # Label that shows if the password matches the one in the database
         match = Label(HomeScreen, fg=BG, bg=BGC, text="")
-        match.grid(row=4, column=1)
+        match.grid(row=5, column=1)
         HomeScreen.pack(expand=1)
 
     ## @brief Check Password
@@ -79,7 +82,6 @@ class PPP(Tk):
         if state:
             # Get master password from DB and decrypt it
             mp = Encrypt.cryptDecode(database.GetId(1).HashKey.encode('utf-8'), database.GetId(1).HashVal.encode('utf-8'))
-            print(mp)
             # Password checking
             response = PWChecking.checkLogIn(password, mp)
         else:
@@ -258,6 +260,8 @@ class PPP(Tk):
 
     def userManual(self, frame):
         self.destroyF(frame)
+        logo = Label(frame, bg=BG, image=self.logo)
+        logo.pack(padx=10, pady=10)
         welcome = Label(frame, text=WELCOME, font=LARGE, bg=BG, fg=FG)
         welcome.pack()
         instructions = Message(frame, text=INSTRUCTIONS, justify="center",bg=BG, fg=FG, width=150)

@@ -20,6 +20,7 @@ EYE = "icons/eye.gif"
 COPY = "icons/copy.gif"
 GENERATE = "icons/flash.gif"
 DELETE = "icons/delete.gif"
+LOGO = "icons/ppp.gif"
 
 WELCOME = "Welcome to the Password Protection Program"
 
