@@ -1,8 +1,5 @@
-%to-do
-%add images
 %add references
 %do section 4
-
 
 \documentclass[12pt, titlepage]{article}
 
@@ -108,8 +105,7 @@ For all subsequent use of the product, the initial entry screen will only requir
 
 \subsection{System Menu} \label{SysMenu}
 
-After creating a master password or logging into the system, the user is lead to a screen that in the center displays a brief description of the application. In the top left corner, the user is able to add new account usernames and passwords to the password manager by specifying the account name, type, username and password.
-Below this, starting with the master password, all the accounts for which the user has already saved a username and password are listed. 
+After creating a master password or logging into the system, the user is lead to a screen that in the center displays a brief description of the application. In the top left corner, the user is able to add new account usernames and passwords to the password manager by specifying the account name, type, username and password. Below this, starting with the master password, all the accounts for which the user has already saved a username and password are listed. 
 
 
 \begin{figure}[h]
@@ -142,6 +138,8 @@ The system can be exited by simply closing the application window as this automa
 
 \subsubsection{Add Entry} \label{AddEnt}
 
+An account entry can be added to this password manager by filling out the required entry fields specified in the top left corner of the \hyperref[fig:InApp]{in-application screen}. The name of the entry will be used as a unique identifier for this entry account's information, the type is used for organization purposes and the username and password are those that the user has already associated with the specific account.
+
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/AddEntry.png}
 	\caption{Adding an Entry}
@@ -150,11 +148,15 @@ The system can be exited by simply closing the application window as this automa
 
 \subsubsection{View Entry} \label{ViewEnt}
 
+Once an entry has been added, it will be listed for viewing as a button in the menu on the left of the in-application screen. The entries are ordered from least recent to most recent entry, starting with the master password. The entry name is displayed on the button along with an eye sympbol to indicate the account that it is associated with.
+
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/ViewEntry.png}
 	\caption{Button to View an Entry}
 	\label{fig:VieEnt1}
 \end{figure}
+
+Once the button is clicked, all of the account information will be displayed in the center panel of the screen along with buttons for additional functions such as Copy, Generate and Update. 
 
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/UpdateEntry.png}
@@ -165,6 +167,8 @@ The system can be exited by simply closing the application window as this automa
 
 \subsubsection{Delete Entry} \label{DelEnt}
 
+An entry can be deleted at any time using the delete button located beside each account lising in the menu on the left of the screen. Obviously, the master password can not be deleted.
+
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/DeleteEntry.png}
 	\caption{Deleting an Entry}
@@ -172,6 +176,8 @@ The system can be exited by simply closing the application window as this automa
 \end{figure}
 
 \subsubsection{Update Entry} \label{UpdateEnt}
+
+An entry can be modified after it is selected in the menu and the information is displayed on the screen. Only the username and password for the selected account can be modified, if the user wishes to change the name and type of the account, the account must be deleted and recreated. After the desired fields are altered, to save these changes, the user must press the Update button located beside each field.
 
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/Update.png}
@@ -181,6 +187,8 @@ The system can be exited by simply closing the application window as this automa
 
 \subsubsection{Copy Field} \label{CopyField}
 
+The copy button located beside the username and password fields is used to facilitate entering authentication information into the service the user wishes to use. The decrypted passoword or username is copied directly to keyboard when the corresponding copy button is pressed.
+
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/Copy.png}
 	\caption{Copying a Field}
@@ -188,6 +196,8 @@ The system can be exited by simply closing the application window as this automa
 \end{figure}
 
 \subsubsection{Generate Field} \label{GenField}
+
+The generate button, denoted by a lightning bolt, provides the user with a random, cryptographicaly sage 8 charater string consisting of upper and lower case alphabets and numbers. The user can use this generated value for their account if they wish.
 
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/Generate.png}
@@ -197,12 +207,17 @@ The system can be exited by simply closing the application window as this automa
 
 \subsubsection{User Manual} \label{UseMan}
 
+If at any time the user is unsure of the function of a button, a user manual will be linked to the question mark button located on the top left corner of the in-application screen beside the add a new entry section.
+
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{images/User Manual.png}
 	\caption{Accessing the User Manual}
 	\label{fig:UsMan}
 \end{figure}
 
+\subsection{Inactivity Timeout} \label{InacTime}
+
+As PasswordProtectionProgram is a password manager, the primary concern of the application is the security of the user information. Therefore, the system is equipped with an automatic logout function when 2 minutes of inactivity is detected. In this way, the application is not left open when the user is not present and this prevents individuals other than the user from accessing the information.
 
 \subsection{Special Instructions for Error Correction} \label{ErrCorr}
 
