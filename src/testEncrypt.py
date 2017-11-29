@@ -25,12 +25,17 @@ class testEncrypt(unittest.TestCase):
         self.e3 = Encrypt.cryptEncode(self.k3, self.p3)
         #self.e4 = Encrypt.cryptEncode(self.k4, self.p4)
 
-
-    ## @brief This method is used to test if the decoded password matched the original password.
-    def test_cryptDecode(self):
+    ## @brief This method is used to test if the decoded password matched the original password (FR-E-1 & FR-E-2).
+    def test_cryptDecode1(self):
         self.assertEqual(Encrypt.cryptDecode(self.k1, self.e1), self.p1)
+
+    def test_cryptDecode2(self):
         self.assertEqual(Encrypt.cryptDecode(self.k2, self.e2), self.p2)
+
+    def test_cryptDecode3(self):
         self.assertEqual(Encrypt.cryptDecode(self.k3, self.e3), self.p3)
+
+    #def test_cryptDecode4(self):
         #self.assertEqual(Encrypt.cryptDecode(self.k4, self.e4), self.p4) 
 
 
