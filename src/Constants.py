@@ -26,7 +26,7 @@ WELCOME = "Welcome to the Password Protection Program"
 
 # States for Register screen
 REGISTER = {
-    "prompt": "Create a master password to start using the application",
+    "prompt": "Create a master password to start using the application. Must have lowercase, uppercase, numbers and at least 8 characters",
     "loggedIn": False }
 
 # States for LogIn screen
