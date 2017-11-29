@@ -25,14 +25,6 @@ class testEncrypt(unittest.TestCase):
         self.e3 = Encrypt.cryptEncode(self.k3, self.p3)
         #self.e4 = Encrypt.cryptEncode(self.k4, self.p4)
 
-    '''
-    ## @brief This method deletes all password objects
-    def tearDown(self):
-        self.p1 = None   
-        self.p2 = None
-        self.p3 = None
-        self.p4 = None
-    '''
 
     ## @brief This method is used to test if the decoded password matched the original password.
     def test_cryptDecode(self):
