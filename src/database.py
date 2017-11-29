@@ -34,7 +34,7 @@ class Account(BaseModel):
 class Encrypt(BaseModel):
     ID = peewee.ForeignKeyField(Account, to_field='ID', primary_key=True, on_delete='CASCADE')
     HashVal = peewee.CharField()
-    HashKey = peewee.FixedCharField(10)
+    HashKey = peewee.FixedCharField(44, unique=True)
 
 ## @brief Instantiate new empty tables
 #  @details Encrypt Table should also be reset when Account is reset
@@ -80,7 +80,7 @@ def GetId(id_):
 #  @param Atype Account type
 def GetT(Atype):
     return (Account
-            .select()
+            .select(Account, Encrypt)
             .join(Encrypt)
             .order_by(Account.ID)
             .where(Account.AccType == Atype)
@@ -91,12 +91,12 @@ def GetT(Atype):
 #  @param Aname Account Name
 def GetN(Aname):
     return (Account
-            .select()
+            .select(Account, Encrypt)
             .join(Encrypt)
             .order_by(Account.ID)
             .where(Account.AccName == Aname)
             .naive()
-            )
+            )[0]
 
 ## @brief Delete Table Row with ID
 #  @param id Account ID
@@ -117,4 +117,5 @@ def UpdateU(Aid, U):
 def UpdateP(Aid, Hv):
     Encrypt.update(HashVal=Hv).where(Encrypt.ID == Aid).execute()
 
-#DropTables();CreateTables()
+if not Account.table_exists() and not Encrypt.table_exists():
+    CreateTables()
