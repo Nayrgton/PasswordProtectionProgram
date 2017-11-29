@@ -13,7 +13,7 @@ FG = "#A1DBCD"
 LARGE = ("Helvetica", 16)
 
 # Screen size
-screen_size = "1080x840"
+screen_size = "820x640"
 
 # Dependent files
 EYE = "icons/eye.gif"
