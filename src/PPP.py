@@ -248,10 +248,14 @@ class PPP(Tk):
         copyU.grid(row=2, column=2)
         copyP.grid(row=3, column=2)
 
-        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, userlabel, False))
-        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, passlabel, True))
+        editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, userlabel, False, updatemsg1))
+        editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, passlabel, True, updatemsg2))
         editU.grid(row=2, column=4)
         editP.grid(row=3, column=4)
+        updatemsg1 = Label(frame, text="", bg=BG, fg=FG)
+        updatemsg1.grid(row=2, column=5)
+        updatemsg2 = Label(frame, text="", bg=BG, fg=FG)
+        updatemsg2.grid(row=3, column=5)
 
         genU = Button(frame, image=self.gen, bg=BG, command=lambda: [f for f in [userlabel.delete(0, END),userlabel.insert(0, GenPassword.genPassCrypt())]])
         genP = Button(frame, image=self.gen, bg=BG, command=lambda: [f for f in [passlabel.delete(0, END),passlabel.insert(0, GenPassword.genPassCrypt())]])
@@ -274,7 +278,7 @@ class PPP(Tk):
         for widget in frame.winfo_children():
             widget.destroy()
 
-    def update(self, i, new, pw):
+    def update(self, i, new, pw, msg):
         updated = new.get()
         if pw:
            hashkey = database.GetId(i).HashKey
@@ -282,6 +286,7 @@ class PPP(Tk):
            database.UpdateP(i, hashval)
         if not pw:
             database.UpdateU(i, updated)
+        msg.config(text="Changes made!")
 
 ## @brief Activates when user is inactive for more than x time
 #  @details Currently shows login by default, can easily add database check
