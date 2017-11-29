@@ -12,7 +12,7 @@ from Constants import *
 import Copy
 import Encrypt
 import GenPassword
-
+import os
 
 ## @brief An ADT that represents the GUI
 class PPP(Tk):
@@ -264,8 +264,10 @@ class PPP(Tk):
         logo.pack(padx=10, pady=10)
         welcome = Label(frame, text=WELCOME, font=LARGE, bg=BG, fg=FG)
         welcome.pack()
-        instructions = Message(frame, text=INSTRUCTIONS, justify="center",bg=BG, fg=FG, width=150)
+        instructions = Message(frame, text=INSTRUCTIONS, justify="left",bg=BG, fg=FG, font=LARGE, width=400)
         instructions.pack()
+        link = Button(frame, text="User Manual", bg=BG, fg=FG, font=LARGE, command=lambda: os.startfile(USERMANUAL))
+        link.pack()
         
 
     def destroyF(self, frame):
@@ -285,6 +287,7 @@ class PPP(Tk):
 #  @details Currently shows login by default, can easily add database check
 def inactive():
     app.destroyF(app)
+    app.configure(background=BGC)
     app.showHomeScreen(LOGIN)
     
 ## @brief resets the timer
