@@ -29,9 +29,9 @@ def checkMP(password):
 #  @param entered The password entered by the user
 #  @param actual The real master password
 def checkLogIn(entered, actual):
-    if len(entered) == 0:
-        return "Password cannot be empty"
-    elif entered != actual:
+    #if len(entered) == 0:
+    #    return "Password cannot be empty"
+    if entered != actual:
         return "Incorrect password"
     elif entered == actual:
         return True
