@@ -422,21 +422,21 @@ Type: Functional, Dynamic, Manual
 
 Initial State: Empty database
 
-Input: A master password is created
+Input: A \textcolor{blue}{query} is created
 
-Output: The master password appears in the table as its encrypted form with all other fields NULL
+Output: The \textcolor{blue}{query is created} in the table as its encrypted form with all \textcolor{blue}{unused} fields \textcolor{blue}{as Empty Strings}
 
-How test will be performed: The database table that stores records will be checked to see if the first entry is a master password with ID of 1
+How test will be performed: The database table that stores records will be checked to see if the first entry \textcolor{blue}{has ID of 1 and if password does not equals the encrypted value}
 
 \item{FR-DB-2\\}
 
 Type: Functional, Dynamic, Manual
 
-Initial State: Master password has already been created
+Initial State: \textcolor{blue}{A query} has already been created
 
-Input: User modifies master password
+Input: User modifies \textcolor{blue}{the first query's username and} password
 
-Output: The updated master password appears in the table as its encrypted form with all other fields NULL
+Output: The updated \textcolor{blue}{query} appears in the table as its encrypted form with \textcolor{blue}{all unused fields as Empty Strings}
 
 How test will be performed: The database table that stores records will be updated and then verified to see if the first entry of the database has updated
 
@@ -444,14 +444,25 @@ How test will be performed: The database table that stores records will be updat
 
 Type: Functional, Dynamic, Manual
 
-Initial State: User is at password management screen, master password is initialized already
+Initial State: \textcolor{blue}{Multiple passwords exists}
 
-Input: User adds an entry of type, username and password
+Input: \textcolor{blue}{User Deletes the first password}
 
-Output: The entry is added to the database with the type in the Type field, username encrypted in the Username field, encrypted password in Password field.
+Output: \textcolor{blue}{The length of the Database decrements by one, and the deleted password is not in the database}
 
-How test will be performed: The database table that stores records will have a new entry inserted and will be verified to see if a new entry has been added
+How test will be performed: \textcolor{blue}{The database table that stores records will have one less password. Password with ID of 1 will not exist in the database}
 
+\item{\textcolor{blue}{FR-DB-4}\\}
+
+\textcolor{blue}{Type: Functional, Dynamic, Manual
+
+Initial State: Multiple passwords exists
+
+Input: User gets all passwords, all passwords by type, first password by id, first password by name
+
+Output: No change
+
+How test will be performed: Equal passwords matches with each other.} 
 \end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
