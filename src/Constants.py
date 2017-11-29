@@ -40,8 +40,15 @@ FIELDS = ["Name", "Type", "Username", "Password"]
 
 # Processing Time
 
+USERMANUAL = "..\\Doc\\UserGuide\\UserGuide.pdf"
+
 # User Manual
-INSTRUCTIONS = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+INSTRUCTIONS = "1) Add entries on the top-left hand corner!\
+                2) Generate a username/password using the lightning icon.                             \
+                3) View entries by clicking the buttons with an eyeball.                              \
+                4) Edit entry by viewing and updating on this side of the screen.                     \
+                NOTE: If you are still having trouble, read the user manual by clicking below. "
+
 
 # Inactivity Period
-INACTIVITY = 120000
+INACTIVITY = 60000
