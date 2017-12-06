@@ -231,6 +231,7 @@ class PPP(Tk):
 
         # Decrypt password
         pw = Encrypt.cryptDecode(query.HashKey.encode('utf-8'), query.HashVal.encode('utf-8'))
+        # Widgets for name, type, username and password of account enry
         namelabel = Label(frame, text=query.AccName, font=LARGE)
         namelabel.grid(row=0, column=1)
         typelabel = Label(frame, text=query.AccType, font=LARGE)
@@ -241,27 +242,32 @@ class PPP(Tk):
         passlabel = Entry(frame, font=LARGE, width=12)
         passlabel.insert(0, pw)
         passlabel.grid(row=3, column=1)
-
+        # Copy button
         copyU = Button(frame, image=self.copy, bg=BG,command=lambda: Copy.copy(userlabel.get()))
         copyP = Button(frame, image=self.copy, bg=BG, command=lambda: Copy.copy(passlabel.get()))
         copyU.grid(row=2, column=2)
         copyP.grid(row=3, column=2)
-
+        # Update button
         editU = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, userlabel, False, updatemsg1))
         editP = Button(frame, text="Update", bg=BG, fg=FG, font=LARGE, command=lambda: self.update(idnum, passlabel, True, updatemsg2))
         editU.grid(row=2, column=4)
         editP.grid(row=3, column=4)
+        # Update message
         updatemsg1 = Label(frame, text="", bg=BG, fg=FG)
         updatemsg1.grid(row=2, column=5)
         updatemsg2 = Label(frame, text="", bg=BG, fg=FG)
         updatemsg2.grid(row=3, column=5)
-
+        # Generate button
         genU = Button(frame, image=self.gen, bg=BG, command=lambda: [f for f in [userlabel.delete(0, END),userlabel.insert(0, GenPassword.genPassCrypt())]])
         genP = Button(frame, image=self.gen, bg=BG, command=lambda: [f for f in [passlabel.delete(0, END),passlabel.insert(0, GenPassword.genPassCrypt())]])
         genU.grid(row=2, column=3)
         genP.grid(row=3, column=3)
 
+    ## @brief Displays instructions on how to use product
+    #  @details Step by step instructions and link to user guide pdf
+    #  @param frame The frame on which the manual is to be displayed
     def userManual(self, frame):
+        # First, clear frame so it is empty and then add widgets
         self.destroyF(frame)
         logo = Label(frame, bg=BG, image=self.logo)
         logo.pack(padx=10, pady=10)
@@ -269,14 +275,23 @@ class PPP(Tk):
         welcome.pack()
         instructions = Message(frame, text=INSTRUCTIONS, justify="left",bg=BG, fg=FG, font=LARGE, width=400)
         instructions.pack()
+        # When user manual button is clicked, pdf viewer opens up
         link = Button(frame, text="User Manual", bg=BG, fg=FG, font=LARGE, command=lambda: os.startfile(USERMANUAL))
         link.pack()
         
-
+    ## @brief Destroys frame
+    #  @details Recursively destroys each widget in frame
+    #  @paran frame Frame you wish to destroy
     def destroyF(self, frame):
         for widget in frame.winfo_children():
             widget.destroy()
 
+    ## @brief Updates database
+    #  @details when user makes change to password or username, it gets updated in database
+    #  @param i The id number of the entry
+    #  @param new The updated entry
+    #  @param pw Is it a password or username? Boolean value
+    #  @paaram msg Update the message to show that changes were successfully made
     def update(self, i, new, pw, msg):
         updated = new.get()
         if pw:
@@ -290,13 +305,11 @@ class PPP(Tk):
 ## @brief Activates when user is inactive for more than x time
 #  @details Currently shows login by default, can easily add database check
 def inactive():
-    app.destroyF(app)
-    app.configure(background=BGC)
+    app.destroyF(app) # If inactive, destroy all frames
+    app.configure(background=BGC) # Configure new and display home screen
     app.showHomeScreen(LOGIN)
     
 ## @brief resets the timer
-#  @param app The GUI
-#  @param event optional
 def reset_timer():
     global timer
     if timer is not None:
@@ -307,6 +320,7 @@ def reset_timer():
 # Runs application
 app = PPP()
 timer = None
+# Bind all keys and button clicks to reset the timer
 app.bind_all("<Any-KeyPress>", lambda x: reset_timer())
 app.bind_all("<Any-ButtonPress>", lambda x: reset_timer())
 reset_timer()
