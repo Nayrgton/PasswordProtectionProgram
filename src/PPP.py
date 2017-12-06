@@ -27,7 +27,7 @@ class PPP(Tk):
         self.title("Password Protection Program")
         self.geometry(screen_size)
         self.configure(background=BGC)
-        self.wm_iconbitmap('ppp.ico')
+        self.wm_iconbitmap(ICON)
         
         # Relevant icons from Constants.py
         self.view = PhotoImage(file=EYE)
