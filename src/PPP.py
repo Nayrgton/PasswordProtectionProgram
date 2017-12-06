@@ -34,8 +34,7 @@ class PPP(Tk):
         self.copy = PhotoImage(file=COPY)
         self.gen = PhotoImage(file=GENERATE)
         self.delete = PhotoImage(file=DELETE)
-        self.logo = PhotoImage(file=LOGO)
-
+        self.logo = PhotoImage(file=LOGO) # logo file
         # Checks if master password has been initialized or not
         db = database.Account.select()
         if (len(db) == 0):
@@ -48,8 +47,7 @@ class PPP(Tk):
     #  @details Displays the first window which can either be a registration frame or log in frame
     #  @param state List of what goes in the frame, namely if it is a register frame or log in frame
     def showHomeScreen(self, state):
-        # Creating and adding the frame
-        HomeScreen = Frame(self, bg=BGC)
+        HomeScreen = Frame(self, bg=BGC) # Creating and adding the frame
         logo = Label(HomeScreen, bg=BGC, image=self.logo)
         logo.grid(row=0, columnspan=3, padx=20, pady=20)
         welcome = Label(HomeScreen, text=WELCOME, fg=BG, bg=BGC, font=LARGE)
@@ -118,6 +116,7 @@ class PPP(Tk):
             btn = Button(frame, text="\t"+name+"\t", image=self.view, compound="right", fg=FG,bg=BG, font=LARGE, anchor="w", command=lambda i=i: self.viewDetails(i,detailFrame))
             btn.config(height=75, width=60)
             btn.grid(row=8+rnum,columnspan=2, sticky=N+S+E+W)
+            # Have a delete button for all entries except first (master password cannot be deleted)
             if i > 1:
                 delButton = Button(frame, bg=BG,image=self.delete, command=lambda i=i: [f for f in [database.Delete(i), btn.grid_remove(), delButton.grid_remove(), self.destroyF(self), self.showPWPage()]])
                 delButton.grid(row=8+rnum, column=2)
