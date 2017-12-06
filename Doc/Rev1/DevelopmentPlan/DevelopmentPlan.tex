@@ -3,6 +3,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage[usenames, dvipsnames]{color}
 
 \title{SE 3XA3: Development Plan\\Title of Project}
 
@@ -16,14 +18,13 @@
 
 \begin{document}
 
-\begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\begin{table}[bp]
+\caption{\bf Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-% PLEASE CHANGE THIS 
-\today & Suhavi Sandhu, Shabana Dhayananth, Joseph Lu & Initialization\\
+2017-09-29 & 0.0 & Initialization\\
+2017-12-06 & 1.0 & Revision 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -35,11 +36,10 @@
 Development Plan of our product Password Protection Program.
 
 \section{Team Meeting Plan}
-The team will be meeting twice a week, every week, on Tuesdays and Thursdays at Thode library. We have decided to rotate the roles every other week to split responsibilities equally.\\\\
-\textbf{Researcher} - Shabana\\
-\textbf{Team Leader} - Suhavi\\
-\textbf{Scribe} - Joseph\\
-\textbf{Developer} - all\\\\
+The team will be meeting \sout{twice} \textcolor{blue}{once}\ a week, every week outside of labs, on Fridays} at Thode library. \sout{We have decided to rotate the roles every other week to split responsibilities equally.}\\\\
+\textbf{Shabana} - Researcher, Encryption\\
+\textbf{Suhavi} - Team Leader, GUI\\
+\textbf{Joseph} - Scribe, Database\\
 The meeting agenda will be filled out by the scribe after every meeting and uploaded to the git repository for all members to access. Below is a template for the meeting minutes. It notes down the details of the meeting and also provides a guideline for the meeting’s progression. Ideally, we will start by updating the rest of the team with what we have accomplished since the last meeting, followed by items that need to be addressed (problems, opinions, questions), and at the end, what needs to be done by the next meeting. There will also be a written statement on decisions made during the meeting.
 
 % Table goes here\section{Team Communication Plan} \begin{center}
@@ -99,21 +99,21 @@ Milestones will be used to divide our workload and allow the users to work in pa
 \subsection{Will implementation be difficult?}
 The hardest part of the program for us to implement is probably going to be integrating the database into our Python GUI program as our developers have not formally programed in MySQL. As we are currently taking a databases course, we will take advantage of those resources and ask the teaching assistants and instructor for clarification when needed.
 \subsection{Will testing be difficult?}
-Testing the encryption on our program may be difficult as we are not hackers and do not really have experience or knowledge in trying to break through encryptions. Therefore, we will mainly focus on testing the user interface. We will also be researching the Python cryptography library that we intend to use to ensure its credibility.
+\sout{Testing the encryption on our program may be difficult as we are not hackers and do not really have experience or knowledge in trying to break through encryptions.} \textcolor{blue}{The testing of the Python cryptography library that we will be using for the project is out of our scope as we do not have the necessary knowledge or techniques to do so. Instead, we will be assuming that as it is a Python library, Python has conducted sufficient testing to ensure the security of the library.} Therefore, we will mainly focus on testing the user interface. \sout{We will also be researching the Python cryptography library that we intend to use to ensure its credibility.}
 \subsection{Is a required library difficult to install?}
-The required libraries should be easy to install with the python package manager pip.
+The required libraries should be easy to install with the python package manager pip. \textcolor{blue}{The libraries that will need to be installed for the project are cryptography, peewee, pyperclip and tkinter.}
 \subsection{Will portability be a concern?}
 Portability should not be a concern as long as all the dependencies are downloaded.
 
 \section{Technology}
-We will be using Python as the main language to create our application. Our main library to create the GUI is the Python library tkinter. The encryption method we will use is provided by the python library cryptography. The primary IDE we will use is IDLE and the primary form of testing will be done on pyunit. Our documentation generation will be done with Doxygen and our reports will be written in latex. The database that will store the usernames and passwords will be MariaDB.
+We will be using Python as the main language to create our application. Our main library to create the GUI is the Python library tkinter. The encryption method we will use is provided by the python library cryptography. The primary IDE we will use is IDLE and the primary form of testing will be done on pyunit. Our documentation generation will be done with Doxygen and our reports will be written in latex. The database that will store the usernames and passwords will be \sout{MariaDB} \textcolor{blue}{SQLite via peewee}.
 
 \section{Coding Style}
 We are planning to following the Python coding style\\
 \href{https://google.github.io/styleguide/pyguide.html}{Python Coding Syle}
 
 \section{Project Schedule}
-\href{run:../../ProjectSchedule/GanttChart.gan}{Gantt chart}
+\href{run:../../ProjectSchedule/Gantt-FinalSubmission.pdf}{Gantt chart}
 
 \section{Project Review}
 \end{document}
