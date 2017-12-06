@@ -2,6 +2,8 @@
 
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage[normalem]{ulem}
+\usepackage[usenames, dvipsnames]{color}
 
 \title{SE 3XA3: Problem Statement\\PasswordProtectionProgram}
 
@@ -11,38 +13,39 @@
 		\\ Joseph Lu, luy89
 }
 
-\date{September 25, 2017}
+\date{\today}
 
 \iffalse \input{../Comments} \fi
 
 \usepackage{microtype}
 \begin{document}
 
-\iffalse
-\begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+
+\begin{table}[bp]
+\caption{\bf Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-September 25, 2017 & Suhavi Sandhu\\Shabana Dhayananth\\Joseph Lu & Initial Problem Statement\\
+2017-09-25 & 0.0 & Initial Problem\\
+2017-12-06 & 1.0 & Revision 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \newpage
-\fi
 
 \maketitle
 
 \section*{What is the problem?}
-Online security is becoming more relevant than ever. Strong passwords are often easy to forget and therefore, people tend to opt for weaker passwords usually containing simple word or number combinations. The problem that we are trying to solve pertains to the difficulty people have with deciding on, remembering and storing their passwords. Furthermore, users have a tendency to use duplicate passwords for different services and the same password for years, according to a survey conducted by TeleSign, a mobile identity company\footnote{“Password Statistics: The Bad, the Worse and the Ugly (Infographic)”, Carly Okyle, 2015, https://www.entrepreneur.com/article/246902}. This makes them more susceptible to security threats. Overall, the biggest issue with online security is human fallibility.
+Online security is becoming more relevant than ever. Strong passwords are often easy to forget and therefore, people tend to opt for weaker passwords usually containing simple word or number combinations. \textbf{The problem that we are trying to solve pertains to the difficulty people have with deciding on, remembering and storing their passwords.} Furthermore, users have a tendency to use duplicate passwords for different services and the same password for years, according to a survey conducted by TeleSign, a mobile identity company\footnote{“Password Statistics: The Bad, the Worse and the Ugly (Infographic)”, Carly Okyle, 2015, https://www.entrepreneur.com/article/246902}. This makes them more susceptible to security threats. Overall, the biggest issue with online security is human fallibility.
 
 \section*{Why is this problem important?}
-We are in an age where almost all services provided to consumers, including banking, health records and social media, have a website or app that requires the creation of a password protected account. Many of these accounts store sensitive personal information that if compromised, could lead to identity theft, and risk other individuals associated with the account (for example the victim’s email contacts). According to a guide released by The Office of the Privacy Commissioner of Canada, in order to safeguard information online, it is best to create unique, strong passwords and change them often\footnote{Identity Theft and You,” Public Works and Government Services Canada, 2014,  https://www.priv.gc.ca/media/2034/guide\_idt\_e.pdf}. However, most people do not do this as it is difficult to keep track of updating passwords and remembering the new ones. We hope to facilitate this issue by creating a password manager where one can safely store and access all of the passwords they use while only having to remember one strongly encrypted password.
+We are in an age where almost all services provided to consumers, including banking, health records and social media, have a website or app that requires the creation of a password protected account. Many of these accounts store sensitive personal information that if compromised, could lead to identity theft, and risk other individuals associated with the account (for example the victim’s email contacts). According to a guide released by The Office of the Privacy Commissioner of Canada, in order to safeguard information online, it is best to create unique, strong passwords and change them often\footnote{Identity Theft and You,” Public Works and Government Services Canada, 2014,  https://www.priv.gc.ca/media/2034/guide\_idt\_e.pdf}. However, most people do not do this as it is difficult to keep track of updating passwords and remembering the new ones. We hope to facilitate this issue by creating a password manager where one can \sout{safely} \textcolor{blue}{securely} store and access all of \textcolor{blue}{their} passwords \sout{they use while only having to remember one strongly encrypted password} \textcolor{blue}{through the use of one master password.}.
 
 \section*{What is the context of this problem?}
-The stakeholders in this case are users of online services that want a place to store their passwords safely and also want a means of generating stronger passwords. The services for which the passwords are created are also affected by the problem as they have to deal with security threats and users that forget their passwords. Identity thieves play a role as they are able to breach users’ personal information due to weak passwords and weak encryption methods. Lastly, the development team is a stakeholder as programmers attempting to solve the problem at hand. An existing solution is Padlock, an open-source password management application that is available for desktop and mobile, running on Windows, Macintosh, Unix, iOS and Android environments. We will be re-implementing this application to learn more about encryption and password security, developing an offline version for desktop, suitable for Windows, Macintosh or Unix environments. 
+The stakeholders in this case are users of online services that want a place to store their passwords safely and also want a means of generating stronger passwords. The services for which the passwords are created are also affected by the problem as they have to deal with security threats and users that forget their passwords. Identity thieves play a role as they are able to breach users’ personal information due to weak passwords and weak encryption methods. Lastly, the development team is a stakeholder as programmers attempting to solve the problem at hand. \\
+\\
+An existing solution is Padlock, an open-source password management application that is available for desktop and mobile, running on Windows, Macintosh, Unix, iOS and Android environments. We will be re-implementing this application \textcolor{blue}{in order to design a more intuitive User Interface and} to learn more about encryption and password security. \textcolor{blue}{We intend to develop an offline version for desktop that is convenient for home use and} suitable for Windows, Macintosh or Unix environments. 
 
 \section*{Bibliography}
 
