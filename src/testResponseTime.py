@@ -23,7 +23,7 @@ class testResponseTime(unittest.TestCase):
         end = time.time()
         self.assertTrue((end-start) <= Constants.PROC_TIME)
         
-    ## @brief Test error time
+    ## @brief Test error time of incorrect password 
     def test_NFR_PER_2(self):
         start = time.time()
         PWChecking.checkMP("Password")
