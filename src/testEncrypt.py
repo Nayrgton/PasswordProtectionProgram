@@ -7,7 +7,7 @@ import unittest
 import Encrypt
 import GenPassword
 
-## @brief This class is used to test the functions in Encrypt.py
+## @brief This class is used to test the functions in Encrypt.py and the functional requirements FR8 and FR11
 class testEncrypt(unittest.TestCase):
 
     ## @brief This method creates various passwords and their associated keys

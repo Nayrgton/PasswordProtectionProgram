@@ -7,7 +7,7 @@
 import unittest
 import GenPassword
 
-## @brief This class is used to test the functions in GenPassword.py
+## @brief This class is used to test the functions in GenPassword.py and functional requirement FR6
 class testGenPassword(unittest.TestCase):
 
     ## @brief This method creates various passwords and their associated keys
