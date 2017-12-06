@@ -21,6 +21,7 @@ COPY = "icons/copy.gif"
 GENERATE = "icons/flash.gif"
 DELETE = "icons/delete.gif"
 LOGO = "icons/ppp.gif"
+ICON = "icons/ppp.ico"
 
 WELCOME = "Welcome to the Password Protection Program"
 
@@ -37,8 +38,10 @@ LOGIN = {
 FIELDS = ["Name", "Type", "Username", "Password"]
 
 # Error Time
+ERR_TIME = 1000
 
 # Processing Time
+PROC_TIME = 1000
 
 USERMANUAL = "..\\Doc\\UserGuide\\UserGuide.pdf"
 
