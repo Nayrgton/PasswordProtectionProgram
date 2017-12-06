@@ -51,4 +51,4 @@ INSTRUCTIONS = "1) Add entries on the top-left hand corner!\
 
 
 # Inactivity Period
-INACTIVITY = 60000
+INACTIVITY = 30000
