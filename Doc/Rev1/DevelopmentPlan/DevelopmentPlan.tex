@@ -5,6 +5,16 @@
 \usepackage{hyperref}
 \usepackage[normalem]{ulem}
 \usepackage[usenames, dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
 
 \title{SE 3XA3: Development Plan\\Title of Project}
 
@@ -18,6 +28,14 @@
 
 \begin{document}
 
+\maketitle
+
+\newpage
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+
 \begin{table}[bp]
 \caption{\bf Revision History} \label{TblRevisionHistory}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
@@ -29,9 +47,11 @@
 \end{tabularx}
 \end{table}
 
+
+
 \newpage
 
-\maketitle
+\pagenumbering{arabic}
 
 Development Plan of our product Password Protection Program.
 
@@ -97,7 +117,7 @@ Milestones will be used to divide our workload and allow the users to work in pa
 
 \section{Proof of Concept Demonstration Plan}
 \subsection{Will implementation be difficult?}
-The hardest part of the program for us to implement is probably going to be integrating the database into our Python GUI program as our developers have not formally programed in MySQL. As we are currently taking a databases course, we will take advantage of those resources and ask the teaching assistants and instructor for clarification when needed.
+The hardest part of the program for us to implement is probably going to be integrating the database into our Python GUI program as our developers have not formally programed in \sout{MySQL} \textcolor{blue}{SQLite}. As we are currently taking a databases course, we will take advantage of those resources and ask the teaching assistants and instructor for clarification when needed.
 \subsection{Will testing be difficult?}
 \sout{Testing the encryption on our program may be difficult as we are not hackers and do not really have experience or knowledge in trying to break through encryptions.} \textcolor{blue}{The testing of the Python cryptography library that we will be using for the project is out of our scope as we do not have the necessary knowledge or techniques to do so. Instead, we will be assuming that as it is a Python library, Python has conducted sufficient testing to ensure the security of the library.} Therefore, we will mainly focus on testing the user interface. \sout{We will also be researching the Python cryptography library that we intend to use to ensure its credibility.}
 \subsection{Is a required library difficult to install?}
@@ -116,6 +136,10 @@ We are planning to following the Python coding style\\
 \href{run:../../ProjectSchedule/Gantt-FinalSubmission.pdf}{Gantt chart}
 
 \section{Project Review}
-When looking back on the development plan after finishing the project, we see that we may have been a bit ambitious in the organization of roles and
+\textcolor{blue}{When looking back on the development plan after finishing the project, we see that we may have been a bit ambitious in the organization of roles and work. Although we had initially intended to rotate the member roles every week, we were quick to realize that this wasn't really feasible and hard to keep track of in the long run. Therefore, the major roles were left as initially assigned throughout the project.} \\
+
+\textcolor{blue}{Also, we had hoped to have 2 meetings a week, we could rarely get a significant amout of work done during the lab periods so instead we often met of Fridays so that we could work on a large portion of the project at once.} \\
+
+\textcolor{blue}{The team communicated with each other and used Git as intended so this really facilitated staying on track with the implementation even though we were all working on separate parts.}
 
 \end{document}
