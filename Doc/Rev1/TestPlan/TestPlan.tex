@@ -1,6 +1,7 @@
 \documentclass[12pt, titlepage]{article}
 
 \usepackage{booktabs}
+\usepackage{ulem}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -39,7 +40,7 @@
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
-\listoffigures
+
 
 \begin{table}[bp]
 \caption{\bf Revision History}
@@ -641,7 +642,7 @@ How test will be performed: Database will be accessed directly to view format of
 
 \sout{Input: User enters new master password}
 
-\sout{Output: Password is checked against strength criteria, and if those are met,} new password is saved and old password deleted}
+\sout{Output: Password is checked against strength criteria, and if those are met, new password is saved and old password deleted}
 
 \sout{How test will be performed: Change master password option will only be displayed if the user is logged in and on the settings page.}
 
@@ -728,7 +729,7 @@ Refer to Table 6 and Table 7
         NFR13 & The program shall run on Windows, OSX and Linux OS & Low & NFR-OER-1\\\hline
         NFR14 & The product will be available as open source. & Low & N/A\\\hline
         NFR15 & The product shall only store account types, usernames and encrypted passwords. & High & NFR-SR-1\\\hline
-        NFR16 & Master password cannot be modified unless user is already logged in & Hight & \sout{NFR-SR-2}\\\hline
+        NFR16 & Master password cannot be modified unless user is already logged in & High & \sout{NFR-SR-2}\\\hline
         NFR17 & The product shall contain security measures in order to prevent the data from being accessed directly from the user’s machine & High & NFR-SR-3\\\hline
         NFR18 & The product shall not distribute the user’s personal information to third parties & High & N/A\\
 
