@@ -13,7 +13,7 @@
     colorlinks,
     citecolor=black,
     filecolor=black,
-    linkcolor=black,
+    linkcolor=red,
     urlcolor=blue
 }
 \usepackage[round]{natbib}
@@ -45,6 +45,7 @@
 Oct 6, 2017 & 1.0 & section 1, 2, 5 \\
 Oct 7, 2017 & 1.1 & section 3, 4, 6, tables, figures \\
 Oct 27, 2017 & 1.2 & Revision \\
+Dec 6, 2017 & 1.3 & 
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -79,7 +80,7 @@ The stakeholders of this project are:
 
 \subsubsection{Solution Constraints}
 
-\textbf{Description}: The product shall operate on all Operating Systems with python installed. (i.e. Windows, OSX, Linux) through a gui app.
+\textbf{Description}: The product shall operate on all Operating Systems with Python installed. (i.e. Windows, OSX, Linux) through a GUI app.
 \\
 \textbf{Rationale}: The client will use all of these operating systems
 \\
@@ -87,15 +88,15 @@ The stakeholders of this project are:
 
 \subsubsection{Partner or Collaborative Applications}
 
-The product does not have any direct partner or collaborative applications. This product is fully built on python and MariaDB and will be able to be executed in the desktop.
+The product does not have any direct partner or collaborative applications. This product is fully built on Python and \sout{MariaDB} \textcolor{blue}{SQLite} and will be able to be executed in the desktop.
 
 \subsubsection{Off-the-Shelf Software}
 
 The off-the-shelf software required for this product to be implemented:
 \begin{itemize}
 \item Python
-\item MariaDB
-\item Tkinter (python library)
+\item \sout{MariaDB} \textcolor{blue}{SQLite}
+\item Tkinter (Python library)
 \end{itemize}
 All the software that is required is open source and can be found on the internet.
 
@@ -131,9 +132,9 @@ There is a deadline in December for the project to be completed.
 	\hline
 	Key & A piece of information that determines the output of a cryptographic algorithm \\
 	\hline
-	MariaDB & A community-developed fork of the MySQL relational database management system which will be used to locally store usernames and databases \\
+	\sout{MariaDB} & \sout{A community-developed fork of the MySQL relational database management system which will be used to locally store usernames and databases} \\
 	\hline
-	Padlock & The original password management software \\
+	\textcolor{blue}{SQLite} & \textcolor{blue}{An SQL based Database Management System that requires very little administration, is free and is compact.}
 	\hline
 	PW & Abbreviation for password \\
 	\hline
@@ -152,7 +153,7 @@ Some relevant facts regarding this project are that the original program has 298
 The program has a GNU General Public Licence v3.0 licence and can be run on Windows, Unix and Linux 
 operating systems as well as iOS and Android mobile devices. The team will be using symmetric encryption
  from the cryptography library, which implements AES with a 128-bit key for encryption. AES is chosen by the 
-U.S. government to protect classified information throughout the world to encrypt sensitive data. A relevant 
+U.S. government to encrypt sensitive data to protect classified information throughout the world. A relevant 
 fact about passwords that has to do with the project is that passwords are easily hacked because humans 
 follow similar patterns. For instance, the numbers ‘1’ and ‘2’ are common and capital letters are often used at
  the beginning of passwords. Lastly, it should be noted that the original product implemented AES and used 
@@ -160,7 +161,7 @@ PBKDF2, a key derivation function that reduces the chance of brute force attacks
 \\
 \\
 Some assumptions made the developers are that the cryptography library will be enough for our needs and does
- not need to be tested for its encryption since that would require executing brute force attacks. Also, it is 
+ not need to be tested for \textcolor{blue}{the strength of its encryption} since that would require executing brute force attacks. Also, it is 
 assumed that there is a need for users to store their usernames and passwords safely. Lastly, it is assumed 
 that Python code can run on Windows, Unix and Linux environments. 
 
@@ -211,9 +212,9 @@ one for multiple accounts. This makes them more susceptible to security threats.
 	\hline
 	FR4 & The user must be able to enter a master password & To access and create passwords and usernames & Enter correct PW and incorrect PW \\
 	\hline
-	FR5 & The new user must be able to add a new entry \textcolor{blue}{to the manager consisting of username, password and type} & To allow the user to store a new username and password \textcolor{blue}{and specify the kind of account it is for} & Create new entry, \textcolor{blue}{by clicking the ‘add’ button, add verify that the application does not give an error and that entry appears} \\
+	FR5 & The new user must be able to add a new entry \textcolor{blue}{to the manager consisting of username, password account name and account type} & To allow the user to store a new username and password \textcolor{blue}{and specify the kind of account it is for} & Create new entry, \textcolor{blue}{by clicking the ‘add’ button, add verify that the application does not give an error, the entry gets saved in the database and that the entry appears} \\
 	\hline
-	FR6 & The user should be able to generate a random password \textcolor{blue}{ by going to the Generate button} & To allow for a stronger password & Generate multiple PWs and verify randomness \\
+	FR6 & The user should be able to generate a random password \textcolor{blue}{ by going to the Generate button} & To allow for a stronger password & Generate multiple PWs and \textcolor{blue}{verify that they fit the password criteria and are unique from each other} \\
 	\hline
 	FR7 & The user interface must have a link to the user manual & To aid the user in using the software & Manual link should take user to manual \\
 	\hline
@@ -229,9 +230,9 @@ one for multiple accounts. This makes them more susceptible to security threats.
 	\hline
 	Name & Description & Rationale & Fit Criterion\\
 	\hline
-	FR9 & The application should have buttons to directly copy username and password & To allow user to easily input long usernames or passwords & Copy existing password and verify that it pastes onto various text inputters \\
+	FR9 & The application should have buttons to directly copy username and password & To allow user to easily input long usernames or passwords & Copy existing password and verify that it pastes \textcolor{blue}{correctly} onto various text inputters \\
 	\hline
-	FR10 & The user should be able to change their master password & To allow the user to regularly update PW & Update PW from Settings and verify that new PW works and old one does not \\
+	FR10 & The user should be able to change their master password & To allow the user to regularly update PW & \textcolor{blue}{Change and update PW in} \sout{Settings} \textcolor{blue}{Master PW entry information} and verify that new PW works and old one does not on PW entry page\\
 	\hline
 	FR11 & \textcolor{blue}{When a user adds a new entry, the software should encrypt the input} & \textcolor{blue}{To protect the user’s information and prevent others from being able to see it} & \textcolor{blue}{Create new entry by clicking the ‘add’ button and verify that the database has a new entry with an encrypted string as the fields} \\
 \hline
