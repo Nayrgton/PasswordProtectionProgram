@@ -56,43 +56,58 @@
 Development Plan of our product Password Protection Program.
 
 \section{Team Meeting Plan}
-The team will be meeting \sout{twice} \textcolor{blue}{once}\ a week, every week outside of labs, on Fridays} at Thode library. \sout{We have decided to rotate the roles every other week to split responsibilities equally.}\\\\
+The team will be meeting \sout{twice} \textcolor{blue}{once a week, every week outside of labs, on Fridays} at Thode library. \sout{We have decided to rotate the roles every other week to split responsibilities equally.}\\\\
 \textbf{Shabana} - Researcher, Encryption\\
 \textbf{Suhavi} - Team Leader, GUI\\
 \textbf{Joseph} - Scribe, Database\\
-The meeting agenda will be filled out by the scribe after every meeting and uploaded to the git repository for all members to access. Below is a template for the meeting minutes. It notes down the details of the meeting and also provides a guideline for the meeting’s progression. Ideally, we will start by updating the rest of the team with what we have accomplished since the last meeting, followed by items that need to be addressed (problems, opinions, questions), and at the end, what needs to be done by the next meeting. There will also be a written statement on decisions made during the meeting.
 
-% Table goes here\section{Team Communication Plan} \begin{center}
-\begin{center}
-    \begin{tabular}{ |p{3cm}||p{2cm}||p{3cm}||p{6cm}| }
-        \hline
-        \hline
-            \multicolumn{4}{|c|}{\textbf{Meeting Minutes}} \\ \multicolumn{4}{|c|}{\textbf{Meeting Minutes}} \\
-        \hline
-        \hline
-            \textbf{Meeting no}& \textbf{Location}&\textbf{Meeting Date}&\textbf{Attendees}\\ 
-	    \textbf{Meeting no}& \textbf{Location}&\textbf{Meeting Date}&\textbf{Attendees}\\
-        \hline
-            {}& {}&{}&{}\\
-        \hline
-            \multicolumn{4}{|l|}{\textbf{Update on what happened since last meeting: }} \\ 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-	\hline
-            \multicolumn{4}{|l|}{\textbf{Issues discussed this meeting: }} \\ 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-	\hline
-            \multicolumn{4}{|l|}{\textbf{What to do until next meeting: }} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-	\hline
-            \multicolumn{4}{|l|}{\textbf{Decisions made: }} \\
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-            \multicolumn{4}{|l|}{\setlength\extrarowheight{5em}} \\ 
-	\hline
-    \end{tabular}
-\end{center}
+% Table goes here
+
+\begin{table}[bp]
+\caption{\bf Meeting Minutes Template} \label{TblMeetMin}
+\begin{tabularx}{\textwidth}{ |X||X||X||X| }
+    \hline
+    \hline
+        \multicolumn{4}{|c|}{\textbf{Meeting Minutes}} \\ 
+    \hline
+    \hline
+
+    \textbf{Meeting no} & \textbf{Location} & \textbf{Meeting Date} & \textbf{Attendees}\\
+    \hline
+	
+	 & & & \\
+
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{Update on what happened since last meeting: }} \\
+		
+    \multicolumn{4}{|l|}{ }\\
+    \multicolumn{4}{|l|}{ }\\
+
+    \hline
+    
+    \multicolumn{4}{|l|}{\textbf{Issues discussed this meeting: }}\\
+
+    \multicolumn{4}{|l|}{ }\\
+    \multicolumn{4}{|l|}{ }\\ 
+
+    \hline
+
+    \multicolumn{4}{|l|}{\textbf{What to do until next meeting: }} \\
+
+    \multicolumn{4}{|l|}{ }\\
+    \multicolumn{4}{|l|}{ }\\
+
+    \hline
+        \multicolumn{4}{|l|}{\textbf{Decisions made: }} \\
+    \hline
+\end{tabularx}
+\end{table}
+
+
+The meeting agenda will be filled out by the scribe after every meeting and uploaded to the git repository for all members to access. Below is a template for the meeting minutes. It notes down the details of the meeting and also provides a guideline for the meeting’s progression. Ideally, we will start by updating the rest of the team with what we have accomplished since the last meeting, followed by items that need to be addressed (problems, opinions, questions), and at the end, what needs to be done by the next meeting. There will also be a written statement on decisions made during the meeting. \hyperref[TblMeetMin]{Meeting Minutes Template}
+
+
 \section{Team Communication Plan}
 
 The team will primarily use the phone to communicate any issues, changes and progress made on the project. For minor announcements, there will be a Facebook group where we can schedule and confirm meeting times. If there is an important issue that has to do with the code or design of the project, we will be using git issues. When working on the reports, we will be using Google Docs to allow everyone to contribute at the same time and then the scribe will format them into latex for uploading.
@@ -108,9 +123,9 @@ The team will primarily use the phone to communicate any issues, changes and pro
 
 \textbf{Branching Workflow}
 \begin{itemize}
-    \item master - branch to host our stable code
-    \item develop - branch to develop our program
-    \item each additional branch is used to implement specific parts of the program
+    \item \sout{master - branch to host our stable code}
+    \item \sout{develop - branch to develop our program}
+    \item each \sout{additional} branch is used to implement specific parts of the program
 \end{itemize}
 Tags will be use when major milestones are reached or there is a major issue that needs attention.\\
 Milestones will be used to divide our workload and allow the users to work in parallel.
@@ -140,6 +155,6 @@ We are planning to following the Python coding style\\
 
 \textcolor{blue}{Also, we had hoped to have 2 meetings a week, we could rarely get a significant amout of work done during the lab periods so instead we often met of Fridays so that we could work on a large portion of the project at once.} \\
 
-\textcolor{blue}{The team communicated with each other and used Git as intended so this really facilitated staying on track with the implementation even though we were all working on separate parts.}
+\textcolor{blue}{The team communicated with each other as intended and used separate git workflow branches for the different parts of the code which really facilitated staying on track with the implementation even though we were all working on separate parts.}
 
 \end{document}
