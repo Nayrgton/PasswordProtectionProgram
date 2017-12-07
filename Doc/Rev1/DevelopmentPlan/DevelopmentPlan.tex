@@ -1,5 +1,8 @@
 \documentclass{article}
 
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -35,6 +38,7 @@
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
+\listoffigures
 
 \begin{table}[bp]
 \caption{\bf Revision History} \label{TblRevisionHistory}
@@ -112,6 +116,8 @@ The meeting agenda will be filled out by the scribe after every meeting and uplo
 
 The team will primarily use the phone to communicate any issues, changes and progress made on the project. For minor announcements, there will be a Facebook group where we can schedule and confirm meeting times. If there is an important issue that has to do with the code or design of the project, we will be using git issues. When working on the reports, we will be using Google Docs to allow everyone to contribute at the same time and then the scribe will format them into latex for uploading.
 
+\newpage
+
 \section{Team Member Roles}
 
 \textbf{Team Leader} - Schedules meetings and delegates work to the other members as well as him/herself. Ideally, this member will make sure the git repo has no conflicts and looks clean.\\\\
@@ -149,6 +155,13 @@ We are planning to following the Python coding style\\
 
 \section{Project Schedule}
 \href{run:../../ProjectSchedule/Gantt-FinalSubmission.pdf}{Gantt chart}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{images/Gantt.png}
+	\caption{Gantt Chart}
+	\label{fig:gantt}
+\end{figure}
 
 \section{Project Review}
 \textcolor{blue}{When looking back on the development plan after finishing the project, we see that we may have been a bit ambitious in the organization of roles and work. Although we had initially intended to rotate the member roles every week, we were quick to realize that this wasn't really feasible and hard to keep track of in the long run. Therefore, the major roles were left as initially assigned throughout the project.} \\
