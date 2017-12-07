@@ -392,7 +392,9 @@ implementation of B.  Figure \ref{FigUH} illustrates the use relation between
 the modules. It can be seen that the graph is a directed acyclic graph
 (DAG). Each level of the hierarchy offers a testable and usable subset of the
 system, and modules in the higher level of the hierarchy are essentially simpler
-because they use modules from the lower levels.
+because they use modules from the lower levels. 
+
+\textcolor{blue}{After finishing the implementation of the project, we learned that the Inactivity function for the system would not work unless the inactivity code was integrate with the GUI, which is why the Inactivity module (M8) had to be removed. It should also be omitted from the graph below. Also, the customization by account type (AC5) was not implemented so that was removed from this document as well.}
 
 \begin{figure}[H]
 \centering
@@ -400,6 +402,8 @@ because they use modules from the lower levels.
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
+
+\newpage
 
 %\section*{References}
 
