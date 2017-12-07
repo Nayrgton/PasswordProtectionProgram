@@ -6,6 +6,6 @@
 import pyperclip
 
 ## @brief Copies the text
-#  @param text The text to be copieds
+#  @param text The text to be copied
 def copy(text):
     pyperclip.copy(text)
