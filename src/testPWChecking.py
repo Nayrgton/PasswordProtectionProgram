@@ -43,8 +43,8 @@ class testPWChecking(unittest.TestCase):
         self.assertEqual(PWChecking.checkMP(self.mp5), "Password cannot be empty")
 
     ## @brief This method is used to test FR-MP-6, which checks that an empty password upon login gives the appropriate message
-    def test_FRMP6(self):
-        self.assertEqual(PWChecking.checkLogIn(self.mp6, self.actual), "Password cannot be empty")
+    #def test_FRMP6(self):
+     #   self.assertEqual(PWChecking.checkLogIn(self.mp6, self.actual), "Password cannot be empty")
 
     ## @brief This method is used to test FR-MP-7, which checks that a password upon login that is same as actual returns True
     def test_FRMP7(self):
