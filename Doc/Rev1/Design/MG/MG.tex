@@ -113,11 +113,11 @@ adapted here is called design for change.
   the graphical user interface.
   \item[\refstepcounter{acnum} \actheacnum \label{acDatabase}:] The database management system that is used to store sensitive information.
   \item[\refstepcounter{acnum} \actheacnum \label{acEncryption}:] The encryption library that secures user information.
-  \item[\refstepcounter{acnum} \actheacnum \label{acUserCustom}:] \sout{Customization functionality for the user (ex. change the inactivity time before the application logs out).}
+  \item[\refstepcounter{acnum} \actheacnum \label{acUserCustom}:] \sout{Customization functionality for the user ex. change the inactivity time before the application logs out.}
   \item[\refstepcounter{acnum} \actheacnum \label{acDBAttributes}:] The attributes of the database.
-  \item[\refstepcounter{acnum} \actheacnum \label{acPassGenFunc}:] Additional functionality from password generator (ex. constraining the random password to have only numbers, special characters).
-  \item[\refstepcounter{acnum} \actheacnum \label{acPortability}:] The portability of the application (ex. allow the application to be used online).
-  \item[\refstepcounter{acnum} \actheacnum \label{acUnderstand}:] \textcolor{blue}{The design of the icons/buttons used in the application (ex. the lightning bolt symbol for the generate button)}.
+  \item[\refstepcounter{acnum} \actheacnum \label{acPassGenFunc}:] Additional functionality from password generator ex. constraining the random password to have only numbers, special characters.
+  \item[\refstepcounter{acnum} \actheacnum \label{acPortability}:] The portability of the application ex. allow the application to be used online.
+  \item[\refstepcounter{acnum} \actheacnum \label{acUnderstand}:] \textcolor{blue}{The design of the icons/buttons used in the application ex. the lightning bolt symbol for the generate button}.
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -152,8 +152,8 @@ actually be implemented.
   \item [\refstepcounter{mnum} \mthemnum \label{mIn}:] Input Module
   \item [\refstepcounter{mnum} \mthemnum \label{mPG}:] Password Generator Module
   \item [\refstepcounter{mnum} \mthemnum \label{mEH}:] Encryption Handling Module
-  \item [\refstepcounter{mnum} \mthemnum \label{mPCUC}:] Password Checking Upon Creation Module
-  \item [\refstepcounter{mnum} \mthemnum \label{mPCUL}:] Password Checking Upon Login Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mPCUC}:] Password Checking \sout{Upon Creation} Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mPCUL}:] \sout{Password Checking Upon Login Module}
   \item [\refstepcounter{mnum} \mthemnum \label{mGUI}:] GUI Module
   \item [\refstepcounter{mnum} \mthemnum \label{mCop}:] Copy Module
   \item [\refstepcounter{mnum} \mthemnum \label{mInac}:] \sout{Inactivity Module}
@@ -184,8 +184,8 @@ actually be implemented.
 \midrule
 
 \multirow{3}{0.3\textwidth}{Software Decision Module} 
-& Password Checking Upon Creation\\
-& Password Checking Upon Login Module\\
+& Password Checking \sout{Upon Creation}\\
+& \sout{Password Checking Upon Login Module}\\
 & \sout{Inactivity Module}\\
 & Constants Module\\
 \bottomrule
@@ -275,20 +275,20 @@ Not applicable as the system is software-based and the lowest level that the sof
 
 \subsection{Software Decision Module}
 
-\subsubsection{Password Check Upon Creation (\mref{mPCUC})}
+\subsubsection{Password Checking (\mref{mPCUC})}
 
 \begin{description}
-\item[Secrets:] The algorithm used to check the created master password.
+\item[Secrets:] The algorithm used to check the created \textcolor{blue}{or entered} master password.
 \item[Services:] Informs user if the password is missing key elements, such as upper and lower case letters, a number, a special character, and a minimum length of 8.
 \item[Implemented By:] PasswordProtectionProgram and Python Libraries (re)
 \end{description}
 
-\subsubsection{Password Check Upon Login (\mref{mPCUL})}
+\subsubsection{Password Checking Upon Login (\mref{mPCUL})}
 
 \begin{description}
-\item[Secrets:] The algorithm used to verify that the user entered the correct master password.
-\item[Services:] Verifies input password against one stored in database.
-\item[Implemented By:] PasswordProtectionProgram and Python Libraries (re)
+\item[Secrets:] \sout{The algorithm used to verify that the user entered the correct master password.}
+\item[Services:] \sout{Verifies input password against one stored in database.}
+\item[Implemented By:] \sout{PasswordProtectionProgram and Python Libraries (re)}
 \end{description}
 
 \subsubsection{Inactivity Module (\mref{mInac})}
@@ -323,13 +323,13 @@ requirements and between the modules and the anticipated changes.
 \textcolor{blue}{FR1} & \mref{mGUI}, \mref{mCons}\\
 FR2 & \mref{mDB}\\
 FR3 & \mref{mPCUC}\\
-FR4 & \mref{mPCUL}\\
+FR4 & \sout{\mref{mPCUL}}\\
 FR5 & \mref{mIn}, \mref{mGUI}\\
 FR6 & \mref{mPG}\\
 FR7 & \mref{mGUI}\\
 FR8 & \mref{mEH}, \mref{mDB}\\
 FR9 & \mref{mCop}\\
-\textcolor{blue}{FR10} & \mref{\sout{mPCUC}}, \mref{mPGUI}, \mref{mDB}\\
+\textcolor{blue}{FR10} & \sout{\mref{mPCUC}}, \mref{mPGUI}, \mref{mDB}\\
 \textcolor{blue}{FR11} & \mref{mEH}, \mref{mDB}\\
 \textcolor{blue}{FR12} & \mref{mGUI}, \mref{mDB}\\
 \textcolor{blue}{FR13} & \mref{mGUI}, \mref{mDB}\\
@@ -348,14 +348,14 @@ FR9 & \mref{mCop}\\
 NFR1 & \mref{mGUI}\\
 NFR2 & \mref{mIn}, \mref{mGUI}\\
 NFR3 & \mref{mIn}, \mref{mGUI}\\
-\sout{NFR7} & \mref{\sout{m}}\\
+\sout{NFR7} & \sout{\mref{m}}\\
 \textcolor{blue}{NFR9} & \mref{mIn}, \mref{mGUI}, \mref{mCons}\\
 NFR11 & \mref{mCons}, \mref{mGUI}\\
 NFR12 & \mref{mCons}, \mref{mGUI}\\
 NFR13 & \mref{mIn}\\
 NFR15 & \mref{mEH}, \mref{mDB}\\
 NFR16 & \mref{mEH}, \mref{mPCUL}\\
-\textcolor{blue}{NFR17} & \mref{\sout{mInac}}, \mref{mGUI}\\
+\textcolor{blue}{NFR17} & \sout{\mref{mInac}}, \mref{mGUI}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Non-Functional Requirements and Modules}
@@ -372,7 +372,7 @@ NFR16 & \mref{mEH}, \mref{mPCUL}\\
 \acref{acFramework} & \mref{mGUI}\\
 \acref{acDatabase} & \mref{mDB}\\
 \acref{acEncryption} & \mref{mEH}\\
-\acref{\sout{acUserCustom}} & \mref{\sout{mCons}\\}\\
+\sout{\acref{acUserCustom}} & \sout{\mref{mCons}}\\
 \acref{acDBAttributes} & \mref{mDB}\\
 \acref{acPassGenFunc} & \mref{mPG}\\
 \acref{acPortability} & \mref{mGUI}\\
@@ -395,7 +395,11 @@ the modules. It can be seen that the graph is a directed acyclic graph
 system, and modules in the higher level of the hierarchy are essentially simpler
 because they use modules from the lower levels. 
 
-\textcolor{blue}{After finishing the implementation of the project, we learned that the Inactivity function for the system would not work unless the inactivity code was integrate with the GUI, which is why the Inactivity module (M8) had to be removed. It should also be omitted from the graph below. Also, the customization by account type (AC5) was not implemented so that was removed from this document as well.}
+\textcolor{blue}{After finishing the implementation of the project, we learned that 
+the Inactivity function for the system would not work unless the inactivity code was 
+integrate with the GUI, which is why the Inactivity module (M8) had to be removed. It 
+should also be omitted from the graph below. Also, the customization by account type (AC5) 
+was not implemented so that was removed from this document as well.}
 
 \begin{figure}[H]
 \centering
@@ -403,8 +407,6 @@ because they use modules from the lower levels.
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
-
-\newpage
 
 %\section*{References}
 
