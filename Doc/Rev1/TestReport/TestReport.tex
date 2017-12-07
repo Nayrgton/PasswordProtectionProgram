@@ -15,14 +15,12 @@
 \title{SE 3XA3: Test Report\\Title of Project}
 
 \author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+		\\ Suhavi Sandhu sandhs11
+		\\ Shabana Dhayananth dhayanas
+		\\ Joseph Lu luy89
 }
 
 \date{\today}
-
-\input{../Comments}
 
 \begin{document}
 
@@ -38,8 +36,7 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+2017/12/06 & 1.0 & Creation\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -48,10 +45,56 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-This document ...
+This document discusses the results from testing the product, PasswordProtectionProgram, 
+any changes that were implemented as a result of testing and the extensiveness of the 
+tests performed.
 
 \section{Functional Requirements Evaluation}
 
+\subsection{User Input}
+
+\paragraph{Master Password}
+These test cases verify that the functions related to the master password, a critical part of 
+the system, behave as intended.  
+\newline
+\\
+	The following test cases assume that a master password has not yet been initialized and test for the creation of the master password.
+
+	FR-MP-1: A valid input of at least characters having upper and lowercase as well as numbers should let user proceed.
+	Result: Test pass, user is allowed to proceed.
+	
+	FR-MP-2 to FR-MP-5: Invalid input for master password should display appropriate error message.
+	Results: All tests pass and display appropriate error message.
+	
+	The following test cases assume that a master password has already been initialized and test for logging in with the master password.
+	
+	FR-MP-6: Upon entry of an empty string, the system should display an error message.
+	Result: This test originally passed, however, due to a bug found during the testing for ‘update entry’, this test was omitted. 
+	
+	FR-MP-7, FR-MP-8: Depending on whether input is correct or incorrect, system lets user proceed or displays error message.
+	Result: Tests pass
+	
+\paragraph{Adding Entries}
+These tests verify that users are able to add new entries to the database, assuming a connection to the database is already established and user is logged into application.
+
+	FR-AE-1, FR-AE-2, FR-AE-3: Originally, the goal of these test cases was to ensure that when adding an entry,
+	a user cannot add an empty password. Upon testing, it became clear that an empty password should be allowed,
+	in the case that the user has not come up with one. Therefore, the test was changed to verify that a Name,
+	rather than a password, should be required.
+	Results: All test cases pass, allowing users to add entries as long as name is provided, else error message displayed.
+	
+\paragraph{Navigation}
+The underlying goal for the product was to make it more userfriendly than the original. In doing so,
+great care was given to the tests designated under navigation. The following tests verify the functionality
+of the user manual.
+
+FR-N-1: Link to user manual works.
+Results: A pdf viewer opens up with the user guide.
+
+FR-N-2: 
+
+	
+	
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Usability}
