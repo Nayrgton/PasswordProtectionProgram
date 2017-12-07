@@ -1,9 +1,24 @@
 \documentclass{article}
 
-\usepackage{tabularx}
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{float}
 \usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
 \usepackage[normalem]{ulem}
 \usepackage[usenames, dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+
 
 \title{SE 3XA3: Problem Statement\\PasswordProtectionProgram}
 
@@ -15,10 +30,14 @@
 
 \date{\today}
 
-\iffalse \input{../Comments} \fi
-
 \usepackage{microtype}
 \begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
 
 
 \begin{table}[bp]
@@ -34,20 +53,20 @@
 
 \newpage
 
-\maketitle
+\pagenumbering{arabic}
 
-\section*{What is the problem?}
+\section{What is the problem?}
 Online security is becoming more relevant than ever. Strong passwords are often easy to forget and therefore, people tend to opt for weaker passwords usually containing simple word or number combinations. \textbf{The problem that we are trying to solve pertains to the difficulty people have with deciding on, remembering and storing their passwords.} Furthermore, users have a tendency to use duplicate passwords for different services and the same password for years, according to a survey conducted by TeleSign, a mobile identity company\footnote{“Password Statistics: The Bad, the Worse and the Ugly (Infographic)”, Carly Okyle, 2015, https://www.entrepreneur.com/article/246902}. This makes them more susceptible to security threats. Overall, the biggest issue with online security is human fallibility.
 
-\section*{Why is this problem important?}
+\section{Why is this problem important?}
 We are in an age where almost all services provided to consumers, including banking, health records and social media, have a website or app that requires the creation of a password protected account. Many of these accounts store sensitive personal information that if compromised, could lead to identity theft, and risk other individuals associated with the account (for example the victim’s email contacts). According to a guide released by The Office of the Privacy Commissioner of Canada, in order to safeguard information online, it is best to create unique, strong passwords and change them often\footnote{Identity Theft and You,” Public Works and Government Services Canada, 2014,  https://www.priv.gc.ca/media/2034/guide\_idt\_e.pdf}. However, most people do not do this as it is difficult to keep track of updating passwords and remembering the new ones. We hope to facilitate this issue by creating a password manager where one can \sout{safely} \textcolor{blue}{securely} store and access all of \textcolor{blue}{their} passwords \sout{they use while only having to remember one strongly encrypted password} \textcolor{blue}{through the use of one master password.}.
 
-\section*{What is the context of this problem?}
+\section{What is the context of this problem?}
 The stakeholders in this case are users of online services that want a place to store their passwords safely and also want a means of generating stronger passwords. The services for which the passwords are created are also affected by the problem as they have to deal with security threats and users that forget their passwords. Identity thieves play a role as they are able to breach users’ personal information due to weak passwords and weak encryption methods. Lastly, the development team is a stakeholder as programmers attempting to solve the problem at hand. \\
 \\
 An existing solution is Padlock, an open-source password management application that is available for desktop and mobile, running on Windows, Macintosh, Unix, iOS and Android environments. We will be re-implementing this application \textcolor{blue}{in order to design a more intuitive User Interface and} to learn more about encryption and password security. \textcolor{blue}{We intend to develop an offline version for desktop that is convenient for home use and} suitable for Windows, Macintosh or Unix environments. 
 
-\section*{Bibliography}
+\section{Bibliography}
 
 \begin{enumerate}
     \item Okyle, Carly. "Password Statistics: The Bad, the Worse and the Ugly (Infographic)." Entrepreneur. June 03, 2015. Accessed September 24, 2017. https://www.entrepreneur.com/article/246902.
