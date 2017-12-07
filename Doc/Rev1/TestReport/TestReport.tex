@@ -12,8 +12,11 @@
 }
 \usepackage[round]{natbib}
 \usepackage{enumitem}
+\usepackage{graphicx}
 
 \setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+\graphicspath{ {testResults/} }
 
 \title{SE 3XA3: Test Report\\Password Protection ProgramG}
 
@@ -24,8 +27,6 @@
 }
 
 \date{\today}
-
-\input{../Comments}
 
 \begin{document}
 
@@ -51,7 +52,6 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-<<<<<<< HEAD
 This document discusses the results from testing the product, PasswordProtectionProgram, any changes that were implemented as a result of testing and the extensiveness of the tests performed.
 
 \section{Functional Requirements Evaluation}
@@ -152,12 +152,6 @@ This document discusses the results from testing the product, PasswordProtection
 
 		\end{itemize}
 
-=======
-This document ...
-
-\section{Functional Requirements Evaluation}
-
->>>>>>> d8f26565a1465b0f96ba8356b25db79f079587e0
 \section{Nonfunctional Requirements Evaluation}
 
 	\subsection{Look and Feel Requirements}		
@@ -227,9 +221,131 @@ This document ...
 	
 \section{Comparison to Existing Implementation}	
 
-Apart from the coding language and narrowed scope, the PasswordProtectionProgram was not too different from the original implementation, Padlock. By executing manual tests on both implementations, it can be verified that the PasswordProtectionProgram successfully fulfils a majority of the main functions that were in the original implementation. Below are the results from those tests.
+	Apart from the coding language and narrowed scope, the PasswordProtectionProgram was not too different from the original implementation, Padlock. By executing manual tests on both implementations, it can be verified that the PasswordProtectionProgram successfully fulfils a majority of the main functions that were in the original implementation. Below are the results from those tests.\\
+	
+	Functional Tests\\
+
+	\quad User Input
+
+	\begin{itemize}
+	
+		\item \textbf{FR-MP-1} Creation of master password - can be performed successfully on both with ease. Original implementation, however, does not have criteria for master password (it can be a single character if desired)
+		\item \textbf{FR-FR-MP-5} Empty string for master password creation - displays error message in both implementations
+		\item \textbf{FR-FR-MP-7} Log in with master password - returning users can successfully login with correct master password
+		\item \textbf{FR-FR-MP-8} Login with incorrect master password - both implementations display error message.
+		\item \textbf{FR-FR-AE-1} Add an entry for account with name, type, username and password - Same categories are present for this and the original implementation however, duplicates are allowed in the original, something we disallowed to give users a better experience
+	
+	\end{itemize}
+	
+	\quad Navigation
+
+	\begin{itemize}
+
+		\item \textbf{FR-N-5} Copy password from existing entry - both implementations give users an easy way to access their passwords if they are too complex, by simply copying to clipboard
+		\item \textbf{FR-N-6} Generate random password for account entry - both implementations have a generate button to give users the opportunity to have more complex usernames and passwords, though, both implementations have different criteria for generation (8 characters, numbers, etc)
+
+	\end{itemize}
+	
+	Nonfunctional Tests\\
+
+	\quad Operational and Environmental Requirements
+
+	\begin{itemize}
+		
+		\item \textbf{NFR-OER-1} Compatibility with Windows, OSX, Linux OS - both implementations should ideally work on all 3 platforms and they did however, we did not get a chance to test the same for our executable
+	
+	\end{itemize}
+
+	\quad Personalization
+
+	\begin{itemize}
+
+		\item \textbf{NFR-PSR-1} User can categorize usernames and passwords based on account type - this test failed for the PasswordProtectionProgram as there is no categorization by account type as of now. It may be implemented in the future so users can sort account data by category, similar to the original implementation
+
+	\end{itemize}
+
+	\quad Security
+	
+	\begin{itemize}
+
+		\item \textbf{NFR-SR-3} Logs user out after 1 minute of inactivity - currently changed to 30 seconds for testing purposes, both implementations timeout after a minute.
+
+	\end{itemize}	
+
+
 
 \section{Unit Testing and Automated Testing}
+
+	PyUnit was used to perform unit testing on the system. All of these tests were automated.\\
+
+	Below is description of each test module and a trace of what test cases were tested in each test module.
+
+	\subsection{\texttt{testCopy.py}}
+
+		Tests \texttt{copy.py} by checking that the copy function accurately copies what is on the user’s clipboard\\
+		\includegraphics[scale=1]{testCopy.png}
+
+	\subsection{\texttt{testDatabase.py}} 
+
+		Tests \texttt{database.py} by checking that the main functions of the database such as insert, delete and update behave as intended
+
+		\begin{itemize}		
+			\item Tests \textbf{FR-DB-1}, add master password to empty database
+			\item Tests \textbf{FR-DB-2}, update entry in populated database
+			\item Tests \textbf{FR-DB-3}, delete entry in populated database
+			\item Tests \textbf{FR-DB-4}, return all information in populated database
+		\end{itemize}
+		
+		\includegraphics[scale=1]{testDatabase.png}
+
+	\subsection{\texttt{testEncrypt.py}}
+	
+		Tests \texttt{Encrypt.py} by checking that key generation, encryption and decryption work
+
+		\begin{itemize}
+			\item Tests \textbf{FR-E-1}, encrypt strings
+			\item Tests \textbf{FR-E-2}, decrypt an encrypted string
+		\end{itemize}
+
+		\includegraphics[scale=1]{testEncrypt.png}
+
+	\subsection{\texttt{testGenPassword.py}}
+
+		Tests \texttt{GenPassword.py} by checking that the random strings for username and password meet criteria
+
+		\begin{itemize}
+			\item Tests \textbf{FR-PWG-1}, criteria for random string generation (8 characters, upper,lowercase, number)
+		\end{itemize}
+
+		\includegraphics[scale=1]{testGenPassword.png}
+
+	\subsection{\texttt{testPWChecking.py}}
+	
+		Tests \texttt{PWChecking.py} to verify that valid and invalid master password entries are handled correctly
+
+		\begin{itemize}
+			\item Tests \textbf{FR-MP-1} - create master password, following criteria (allowed)
+			\item Tests \textbf{FR-MP-2} - create master password with no numbers (display error message)
+			\item Tests \textbf{FR-MP-3} - create master password not at least 8 characters (display error message)
+			\item Tests \textbf{FR-MP-4} - create master password with no uppercase (display error message)
+			\item Tests \textbf{FR-MP-5} - create master password with empty string (displays error message)
+			\item Tests \textbf{FR-MP-6} - later omitted 
+			\item Tests \textbf{FR-MP-7} - login with correct master password (allowed)
+			\item Tests \textbf{FR-MP-8} - login with incorrect master password  (displays error message)
+		\end{itemize}
+
+		\includegraphics[scale=1]{testPWChecking.png}
+
+	\subsection{\texttt{testResponseTime.py}}
+
+		Tests \texttt{PPP.py} for its performance by checking PROCESSING\_TIME and ERROR\_TIME
+
+		\begin{itemize}
+			\item Tests \textbf{NFR-PER-1} - perform action within PROCESSING\_TIME
+			\item Tests \textbf{NFR-PER-2} - display error message within ERROR\_TIME
+		\end{itemize}
+
+		\includegraphics[scale=1]{testResponseTime.png}
 
 \section{Changes Due to Testing}
 	
