@@ -21,9 +21,9 @@
 \title{SE 3XA3: Test Report\\Password Protection ProgramG}
 
 \author{Team 28, Team Name
-		\\ Suhavi Sandhu sandhs11
-		\\ Shabana Dhayananth dhayanas
-		\\ Joseph Lu luy89
+		\\ Suhavi Sandhu (sandhs11)
+		\\ Shabana Dhayananth (dhayanas)
+		\\ Joseph Lu (luy89)
 }
 
 \date{\today}
@@ -378,10 +378,112 @@ This document discusses the results from testing the product, PasswordProtection
 
 
 \section{Trace to Requirements}
+
+\begin{table}[!htbp]
+    \caption{\textbf{Traceability table for Functional Requirements}} \label{Table}
+    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
+        \toprule
+        \textbf{Req ID} & \textbf{Description} & \textbf{Priority} & \textbf{Test Cases}\\
+        \midrule
+        FR1  & The executable Python code will create a user interface window & High & FR-MP-1\\\hline
+        FR2  & Upon execution, the program will have a connection to a local database & High & FR-DB-1, FR-DB-2, FR-DB-3, FR-DB-4\\\hline
+        FR3  & The user must be able create a master password & High & FR-MP-1, FR-MP-2, FR-MP-3, FR-MP-4, FR-MP-5\\\hline
+        FR4  & The user must be able to enter a master password & High & FR-MP-7, FR-MP-8\\\hline
+        FR5  & The user must be able to add a new entry to the manager & High & FR-AE-1, FR-AE2, FR-AE-3\\\hline
+        FR6  & The user should be able to generate a random password  & High & FR-N-6, FR-N-7, FR-PWG-1\\\hline
+        FR7  & The user interface must have a link to the user manual & High & FR-N-1, FR-N-2\\\hline
+        FR8  & When user wants to copy or view a password, the software should decrypt it & High & FR-N-5, FR-E-2\\\hline
+        FR9  & The application should have buttons to directly copy username and password & High & FR-N-5\\\hline
+        FR10 & The user should be able to change their master password  & High & FR-MP-6\\\hline
+        FR11 & When a user adds a new entry, the software should encrypt the input & High & FR-E-1\\
+    
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[!htbp]
+    \caption{\textbf{Traceability table for Functional Requirements}} \label{5Table}
+    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
+        \toprule
+        \textbf{Req ID} & \textbf{Description} & \textbf{Priority} & \textbf{Test Cases}\\
+        \midrule
+        FR12 & The user will be able to delete any data entries except for the master PW.} & High & FR-N-8\\\hline
+        FR13 & The user will be able to update the username and password & High & FR-N-9\\
+    
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[!htbp]
+    \caption{\textbf{Traceability table for Non-functional Requirements}} \label{Table}
+    \small
+    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
+        \toprule
+        \textbf{Req ID} & \textbf{Description} & \textbf{Priority} & \textbf{Test Cases}\\
+        \midrule
+        
+        NFR1  & Different screens for different functions & High & NFR-LFR-1, beta testing\\\hline
+        NFR2  & Pop-up notification when requirements are missing & High & NFR-LFR-2\\\hline
+        NFR3  & Clearly display master password criteria before processing & High & NFR-LFR-3\\\hline      
+        NFR4  & The product will have a minimalistic aesthetic that is easy for users to find their way around the application & Med & Beta testing\\\hline
+        NFR5  & Create a modern and functional feel for the product. Rationale: The user must want to use this app & Low & Beta testing\\\hline
+        NFR6  & The product shall be intuitive and easy to understand and use. & High & Beta testing\\\hline
+        NFR7  & The product shall allow for the user to be able to categorize their passwords based on the service & Low & NFR-PSR-1\\\hline
+        
+        \midrule 
+    \end{tabularx}
+\end{table}
+
+\begin{table}[!htbp]
+    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
+        \midrule
+
+        NFR9  & The product shall use symbols and words that are naturally understandable & Low & NFR-UPR-1\\\hline
+        NFR11 & The product shall respond to user input within PROCESSING-TIME & High & NFR-PER-1\\\hline
+        NFR12 & The application shall be responsive and when not all requirements for a process are met, error message within ERROR-TIME & High & NFR-PER-2\\\hline
+        NFR13 & The program shall run on Windows, OSX and Linux OS & Low & NFR-OER-1\\\hline
+        NFR14 & The product will be available as open source. & Low & N/A\\\hline
+        NFR15 & The product shall only store account types, usernames and encrypted passwords. & High & NFR-SR-1\\\hline
+        NFR16 & Master password cannot be modified unless user is already logged in & High & \? \\\hline
+        NFR17 & The product shall contain security measures in order to prevent the data from being accessed directly from the user’s machine & High & NFR-SR-3\\\hline
+        NFR18 & The product shall not distribute the user’s personal information to third parties & High & N/A\\
+
+        \bottomrule
+
+    \end{tabularx}
+\end{table}
 		
-\section{Trace to Modules}		
+\section{Trace to Modules}	
+
+
+\begin{table}[!htbp]
+    \caption{\textbf{Traceability table for Modules}} \label{Table}
+    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
+        \toprule
+        \textbf{Mod ID} & \textbf{Description} & \textbf{Test Cases}\\
+        \midrule
+        M1  & Input Module & FR-AE-1, FR-AE-2, FR-AE-3, NFR-LFR-2, NFR-LFR-3, NFR-OER-1, NFR-UPR-1\\\hline
+        M2  & Password Generation Module & FR-N-6, FR-N-7, FR-PWG-1\\\hline
+        M3  & Encryption Module & FR-N-5, FR-E-1, FR-E-2, NFR-SR-1, NFR-SR-3\\\hline
+        M4  & Password Checking Module & FR-MP-1...FR-MP-8 \\\hline
+        M6  & GUI Module & FR-AE-1, FR-AE-2, FR-AE-3, FR-N-1, FR-N-2, FR-N-8, FR-N-9, NFR-LFR-1...NFR-LFR-3, NFR-UPR-1, NFR-PER-1, NFR-PER-2\\\hline, 
+        M7  & Copy Module & FR-N-5\\\hline
+        M9  & Database Module & FR-DB-1...FR-DB-4, NFR-SR-1\\\hline
+        M10 & Constants Module & FR-MP-1, NFR-PER-1, NFR-PER-2\\\hline
+    
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+
 
 \section{Code Coverage Metrics}
+
+We believe that the testing that we have conducted on PasswordProtectionProgram has covered about 95% of our code. This is especially due to the fact that the stucture of the majority of our source code is sequential functions for which all lines of code must be travered in order to be used. There is very little, to no branching in our implementation code meaning that we did not have to do edge coverage testing. This further reduces the risk of some code not being covered due to a conditional statements. 
+
+As for boundary testing, all inputs into the system have to be string types as they pass through a text field entry. Due to this, all inputs to the database and encryption functions were also strings so there were not many boundary cases to test. The only notable abnormal case was the input of an empty string which we have tested for and handled.
+
+We associate the remaining 5% in code coverage that we are lacking is to extensive testing that we could not conduct due to the time constraints of the project. Therefore, based on the highly connected traceability matrices above, we have covered 95% of our code through testing.
 
 \bibliographystyle{plainnat}
 
