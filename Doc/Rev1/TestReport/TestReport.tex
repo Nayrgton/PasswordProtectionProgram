@@ -1,5 +1,11 @@
 \documentclass[12pt, titlepage]{article}
 
+
+\usepackage{booktabs}
+\usepackage{ulem}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{titlesec}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -35,15 +41,13 @@
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
-\listoffigures
 
 \begin{table}[bp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+December 6, 2017 & 0.0 & Creation\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -407,7 +411,7 @@ This document discusses the results from testing the product, PasswordProtection
         \toprule
         \textbf{Req ID} & \textbf{Description} & \textbf{Priority} & \textbf{Test Cases}\\
         \midrule
-        FR12 & The user will be able to delete any data entries except for the master PW.} & High & FR-N-8\\\hline
+        FR12 & The user will be able to delete any data entries except for the master PW. & High & FR-N-8\\\hline
         FR13 & The user will be able to update the username and password & High & FR-N-9\\
     
         \bottomrule
@@ -444,7 +448,7 @@ This document discusses the results from testing the product, PasswordProtection
         NFR13 & The program shall run on Windows, OSX and Linux OS & Low & NFR-OER-1\\\hline
         NFR14 & The product will be available as open source. & Low & N/A\\\hline
         NFR15 & The product shall only store account types, usernames and encrypted passwords. & High & NFR-SR-1\\\hline
-        NFR16 & Master password cannot be modified unless user is already logged in & High & \? \\\hline
+        NFR16 & Master password cannot be modified unless user is already logged in & High & . \\\hline
         NFR17 & The product shall contain security measures in order to prevent the data from being accessed directly from the user’s machine & High & NFR-SR-3\\\hline
         NFR18 & The product shall not distribute the user’s personal information to third parties & High & N/A\\
 
@@ -458,7 +462,7 @@ This document discusses the results from testing the product, PasswordProtection
 
 \begin{table}[!htbp]
     \caption{\textbf{Traceability table for Modules}} \label{Table}
-    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
+    \begin{tabularx}{\textwidth}{p{2cm}Xp{4cm}}
         \toprule
         \textbf{Mod ID} & \textbf{Description} & \textbf{Test Cases}\\
         \midrule
