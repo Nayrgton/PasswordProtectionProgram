@@ -54,6 +54,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 2017-11-10 & 0.0 & Creation\\
+2017-12-06 & 1.0 & Revision\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -109,12 +110,13 @@ adapted here is called design for change.
   that the application is being run on.
   \item[\refstepcounter{acnum} \actheacnum \label{acFramework}:] The framework for
   the graphical user interface.
-  \item[\refstepcounter{acnum} \actheacnum \label{acDatabase}:] The database management system that is ued to store sensitive information.
+  \item[\refstepcounter{acnum} \actheacnum \label{acDatabase}:] The database management system that is used to store sensitive information.
   \item[\refstepcounter{acnum} \actheacnum \label{acEncryption}:] The encryption library that secures user information.
-  \item[\refstepcounter{acnum} \actheacnum \label{acUserCustom}:] Customization functionality for the user (ex. change the inactivity time before the application logs out).
+  \item[\refstepcounter{acnum} \actheacnum \label{acUserCustom}:] \sout{Customization functionality for the user (ex. change the inactivity time before the application logs out).}
   \item[\refstepcounter{acnum} \actheacnum \label{acDBAttributes}:] The attributes of the database.
   \item[\refstepcounter{acnum} \actheacnum \label{acPassGenFunc}:] Additional functionality from password generator (ex. constraining the random password to have only numbers, special characters).
   \item[\refstepcounter{acnum} \actheacnum \label{acPortability}:] The portability of the application (ex. allow the application to be used online).
+  \item[\refstepcounter{acnum} \actheacnum \label{acUnderstand}:] \textcolor{blue}{The design of the icons/buttons used in the application (ex. the lightning bolt symbol for the generate button)}.
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -153,7 +155,7 @@ actually be implemented.
   \item [\refstepcounter{mnum} \mthemnum \label{mPCUL}:] Password Checking Upon Login Module
   \item [\refstepcounter{mnum} \mthemnum \label{mGUI}:] GUI Module
   \item [\refstepcounter{mnum} \mthemnum \label{mCop}:] Copy Module
-  \item [\refstepcounter{mnum} \mthemnum \label{mInac}:] Inactivity Module
+  \item [\refstepcounter{mnum} \mthemnum \label{mInac}:] \sout{Inactivity Module}
   \item [\refstepcounter{mnum} \mthemnum \label{mDB}:] Database Module
   \item [\refstepcounter{mnum} \mthemnum \label{mCons}:] Constants Module
 
@@ -183,7 +185,7 @@ actually be implemented.
 \multirow{3}{0.3\textwidth}{Software Decision Module} 
 & Password Checking Upon Creation\\
 & Password Checking Upon Login Module\\
-& Inactivity Module\\
+& \sout{Inactivity Module}\\
 & Constants Module\\
 \bottomrule
 
@@ -291,9 +293,9 @@ Not applicable as the system is software-based and the lowest level that the sof
 \subsubsection{Inactivity Module (\mref{mInac})}
 
 \begin{description}
-\item[Secrets:] The algorithm used to detect user inactivity.
-\item[Services:] Logs user out of account after a certain period of inactivity.
-\item[Implemented By:] PasswordProtectionProgram
+\item[Secrets:] \sout{The algorithm used to detect user inactivity.}
+\item[Services:] \sout{Logs user out of account after a certain period of inactivity.}
+\item[Implemented By:] \sout{PasswordProtectionProgram}
 \end{description}
 
 \subsubsection{Constants Module (\mref{mCons})}
@@ -317,7 +319,7 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-FR1 & \mref{mCons}\\
+FR1 & \mref{mGUI}, \mref{\textcolor{blue}{mCons}}\\
 FR2 & \mref{mDB}\\
 FR3 & \mref{mPCUC}\\
 FR4 & \mref{mPCUL}\\
@@ -326,8 +328,10 @@ FR6 & \mref{mPG}\\
 FR7 & \mref{mGUI}\\
 FR8 & \mref{mEH}, \mref{mDB}\\
 FR9 & \mref{mCop}\\
-FR10 & \mref{mPCUC}\\
-FR11 & \mref{mEH}\\
+FR10 & \mref{\textcolor{blue}{mPG}}, \mref{\textcolor{blue}{mPCUL}}, \mref{\textcolor{blue}{mDB}}\\
+FR11 & \mref{mEH}, \mref{\textcolor{blue}{mDB}}\\
+FR12 & \mref{\textcolor{blue}{mGUI}}, \mref{\textcolor{blue}{mDB}}\\
+FR13 & \mref{\textcolor{blue}{mGUI}}, \mref{\textcolor{blue}{mDB}}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Functional Requirements and Modules}
