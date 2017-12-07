@@ -134,7 +134,7 @@ There is a deadline in December for the project to be completed.
 	\hline
 	\sout{MariaDB} & \sout{A community-developed fork of the MySQL relational database management system which will be used to locally store usernames and databases} \\
 	\hline
-	\textcolor{blue}{SQLite} & \textcolor{blue}{An SQL based Database Management System that requires very little administration, is free and is compact.}\\
+	\textcolor{blue}{SQLite} & \textcolor{blue}{An SQL based Database Management System that requires very little administration, is free and is compact.}
 	\hline
 	PW & Abbreviation for password \\
 	\hline
@@ -144,9 +144,9 @@ There is a deadline in December for the project to be completed.
 	\hline
 	Tkinter & Python module that is going to be used to create a graphical user interface, known as Python’s standard GUI package \\
 	\hline
-	\textcolor{blue}{PROCESSING-TIME} & \textcolor{blue}{Time it takes for system to respond to correct user input.} \\
+	\textcolor{blue}{PROCESSING-TIME & Time it takes for system to respond to correct user input.} \\
 	\hline
-	\textcolor{blue}{ERROR-TIME} & \textcolor{blue}{Time it takes for system to respond to incorrect user input.} \\
+	\textcolor{blue}{ERROR-TIME & Time it takes for system to respond to incorrect user input.} \\
 \hline
 \end{tabular}
 \end{table}
@@ -252,7 +252,7 @@ one for multiple accounts. This makes them more susceptible to security threats.
 \subsection{Look and Feel Requirements}
 \begin{itemize}
 	\item Requirement Number: NFR1\\
-The product shall have \sout{separate} \textcolor{blue}{designated} sections \textcolo{blue}{on the application screen to list} the user’s account authorizations, \textcolor{blue}{view \/ modify their present entries} and dedicate data entry to the creation of new user account usernames and passwords.\\
+The product shall have \sout{separate} \textcolor{blue}{designated} sections \textcolo{blue}{on the application screen to list} the user’s account authorizations, \textcolor{blue}{view / modify their present entries} and dedicate data entry to the creation of new user account usernames and passwords.\\
 Rationale: The Main functions of the product should be displayed to follow NFR6.\\
 Fit Criterion: Users are able to access the main functions immediately \textcolor{blue}{as the general layout of the in-application screen will not change while the product is in use}.\\
 Priority: HIGH\\
@@ -368,25 +368,25 @@ History: Created October 6, 2017
 \subsection{Security Requirements}
 \begin{itemize}
 	\item Requirement Number: NFR15\\
-The product shall only store \textcolor{blue}{account types, account names} usernames and encrypted passwords.\\
+The product shall only store \textcolor{blue}{account types,} usernames and encrypted passwords.\\
 Rationale: Unencrypted passwords will not be stored, all passwords will be encrypted when added to database.\\
-Fit Criterion: The \sout{encrypted} \textcolor{blue}{decrypted} password is displayed to the user\\
+Fit Criterion: The encrypted password is displayed to the user\\
 Priority: HIGH\\
-History: Created October 6, 2017, Updated December 6, 2017
+History: Created October 6, 2017
 
 	\item Requirement Number: NFR16\\
 \sout{The product shall be able to change their master password only if they are already logged into their accounts.} \textcolor{blue}{The master password cannot be modified unless the user is already logged into their account.}\\
 \sout{Rationale:  There will not be an email associated with the account to facilitate a reset password option on the log in page.} \textcolor{blue}{There will not be an email associated with the account to facilitate a reset password option on the log in page, being signed in is what authenticates the user.}\\
-Fit Criterion: The change password \sout{option} \textcolor{blue}{functionality} is only shown when the user is logged in already.\\
+Fit Criterion: The change password option is only shown when the user is logged in already.\\
 Priority: HIGH\\
-History: Created October 6, 2017, Updated October 27, 2017
+History: Created October 6, 2017
 
 	\item Requirement Number: NFR17\\
 The product shall contain security measures in order to prevent the data from being accessed directly from the user’s machine by people other than the user.\\
 Rationale: The user may unknowingly leave their computer unattended for a long period of time.\\
-Fit Criterion: The application logs out after \sout{a certain duration} \textcolor{blue}{INACTIVITY-PERIOD} of inactivity.\\
+Fit Criterion: The application logs out after a certain duration of inactivity.\\
 Priority: HIGH\\
-History: Created October 6, 2017, Updated December 6, 2017
+History: Created October 6, 2017
 
 	\item Requirement Number: NFR18\\
 The product shall not distribute the user’s personal information to third parties.\\
@@ -508,7 +508,7 @@ The team will be implementing and testing non-functional requirements based on t
 
 \subsection{Migration to the New Product}
 
-The final product will be run and installed via an executable Python file. As \sout{MariaDB} \textcolor{blue}{SQLite} will be used to store the usernames and passwords, the database will have to be converted before the product is released. It also needs to be tested on all intended operating systems.
+The final product will be run and installed via an executable Python file. As MariaDB will be used to store the usernames and passwords, the database will have to be converted before the product is released. It also needs to be tested on all intended operating systems.
 
 \subsection{Risks}
 
