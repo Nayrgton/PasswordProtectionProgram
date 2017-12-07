@@ -1,4 +1,4 @@
-all: M1.pdf M2.pdf M3.pdf M4.pdf M5.pdf M6.pdf
+all: M1.pdf M2.pdf M3.pdf M4.pdf M5.pdf M6.pdf M7.pdf
 
 M1.pdf: M1.tex
 	pdflatex M1.tex
@@ -29,6 +29,11 @@ M6.pdf: M6.tex
 	pdflatex M6.tex
 	rm M6.aux
 	rm M6.log
+
+M7.pdf: M7.tex
+	pdflatex M7.tex
+	rm M7.aux
+	rm M7.log
 
 clean:
 	#rm *.aux

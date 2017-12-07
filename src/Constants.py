@@ -53,5 +53,5 @@ INSTRUCTIONS = "1) Add entries on the top-left hand corner!\
                 NOTE: If you are still having trouble, read the user manual by clicking below. "
 
 
-# Inactivity Period
-INACTIVITY = 30000
+# Inactivity Period 
+INACTIVITY = 30000 # Changed to 30 seconds instead of 1 minute for testing
