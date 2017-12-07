@@ -45,7 +45,7 @@
 Oct 6, 2017 & 1.0 & section 1, 2, 5 \\
 Oct 7, 2017 & 1.1 & section 3, 4, 6, tables, figures \\
 Oct 27, 2017 & 1.2 & Revision \\
-Dec 6, 2017 & 1.3 & 
+Dec 6, 2017 & 1.3 & Revision Section 3 onwards\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -143,6 +143,10 @@ There is a deadline in December for the project to be completed.
 	Symmetric Cipher & The specific cipher that will be used for encryption, the key that it employs for going from readable form to protected form is the same \\
 	\hline
 	Tkinter & Python module that is going to be used to create a graphical user interface, known as Python’s standard GUI package \\
+	\hline
+	\textcolor{blue}{PROCESSING-TIME & Time it takes for system to respond to correct user input.} \\
+	\hline
+	\textcolor{blue}{ERROR-TIME & Time it takes for system to respond to incorrect user input.} \\
 \hline
 \end{tabular}
 \end{table}
@@ -235,6 +239,10 @@ one for multiple accounts. This makes them more susceptible to security threats.
 	FR10 & The user should be able to change their master password & To allow the user to regularly update PW & \textcolor{blue}{Change and update PW in} \sout{Settings} \textcolor{blue}{Master PW entry information} and verify that new PW works and old one does not on PW entry page\\
 	\hline
 	FR11 & \textcolor{blue}{When a user adds a new entry, the software should encrypt the input} & \textcolor{blue}{To protect the user’s information and prevent others from being able to see it} & \textcolor{blue}{Create new entry by clicking the ‘add’ button and verify that the database has a new entry with an encrypted string as the fields} \\
+	\hline
+	FR12 & \textcolor{blue}{The user will be able to delete any data entries that they have previously added except for the master PW.} & \textcolor{blue}{To allow the user to remove account information that they no longer find relevant.} & \textcolor{blue}{Delete an entry by clicking the ‘delete’ button and verify that the database no longer contains the entry and its fields.} \\
+	\hline
+	FR13 & \textcolor{blue}{The user will be able to update the username and password for any account entry that they already have, including the master PW} & \textcolor{blue}{To allow the user to regularly update their password.} & \textcolor{blue}{Change the username and password field for an existing entry and click the 'update' button and verify that the database reflects the updated information (with an encrypted string as the fields.)} \\
 \hline
 \end{tabular}
 \end{table}
@@ -244,30 +252,32 @@ one for multiple accounts. This makes them more susceptible to security threats.
 \subsection{Look and Feel Requirements}
 \begin{itemize}
 	\item Requirement Number: NFR1\\
-The product shall have separate sections to hold the user’s account authorizations and the creation of new user account usernames and passwords.\\
+The product shall have \sout{separate} \textcolor{blue}{designated} sections \textcolo{blue}{on the application screen to list} the user’s account authorizations, \textcolor{blue}{view / modify their present entries} and dedicate data entry to the creation of new user account usernames and passwords.\\
 Rationale: The Main functions of the product should be displayed to follow NFR6.\\
-Fit Criterion: Users are able to access the main functions immediately.\\
+Fit Criterion: Users are able to access the main functions immediately \textcolor{blue}{as the general layout of the in-application screen will not change while the product is in use}.\\
 Priority: HIGH\\
-History: Created October 6, 2017
+History: Created October 6, 2017, Updated December 6, 2017
 	\item Requirement Number: NFR2\\
-A pop-up notification will display when user is missing a required option when trying to perform a process.\\
-Rationale: The User must be notified on why their Application is not performing to follow requirement. \\
-Fit Criterion: A notification is sent when a required option is not selected.\\
+\sout{A pop-up notification} \textcolor{blue}{An on application notification} will display when user is missing a required option when trying to perform a process.\\
+Rationale: The User must be notified on why their application is not performing \sout{to follow requirement} \textcolor{blue}{in order for them to fix their mistake}. \\
+Fit Criterion: A notification is \sout{sent} \textcolor{blue}{displayed near the feature causing the issue when a required criteria is not met.}\\
 Priority: HIGH\\
-History: Created October 6, 2017
+History: Created October 6, 2017, Updated December 6, 2017
+
 	\item Requirement Number: NFR3\\
 The product shall clearly display master password criteria that have not been met by the user before the password is processed.\\
 Rationale: The user should understand intuitively what they can do next to follow NFR6.\\
-Fit Criterion: Options not selected are displayed in the UI \\
+Fit Criterion: \sout{Options not selected} \textcolor{blue}{Master PW criteria that are not met} are displayed in the UI \\
 Priority: HIGH\\
-History: Created October 6, 2017
+History: Created October 6, 2017, Updated December 6, 2017
 
 	\item Requirement Number: NFR4\\
 The product will have a minimalistic aesthetic that is easy for users to find their way around the application.\\
 Rationale: User should be able to understand how the product performs.\\
-Fit Criterion: There should be no more than 5 active functions that the user can see and perform at once.\\
+Fit Criterion: \textcolor{blue}{The application should be static and there} should be no more than 5 active functions that the user can see and perform at once.\\
 Priority: MED\\
 History: Created October 6, 2017
+
 	\item Requirement Number: NFR5\\
 The Google Material Style of the Product will create a modern and functional feel for the product.\\
 Rationale: The user must want to use this app.\\
@@ -282,9 +292,9 @@ History: Created October 6, 2017
 	\item Requirement Number: NFR6\\
 The product shall be intuitive and easy to understand and use.\\
 Rationale: Users must be able to use this product.\\
-Fit Criterion: Majority of Users are able to store a password onto the program\\
+Fit Criterion: \sout{Majority of} Users \textcolor{blue}{above the age of 12} are able to store a password onto the program\\
 Priority: HIGH\\
-History: Created October 6, 2017
+History: Created October 6, 2017, Updated December 6, 2017
 
 	\item Requirement Number: NFR7\\
 The product shall allow for the user to be able to categorize their passwords based on the service that it is used for.\\
@@ -293,26 +303,26 @@ Fit Criterion: Users create sections in the application\\
 Priority:LOW\\
 History: Created October 6, 2017
 
-	\item Requirement Number: NFR8\\
-The user shall be able to navigate their computer.\\
-Rationale: Intended users are expected to understand how to copy and paste simple text.\\
-Fit Criterion: Intended users are able to use the application that meets application requirements.\\
-Priority: LOW\\
-History: Created October 6, 2017
+	\item \sout{Requirement Number: NFR8}\\
+\sout{The user shall be able to navigate their computer.}\\
+\sout{Rationale: Intended users are expected to understand how to copy and paste simple text.}\\
+\sout{Fit Criterion: Intended users are able to use the application that meets application requirements.}\\
+\sout{Priority: LOW}\\
+\sout{History: Created October 6, 2017}
 
 	\item Requirement Number: NFR9\\
 The product shall use symbols and words that are naturally understandable by the user community.\\
 Rationale: The user must easily understand how to use the program as per NFR6.\\
-Fit Criterion: Majority of users who use the program are able to save their username and password and generate them too.\\
+Fit Criterion: \sout{Majority} \textcolor{blue}{90\%} of users who use the program are able to \textcolor{blue}{understand the button symbols used} \sout{save their username and password and generate them too.}\\
 Priority: LOW\\
-History: Created October 6, 2017
+History: Created October 6, 2017, Updated December 6, 2017
 
-	\item Requirement Number: NFR10\\
-The product shall hide the details of its construction to the user.\\
-Rationale: To follow NFR6, the product shall reveal more functions as users execute more processes.\\
-Fit Criterion: The options for processes that have prerequisites are not shown on the UI until they are fulfilled\\
-Priority: HIGH\\
-History: Created October 6, 2017
+	\item \sout{Requirement Number: NFR10}\\
+\sout{The product shall hide the details of its construction to the user.}\\
+\sout{Rationale: To follow NFR6, the product shall reveal more functions as users execute more processes.}\\
+\sout{Fit Criterion: The options for processes that have prerequisites are not shown on the UI until they are fulfilled}\\
+\sout{Priority: HIGH}\\
+\sout{History: Created October 6, 2017}
 		
 \end{itemize}
 
@@ -328,9 +338,9 @@ History: Created October 6, 2017
 	\item Requirement Number: NFR12\\
 The application shall be responsive and when not all requirements for a process are met,  it will display a notification or error message within ERROR-TIME.  \\
 Rationale: Latency disrupts the user experience of the application and renders compromises its ease of use.  \\
-Fit Criterion: The notification or error message is displayed in under ERROR-TIME for USER-TEST-PERCENTAGE of users.  \\
+Fit Criterion: The notification or error message is displayed in under ERROR-TIME for \sout{USER-TEST-PERCENTAGE} \textcolor{blue}{95\%} of users.  \\
 Priority: HIGH\\
-History: Created October 6, 2017
+History: Created October 6, 2017, Updated December 6, 2017
 
 \end{itemize}
 
