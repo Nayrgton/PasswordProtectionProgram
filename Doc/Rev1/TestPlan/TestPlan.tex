@@ -5,7 +5,6 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
-\usepackage{ulem}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -27,7 +26,7 @@
 
 \author{Team 28, Tuples1
 		\\ Shabana Dhayananth, dhayanas
-		\\ Suhavi Sandhu, sandhs11
+		\\ Suhavi Sandhu, sandhs
 		\\ Joseph Lu, luy89
 }
 
@@ -48,7 +47,6 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 2017-10-27 & 0.0 & Creation\\
-2017-12-06 & 1.0 & Final\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -70,7 +68,7 @@ This test plan will be used as a outline for unit testing the encryption of user
 Refer to Table 2 and Table 3
 	
 \begin{table}[hbp]
-\caption{\textbf{Table of Abbreviations}} \label{0Table}
+\caption{\textbf{Table of Abbreviations}} \label{Table}
 
     \begin{tabularx}{\textwidth}{p{3cm}X}
         \toprule
@@ -85,7 +83,7 @@ Refer to Table 2 and Table 3
 \end{table}
 
 \begin{table}[!htbp]
-\caption{\textbf{Table of Definitions}} \label{1Table}
+\caption{\textbf{Table of Definitions}} \label{Table}
 
     \begin{tabularx}{\textwidth}{p{3cm}X}
         \toprule
@@ -118,7 +116,7 @@ The only tool required for testing is PyUnit, which will be used for unit testin
 \subsection{Testing Schedule}
 Refer to Table 4
 \begin{table}[!htbp]
-    \caption{\textbf{Testing Schedule}} \label{2Table}
+    \caption{\textbf{Testing Schedule}} \label{Table}
     \begin{tabularx}{\textwidth}{p{3cm}XX}
         \toprule
         \textbf{Date} & \textbf{Task} & \textbf{Team Member}\\
@@ -142,7 +140,7 @@ Refer to Table 4
 Refer to Table 5
 
 \begin{table}[!htbp]
-    \caption{\textbf{Types of Tests} \label{3Table}}
+    \caption{\textbf{Types of Tests} \label{Table}}
     \begin{tabularx}{\textwidth}{p{3cm}X}
         \toprule
         \textbf{Test Type} & \textbf{Where/when is it applied}\\
@@ -171,7 +169,7 @@ Refer to Table 5
 
 \item{FR-MP-1\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 					
 Initial State: Home screen of application, when master password has not been initialized 
 					
@@ -184,7 +182,7 @@ How test will be performed: The function that checks that the password satisfies
 					
 \item{FR-MP-2\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Home screen of application, when master password has not been initialized
 
@@ -196,7 +194,7 @@ How test will be performed: The function that checks that the password satisfies
 
 \item{FR-MP-3\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Home screen of application, when master password has not been initialized 
 
@@ -208,7 +206,7 @@ How test will be performed: The function that checks that the password satisfies
 
 \item{FR-MP-4\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Home screen of application, when master password has not been initialized 
 
@@ -220,7 +218,7 @@ How test will be performed: The function that checks that the password satisfies
 
 \item{FR-MP-5\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Home screen of application, when master password has not been initialized 
 
@@ -232,9 +230,9 @@ How test will be performed: The function that checks that the password satisfies
 
 \item{FR-MP-6\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
-Initial State: Master password has been initialized and \sout{the user is at the Settings page and} wants to change the master password
+Initial State: Master password has been initialized and the user is at the Settings page and wants to change the master password
 
 Input: User enters a new master password with at least 8 characters, numbers, upper and lowercase letters and submits it
 
@@ -242,11 +240,9 @@ Output: The system lets the user proceed. The user should be able to access the 
 
 How test will be performed: The function that checks that the password satisfies all requirements will be called when the user submits the password. If the password satisfies requirements, a function updates the master password in the database.
 
-\textcolor{blue}{Note: This test case was eventually omitted due to changes made during testing. This is further discussed in the test report.}
-
 \item{FR-MP-7\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Master password has been initialized and the user opens application
 
@@ -258,7 +254,7 @@ How test will be performed: A function will be called to compare the user’s in
 
 \item{FR-MP-8\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Master password has been initialized and the user opens application
 
@@ -276,7 +272,7 @@ Type: Functional, Dynamic, Manual
 
 Initial State: User is logged in with master password and wishes to add an entry to the password manager by clicking with ‘Add’ option
 
-Input: \textcolor{blue}{For name, enter name of entry}, for Type, enter what the password is for (i.e Facebook account), for Username enter a \sout{valid} username and for password enter a \sout{valid} password
+Input: For Type, enter what the password is for (i.e Facebook account), for Username enter a valid username and for password enter a valid password
 
 Output: The system adds the entry to the database, upon encrypting it, and the user should be able to see the entry in their list of saved account information.
 
@@ -288,11 +284,11 @@ Type: Functional, Dynamic, Manual
 
 Initial State: User is logged in with master password and wishes to add an entry to the password manager by clicking with ‘Add’ option
 
-Input: \textcolor{blue}{For Name}, Type, Username and Password, leave fields empty and click ‘Add’
+Input: For Type, Username and Password, leave fields empty and click ‘Add’
 
-Output: The system does not let user proceed and prompts for a \sout{password} \textcolor{blue}{Name}
+Output: The system does not let user proceed and prompts for a password
 
-How test will be performed: The system uses a function to check that the \sout{password} \textcolor{blue}{Name} is not null and is it is, displays a label prompting user to enter one
+How test will be performed: The system uses a function to check that the password is not null and is it is, displays a label prompting user to enter a password
 
 \item{FR-AE-3\\}
 
@@ -300,11 +296,11 @@ Type: Functional, Dynamic, Manual
 
 Initial State: User is logged in with master password and wishes to add an entry to the password manager by clicking with ‘Add’ option
 
-Input: Leave Type, User and \textcolor{blue}{password} blank, \sout{for password enter a valid password} \textcolor{blue}{enter a name.}
+Input: Leave Type and User blank, for password enter a valid password
 
-Output: The system adds the entry to the database, \sout{upon encrypting it} user should be able to see the entry in their list of saved account information.
+Output: The system adds the entry to the database, upon encrypting it, and the user should be able to see the entry in their list of saved account information.
 
-How test will be performed: Given that a \textcolor{blue}{name} is provided, the function that encrypts the username and password will be called, thereby encrypting it and the data will be stored in the database. To make it appear, a new label will be added to the window that shows what the user has just added (with the password in asterisks).
+How test will be performed: Given that a password is provided, the function that encrypts the username and password will be called, thereby encrypting it and the data will be stored in the database. To make it appear, a new label will be added to the window that shows what the user has just added (with the password in asterisks).
 
 \subsubsection{Navigation}
 
@@ -324,37 +320,37 @@ How test will be performed: The application will be opened and the function to m
 
 Type: Functional, Dynamic, Manual
 
-Initial State: \sout{User manual screen} \textcolor{blue}{View entry screen}
+Initial State: User manual screen
 
-Input: User clicks clicks \sout{back} \textcolor{blue}{question mark} button
+Input: User clicks clicks back button
 
-Output: \sout{Password management screen opens and is displayed on the screen} \textcolor{blue}{User manual is displayed}
+Output: Password management screen opens and is displayed on the screen
 
 How test will be performed: The application will be opened and the function to make the password management screen appear will be called
 
-\item{\sout{FR-N-3}\\}
+\item{FR-N-3\\}
 
-\sout{Type: Functional, Dynamic, Manual}
+Type: Functional, Dynamic, Manual
 
-\sout{Initial State: User is at password management screen and nothing has been added}
+Initial State: User is at password management screen and nothing has been added
 
-\sout{Input: User clicks Add button}
+Input: User clicks Add button
 
-\sout{Output: 3 fields are displayed: Type, Username and Password}
+Output: 3 fields are displayed: Type, Username and Password
 
-\sout{How test will be performed: The application will update the interface to show 3 new labels and text fields when the button is clicked}
+How test will be performed: The application will update the interface to show 3 new labels and text fields when the button is clicked
 
 \item{FR-N-4\\}
 
-\sout{Type: Functional, Dynamic, Manual}
+Type: Functional, Dynamic, Manual
 
-\sout{Initial State: User is at password management screen and an entry has been added}
+Initial State: User is at password management screen and an entry has been added
 
-\sout{Input: User clicks Add button}
+Input: User clicks Add button
 
-\sout{Output: 3 fields are displayed under the existing entry: Type, Username and Password}
+Output: 3 fields are displayed under the existing entry: Type, Username and Password
 
-\sout{How test will be performed: The application will update the interface to show 3 new labels and text fields when the button is clicked, keeping the previous entries}
+How test will be performed: The application will update the interface to show 3 new labels and text fields when the button is clicked, keeping the previous entries
 
 \item{FR-N-5\\}
 
@@ -392,30 +388,6 @@ Output: A random password is generated and then replaced with the new
 
 How test will be performed: The function to generate a random password is called and the password appears in the text field. The second time, this text is replaced with the new random password
 
-\item{\textcolor{blue}{FR-N-8}\\}
-
-\textcolor{blue}{Type: Functional, Dynamic, Manual}
-
-\textcolor{blue}{Initial State: User is on password management screen and entries have been added}
-
-\textcolor{blue}{Input: User clicks on 'Delete' button}
-
-\textcolor{blue}{Output: The entry is deleted from the screen}
-
-\textcolor{blue}{How the test will be performed: The test will be performed manually. The command for the delete button should remove the entry from the database and refresh the screen.}
-
-\item{\textcolor{blue}{FR-N-9}\\}
-
-\textcolor{blue}{Type: Functional, Dynamic, Manual}
-
-\textcolor{blue}{Initial State: User is on password management screen and an entry is being viewed}
-
-\textcolor{blue}{Input: User clicks on 'Update' button}
-
-\textcolor{blue}{Output: The updated entry is displayed}
-
-\textcolor{blue}{How the test will be performed: The test will be performed manually. The command for the update button should make changes in the update and refresh the screen.}
-
 \subsubsection{Encryption}
 
 \item{FR-E-1\\}
@@ -446,7 +418,7 @@ How test will be performed: The decrypted string will be printed to see if it ma
 
 \item{FR-DB-1\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: Empty database
 
@@ -458,7 +430,7 @@ How test will be performed: The database table that stores records will be check
 
 \item{FR-DB-2\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: \textcolor{blue}{A query} has already been created
 
@@ -470,7 +442,7 @@ How test will be performed: The database table that stores records will be updat
 
 \item{FR-DB-3\\}
 
-Type: Functional, Dynamic, \sout{Manual} \textcolor{blue}{Automated}
+Type: Functional, Dynamic, Manual
 
 Initial State: \textcolor{blue}{Multiple passwords exists}
 
@@ -482,30 +454,15 @@ How test will be performed: \textcolor{blue}{The database table that stores reco
 
 \item{\textcolor{blue}{FR-DB-4}\\}
 
-\textcolor{blue}{Type: Functional, Dynamic, Automated}
+\textcolor{blue}{Type: Functional, Dynamic, Manual
 
-\textcolor{blue}{Initial State: Multiple passwords exists}
+Initial State: Multiple passwords exists
 
-\textcolor{blue}{Input: User gets all passwords, all passwords by type, first password by id, first password by name}
+Input: User gets all passwords, all passwords by type, first password by id, first password by name
 
-\textcolor{blue}{Output: No change}
+Output: No change
 
-\textcolor{blue}{How test will be performed: Equal passwords matches with each other.} 
-
-\subsubsection{Password Generation}
-
-\item{\textcolor{blue}{FR-PWG-1}\\}
-
-\textcolor{blue}{Type: Functional, Dynamic, Automated}
-
-\textcolor{blue}{Initial State: User is on password management screen and is adding entry}
-
-\textcolor{blue}{Input: User clicks on 'Generate' button}
-
-\textcolor{blue}{Output: A random output, of length 8 characters with lowercase, uppercase letters and numbers}
-
-\textcolor{blue}{How the test will be performed: The unit test will check that there are 8 characters, with the appropriate letters/numbers criteria}
-
+How test will be performed: Equal passwords matches with each other.} 
 \end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
@@ -661,7 +618,7 @@ How test will be performed: An in-code/test timer will be used to measure if the
 \subsection{Traceability Table Between Test Cases and Requirements}
 Refer to Table 6 and Table 7
 \begin{table}[!htbp]
-    \caption{\textbf{Traceability table for Functional Requirements}} \label{4Table}
+    \caption{\textbf{Traceability table for Functional Requirements}} \label{Table}
     \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
         \toprule
         \textbf{Req ID} & \textbf{Description} & \textbf{Priority} & \textbf{Test Cases}\\
@@ -671,7 +628,7 @@ Refer to Table 6 and Table 7
         FR3  & The user must be able create a master password & High & FR-MP-1, FR-MP-2, FR-MP-3, FR-MP-4-, FR-MP-5\\\hline
         FR4  & The user must be able to enter a master password & High & FR-MP-7, FR-MP-8\\\hline
         FR5  & The user must be able to add a new entry to the manager & High & FR-AE-1, FR-AE2, FR-AE-3, FR-N-3, FR-N-4\\\hline
-        FR6  & The user should be able to generate a random password  & High & FR-N-6, FR-N-7, \textcolor{blue}{FR-PWG-1}\\\hline
+        FR6  & The user should be able to generate a random password  & High & FR-N-6, FR-N-7\\\hline
         FR7  & The user interface must have a link to the user manual & High & FR-N-1, FR-N-2\\\hline
         FR8  & When user wants to copy or view a password, the software should decrypt it & High & FR-N-5, FR-E-2\\\hline
         FR9  & The application should have buttons to directly copy username and password & High & FR-N-5\\\hline
@@ -683,20 +640,7 @@ Refer to Table 6 and Table 7
 \end{table}
 
 \begin{table}[!htbp]
-    \caption{\textbf{Traceability table for Functional Requirements}} \label{5Table}
-    \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
-        \toprule
-        \textbf{Req ID} & \textbf{Description} & \textbf{Priority} & \textbf{Test Cases}\\
-        \midrule
-        \textcolor{blue}{FR12}  & \textcolor{blue}{The user will be able to delete any data entries except for the master PW.} & High & \textcolor{blue}{FR-N-8}\\\hline
-        \textcolor{blue}{FR13} & \textcolor{blue}{The user will be able to update the username and password} & High & \textcolor{blue}{FR-N-9}\\
-    
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-\begin{table}[!htbp]
-    \caption{\textbf{Traceability table for Non-functional Requirements}} \label{6Table}
+    \caption{\textbf{Traceability table for Non-functional Requirements}} \label{Table}
     \small
     \begin{tabularx}{\textwidth}{p{2cm}Xp{2cm}X}
         \toprule
@@ -880,9 +824,9 @@ Nonfunctional Tests
 Unit testing will be executed using PyUnit and all functions of the application will be tested. In functional requirements there are few unit tests because the tests are heavily focused on user interface. However, to test that internal functions work as expected, the following tests will be executed.
 
 \begin{itemize}
-    \item \texttt{\textcolor{blue}{checkMP}(password)} - checks if the password satisfies criteria
-    \item \texttt{insert(\textcolor{blue}{name}, type, username, password)} - inserts id of entry, type, username and encrypted password
-    \item \texttt{update\sout{MasterPassword}()} - updates master password in database if it is modified    
+    \item \texttt{checkPassword(password)} - checks if the password satisfies criteria
+    \item \texttt{insert(id, type, username, password)} - inserts id of entry, type, username and encrypted password
+    \item \texttt{updateMasterPassword()} - updates master password in database if it is modified    
     \item \texttt{username(id)} - returns username from database
     
     \item \texttt{password(id)} - returns password from database, which is later decrypted
@@ -896,7 +840,6 @@ Unit testing will be executed using PyUnit and all functions of the application 
 \subsection{Unit testing of output files}		
 
 Below is a description of the output files that will be needed for unit testing and how the functions that are being unit tested will use the output files. Not all functions require an output file for unit testing. Coverage metrics are also discussed.\\
-\textcolor{blue}{NOTE: The following files were not used in the testing process as there was not enough time. Instead, tests were performed on a smaller scale but the option of using the following files is feasible for the future}
 
 \texttt{passwords.txt}
 \begin{itemize}
